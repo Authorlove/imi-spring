@@ -33,6 +33,16 @@ var list = [
 		height :  960,
 		width  :  542,
 		img :  'img/7.jpg'
+	},
+	{
+		height :  800,
+		width  :  533,
+		img :  'img/8.jpg'
+	},
+	{
+		height :  600,
+		width  :  600,
+		img :  'img/9.jpg'
 	}
 ];
 
@@ -111,10 +121,12 @@ Builder.prototype.bindDOM = function(){		//事件绑定
 		var i = self.idx - 1;
 		var m = i + 3;
 		
+		
 		for(i;i<m;i++){			//改变translate3d实现换屏效果
+			lis[i] && (lis[i].setAttribute('class','un_donghua'));//消除动画效果实现实时移动
 			lis[i] && (lis[i].style.webkitTransform = 'translate3d('+((i-self.idx)*scale+self.offsetX)+'px,0,0)'); 
 		}
-		console.log(self.offsetX)
+		
 	};
 	var endHandler = function(obj){
 		var boundary = scale/4;
@@ -123,19 +135,18 @@ Builder.prototype.bindDOM = function(){		//事件绑定
 		
 		var lis = outer.getElementsByTagName('li');
 		
-		
 		if(endTime - self.startTime > 800){
 			if(self.offsetX >= boundary){
 				//进入上一屏
 				self.go('-1');
-			}else if(self.offsetX <= boundary){
+			}else if(self.offsetX <= -boundary){
 				//进入下一屏	
 				self.go('1');
 			}else{
 				//留在本屏
 				self.go('0');
 			}
-		}else{
+		}else{						//快速操作
 			if(self.offsetX > 50){
 				//进入上一屏
 				self.go('-1');
@@ -163,7 +174,7 @@ Builder.prototype.go = function(num){
 	var scale = this.scaleW;
 	
 	if(typeof num === 'number'){
-		cidx = idx;
+		cidx = num;
 	}else if(typeof num === 'string'){
 		cidx = idx+num*1;
 	}
@@ -177,9 +188,15 @@ Builder.prototype.go = function(num){
 	
 	this.idx = cidx;
 	
+	//增加动画效果
+	lis[cidx].setAttribute('class','donghua');
+	lis[cidx-1] && (lis[cidx-1].setAttribute('class','donghua'));
+	lis[cidx+1] && (lis[cidx+1].setAttribute('class','donghua'));
+	
+	
 	lis[cidx].style.webkitTransform = 'translate3d(0,0,0)';
 	lis[cidx-1] && (lis[cidx-1].style.webkitTransform = 'translate3d(-'+scale+'px,0,0)');
-	lis[cidx+1] && (lis[cidx+1].style.webkitTransform = 'translate3d(-'+scale+'px,0,0)');
+	lis[cidx+1] && (lis[cidx+1].style.webkitTransform = 'translate3d('+scale+'px,0,0)');
 	
 }
 
