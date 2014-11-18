@@ -27,6 +27,13 @@
 		
 		
 		
-		<script type="text/javascript" src="js/demo.js"></script>
+		<script type="text/javascript">
+			var sc = document.createElement('script');
+			sc.type = 'text/javascript';
+			sc.async = true;
+			sc.src = 'js/demo.js';
+			var o_sc = document.getElementsByTagName('script')[0];
+			o_sc.parentNode.insertBefore(sc,o_sc);
+		</script>
 	</body>
 </html>
