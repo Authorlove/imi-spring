@@ -1,0 +1,6 @@
+.fl{float: left;}
+.fr{float: right;}
+.abso{position: absolute;}
+.rela{position: relative;}
+.blur{-webkit-filter: blur(10px);}
+.clear{clear: both;}
