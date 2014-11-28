@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>成绩查询</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var aid = '<?php echo $aid;?>';
+    </script>
+</head>
+<style type="text/css">
+	/*初始化*/
+	body{margin: 0px;font-family:"Helvetica",Roboto;line-height: 1.5;}
+	ul,li{list-style-type:none;margin:0;padding:0;}
+	/*顶部标签*/
+	.tag{padding: 0; background-color: #f8f8f8;border-bottom: 1px solid #d7d7d7;height: 40px;position: relative;}
+	.tag a{font-size:15px;line-height:40px;text-align: center;color: #333;width: 50%;height: 40px;display: inline-block;}.tag a:link {text-decoration: none;}
+	.tag .font_blue{color: #3697DE;}
+	.r-line{position: absolute;width: 50%;height: 2px;background-color: #1e95dd;top: 39px;left: 0;}
+	/*下拉框*/
+	.xl2{background-color: #fff;font-size:14px;}
+	.rows li{position: relative;display:inline-block;width: 50%;}
+	.r_line_1,.r_line_2{position: absolute;width: 100%;height:1px;background-color: #ddd;top: 35px;right:0px;z-index: 100;}/*下滑灰线*/
+	.a_left{border-right: 1px solid #ddd;}
+	.rows a{padding: 0 10px;color: #666;display: block;height: 35px;line-height: 35px;}
+	.rows a:after{content: "";display: block;position: absolute;height: 35px;width: 11px;top: 0;right: 10px;background: #fff url(./img/icon-jt-down.png) no-repeat right center;background-size: 11px 43px;}
+	.expand_1 .rows .a_left:after,.expand_2 .rows .a_right:after{content: "";display: block;position: absolute;height: 35px;width: 11px;top: 0;right: 10px;background: #fff url(./img/icon-jt-up.png) no-repeat right center;background-size: 11px 43px;}
+	.expand_1 .rows .a_left,.expand_2 .rows .a_right{color: #0095f5;}
+	.xl2 a:link {text-decoration: none;} 
+	.c-line{position: absolute;height: 35px;width: 1px;right: 0px;top: 0px;background-color: #ddd;}
+	.expand_1 .r_line_1,.expand_2 .r_line_2{display: none;}
+	.cols_1,.cols_2{display: none;}
+	.expand_1 .cols_1,.expand_2 .cols_2{display: block;position: absolute;width:100%;background-color:#fff;z-index: 50;}
+	.cols_1 li,.cols_2 li{border-bottom: 1px solid #e6e6e6;margin:0 10px;}
+	.cols_1 li a,.cols_2 li a{color: #666;display: block;height: 40px;line-height:40px;padding-left: 5px;}
+	/*-------------------------------------------------------------------成绩查询--------------------------------------------------------------------------*/
+	/*蓝色屏幕*/
+	.src{background-color: #0095f5;padding-top: 27px;padding-bottom: 27px;overflow: hidden;position: relative;}
+	#aver_gpa{margin: 0;text-align:center;font-size:50px;color: #fff;font-weight: normal;}
+	.src h4{margin: -10px 0 0 0;text-align:center;color:rgba( 255, 255, 255, 0.6);font-size:14px;}
+	.src p{margin: 0;padding: 0;font-size:14px;color:rgba( 255, 255, 255, 0.6);}
+	.src .b_p_div{position: absolute;top:8px;width: 100%;}
+	.src .b_p_div .b_l{float: left;margin-left: 10px;}
+	.src .b_p_div .b_r{text-align: right;margin-right: 10px;}
+	/*学科成绩*/
+	.score li{border-bottom: 1px solid #d7d7d7;padding-top: 14px;padding-bottom:14px;line-height:1.2;overflow:hidden;position: relative;}
+	.score p{color: #909090;margin: 0;padding: 0;font-size:12px;}
+
+	.score h2{color: #333;font-size:16px;margin: 0;padding: 0;float:left;margin-left: 10px;margin-right: 75px;}
+	.score .s_num{position: absolute;top: 10px;line-height:1;right: 10px;color:#3697DE;font-size:26px;margin: 0;padding: 0;text-align: right;}
+
+	.score .b_div{clear: both;margin:0 10px;padding-top: 5px;overflow:hidden;line-height:1;}
+	.score .p_l{float: left;}
+	.score .p_r{text-align: right;}
+
+	.clear{clear: both;height: 0;overflow: hidden;}
+	#mask{background: #000;opacity: 0.7;width: 100%;position: absolute;left: 0;}/*遮罩层*/
+	#overload{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: none; z-index: 500;color: #fff;text-align: center;}
+	#overload h2{position: relative;top:40%;}
+
+	.note{ width: 100%; font-size: 12px; color: #898989;  text-align: center;padding-bottom: 10px;margin: 0;}
+	.note .blue_size{ text-decoration: none; color: #249bf3;display: inline;}
+	/*-------------------------------------------------------------------END-成绩查询--------------------------------------------------------------------------*/
+
+	.loading_page{background:rgba(255,255,255,.8);width:100%;position:fixed;top:0;bottom:0;z-index:999;display: none;}
+	.loading_center,.loading_page:after{background-repeat:no-repeat;background-size:100px 100px;width:100px;height:100px;position:absolute;top:50%;left:50%;margin:-50px 0 0 -50px;}
+	.loading_page:after{content:'';background-image:url(./img/global_loading_in.png);}
+	.loading_center{background-image:url(./img/global_loading.png);-webkit-animation:loadingrotate 1.6s infinite ease-in-out;}
+	@-webkit-keyframes loadingrotate {
+	  0% {-webkit-transform:rotate(0);}
+	  70% {-webkit-transform:rotate(180deg);}
+	  100% {-webkit-transform:rotate(180deg);}
+
+</style>
+<body>
+
+
+	<!-- 加载时蒙版 -->
+	<div class="loading_page"><div class="loading_center"></div></div>
+
+	<!-- 顶部标签 -->
+	<!-- <div class="tag">
+		<a id="score_but" class="font_blue" href="javascript:;" onclick="scoreORexam(1);">成绩查询</a><a id="exam_but" href="javascript:;" onclick="scoreORexam(2);">考试查询</a>
+		<span id="r_line" class="r-line"></span>		
+	</div> -->
+
+
+
+<!-- ********************************************************************成绩查询******************************************************************** -->
+	<div id="score_check" style="display:block;">
+	<!-- 下拉框 -->
+	<div class="xl2 expand_0" id="expand">
+		<ul class="rows">
+			<li><a id="score_a_left" class="a_left" href="javascript:;" onclick="showxiala(1)">2013 - 2014年</a><span class="r_line_1"></span></li><li><a id="score_a_right" class="a_right" href="javascript:;" onclick="showxiala(2)">第二学期</a><span class="r_line_2"></span></li>
+		</ul>
+		<ul class="cols_1" id="cols_1">
+			<!-- <li><a href="javascript:;">我是下拉一</a></li>
+			<li><a href="javascript:;">选项二</a></li>
+			<li><a href="javascript:;">下拉一</a></li>
+			<li><a href="javascript:;">选项若干</a></li> -->
+		</ul>
+		<ul class="cols_2">
+			<li><a href="javascript:;" onclick="semesterchoice(1)">第一学期</a></li>
+			<li><a href="javascript:;" onclick="semesterchoice(2)">第二学期</a></li>
+		</ul>
+	</div>
+	<!-- 蓝色屏幕 -->
+	<div class="src">
+		<div class="b_p_div">
+			<p class="b_l" id="studentname"><!-- 小明 --></p>
+			<p class="b_r" id="studentid"><!-- 201241020222 --></p>
+		</div>
+		<h1 id="aver_gpa">&nbsp;</h1>
+		<h4>平均绩点</h4>
+	</div>
+
+	<!-- 学科成绩 -->
+	<ul class="score" id="score">
+	<!-- 	<li>
+			<h2>计算机组成原理</h2>
+			<p class="s_num">95</p>
+			<div class="b_div">
+				<p class="p_l">学分：<span>2</span></p>
+				<p class="p_r">平时：<span>95</span>&nbsp;&nbsp;期末：<span>95</span></p>
+			</div>
+		</li>
+		<li>
+			<h2>计算机组成原理</h2>
+			<p class="s_num">95</p>
+			<div class="b_div">
+				<p class="p_l">学分：<span>2</span></p>
+				<p class="p_r">平时：<span>95</span>&nbsp;&nbsp;期末：<span>95</span></p>
+			</div>
+		</li> -->
+	</ul>
+	</div>
+<!-- ******************************************************************END**成绩查询******************************************************************** -->
+
+
+<!-- ********************************************************************考试查询******************************************************************** -->
+<!-- 考试信息 -->
+	<div id="exam_check" style="display:none;">
+	<!-- 下拉框 -->
+	<div class="xl2 expand_0" id="expand_01">
+		<ul class="rows">
+			<li><a id="score_a_left_01" class="a_left" href="javascript:;" onclick="showxiala_01(1)">2013 - 2014年</a><span class="r_line_1"></span></li><li><a id="score_a_right_01" class="a_right" href="javascript:;" onclick="showxiala_01(2)">第二学期</a><span class="r_line_2"></span></li>
+		</ul>
+		<ul class="cols_1" id="cols_1_01">
+		
+		</ul>
+		<ul class="cols_2">
+			<li><a href="javascript:;" onclick="semesterchoice_01(1)">第一学期</a></li>
+			<li><a href="javascript:;" onclick="semesterchoice_01(2)">第二学期</a></li>
+		</ul>
+	</div>
+	<ul class="exam" id="exam">
+	<!-- 	<li>
+			<h2>计算机组成原理</h2>
+			<p class="p_up">2014年06月27日&nbsp;09:00-11:00&nbsp;</span></p>
+			<p class="p_bot">五山区&nbsp;4202&nbsp;座位号: 55</p>
+		</li> -->
+	</ul>
+	</div>
+
+	<div style="height:10px;"></div>
+    <p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+<!-- ******************************************************************END**考试查询******************************************************************** -->
+</body>
+
+<script type="text/javascript" src="./js/examscore.js"></script>
+<script type="text/javascript">
+	var studentid = 201230760222;
+	var data = {"item":[{"name":"\u4e52\u4e53\u7403","credit":"1.0","uscore":" ","fscore":" ","score":"71"},{"name":"\u7ebf\u6027\u4ee3\u6570","credit":"2.0","uscore":"71.4","fscore":"80","score":"76"},{"name":"Linux\u5e94\u7528\u57fa\u7840","credit":"2.0","uscore":"90","fscore":"80","score":"82"},{"name":"\u5de5\u7a0b\u6280\u80fd\u901a\u8bc6\u8bad\u7ec3","credit":"1.0","uscore":" ","fscore":" ","score":"90"},{"name":"\u5927\u5b66\u82f1\u8bed\u2163(\u5206\u5c42\u6559\u5b66)","credit":"2.5","uscore":"76","fscore":"69","score":"73"},{"name":"\u5f62\u52bf\u4e0e\u653f\u7b562","credit":"0.5","uscore":" ","fscore":" ","score":"85"},{"name":"\u8ba1\u7b97\u673a\u7ec4\u6210\u539f\u7406","credit":"3","uscore":"80","fscore":"84","score":"82"},{"name":"\u64cd\u4f5c\u7cfb\u7edf","credit":"3.0","uscore":"82","fscore":"97","score":"90"},{"name":"\u6c47\u7f16\u8bed\u8a00\u7a0b\u5e8f\u8bbe\u8ba1","credit":"3.0","uscore":"90","fscore":"90","score":"90"},{"name":"\u8ba1\u7b97\u673a\u7ec4\u6210\u5b9e\u9a8c","credit":"0.5","uscore":" ","fscore":" ","score":"90"},{"name":"\u6c47\u7f16\u8bed\u8a00\u7a0b\u5e8f\u8bbe\u8ba1\u5b9e\u9a8c","credit":"0.5","uscore":" ","fscore":" ","score":"90"},{"name":"\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u7b97\u6cd5\u7efc\u5408\u5b9e\u4e60\u2162","credit":"1.0","uscore":" ","fscore":" ","score":"96"},{"name":"\u9a6c\u514b\u601d\u4e3b\u4e49\u57fa\u672c\u539f\u7406","credit":"3.0","uscore":"80","fscore":"70","score":"75"},{"name":"\u804c\u4e1a\u7d20\u517b\u63d0\u5347\u4e0e\u5c31\u4e1a\u6307\u5bfc","credit":"2.0","uscore":"94","fscore":"93","score":"92"}],"gpa":"3.33","studentname":"\u51af\u79d1\u68c9","studentid":"201230740403"};
+	schoolyear(studentid);
+	readData(data);
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+.search-wrap{padding:10px; border-bottom: 1px solid #d7d7d7;}
+.search-input-wrap{margin-right: 40px;height:30px; line-height:30px;}
+.search-input-wrap input{padding: 5px 0 4px;text-indent:25px;border:1px solid #d7d7d7; border-radius:3px;outline: none; z-index: 9;width:100%;background: url(../img/search-icon.png) no-repeat 4px;background-size: 18px;background-color: #fafafa; }
+.search-up{float: right;color: #0C61FD;height:30px; line-height:30px;}
+
+.tab{background-color: #fff;display:-webkit-box;overflow: hidden;}
+.tab li{-webkit-box-flex:1;text-align: center;color: #333333;height: 37px;line-height: 37px;}
+.vertical-line{height: 27px;width: 2px;background-color: #ebebeb;display: inline-block;margin-top: 7px;float: right;}
+.slide-line-box{height: 3px;position: relative;background-color: #f8f8f8;}
+#slide-line1{height: 3px;background-color:#1e95dd;display: inline-block;position: absolute;}
+.tab .on-tab{color:#1e95dd;}
+#slide-line1{width: 49%;left: 0;}
+
+.liblist-item{padding: 15px;background-color: #fff;border-bottom: 1px solid #d7d7d7;}
+.lli-bookname{color: #22282B;word-wrap:break-word;display: block;margin-right: 55px;word-break: break-all;padding-top: 5px;}
+.lli-leftday{color: #AAAAAA;float: right;}
+.lli-lastday{color: #AAAAAA;}
+.lli-renew{color: #3498DB;font-size:12px;padding: 4px;border: 1px solid #3498DB;float: right;margin-right: 10px;}
+.liblist-item-up{}
+.liblist-item-down{margin-top:10px;height: 20px;line-height: 20px;}
+.red-num{color: #FF6600;font-size:24px;}
+.blue-num{color: #3498DB;font-size:24px;}
+.liblist-item-left{margin-right: 70px;}
+.past-bookname{color: #9A9A9A;}
+.past-lastday{color: #AAAAAA;margin-top: 5px;height: 20px;line-height: 20px;}
+.return{color: #AAAAAA;font-size:18px;float: right;height: 49px;line-height: 49px;margin-right: 10px;}
+
+#search_item_wrap{display: none;}
+.search_item{padding: 15px;background-color: #fff;border-bottom: 1px solid #d7d7d7;}
+.search-icon{float: right;height: 63px;line-height: 63px;}
+.search-icon img{height: 15px;}
+.search-item-left{margin-right: 80px;}
+.search-bookname {color: #0B61FE;margin-bottom: 10px;}
+.search-bookinfo{color: #AAAAAA;line-height: 18px;}
+
+
+.subs-bookinfo{margin-bottom: 15px;}
+.subscribe-item{padding: 15px;background-color: #fff;border-bottom: 1px solid #d7d7d7;}
+.subs-bookname{color: #22282B;font-size:18px;}
+.subs-bookauthor{color: #AAAAAA;}
+.subs-detail{margin-right: 80px;}
+.subsdetail-item{color: #aaa;line-height: 18px;}
+.subsdetail-itemcontent{color: #22282B;line-height: 18px;}
+.subs-state{float: right;margin-top: 5px;}
+.subs-state p{color: #ff6600;text-align: center;}
+.subs-cancel{color: #3498DB;padding: 3px 5px;margin-top: 6px;border:1px solid #3498DB;display: block;}
+
+
+
+.head_wrap{padding:18px;border-bottom: 1px solid #d7d7d7;background-color: #fff;overflow: hidden;}
+.book_img {height: 95px;float: left;}
+.book_title {color: #22282B;font-size:18px;margin: 10px 10px 0px 95px;}
+.book_author{color: #AAAAAA;margin: 5px 10px 0px 95px;}
+.interval{height: 55px;border-bottom: 1px solid #d7d7d7;}
+.intro_div{position: relative;overflow: hidden;}
+.intro_span{position: absolute;}
+.book_info_title,.library_info_title{color: #6D6D72;padding:30px 10px 10px;font-size: 14px; font-weight:normal;}
+.book_info{background-color: #fff;color: #22282B;padding: 10px 0px 0px;border-bottom: 1px solid #d7d7d7;line-height: 20px;}
+.book_num,.book_publish,.book_intro{padding-right: 10px;}
+.book_num{display: inline-block;}
+.book_publish{display: inline-block;}
+.book_intro{display: inline-block;text-indent: 45px;word-wrap:break-word;display: block;margin-bottom: 10px;}/*gaiguo*/
+.catalog{border-top: 1px solid #d7d7d7;line-height: 42px;overflow: hidden;}/*改过*/
+.catalog_list{color: #22282B;width:100%;line-height: 42px;display: inline-block;background-color: #fff; font-size: 14px; font-weight: normal;}/*gaiguo*/
+.catalog_list div{margin-left: 10px;}
+.catalog_list div:after{content: '';display: block;content: '';display: block;position: absolute;height: 6px;width: 10px;right: 10px;top:18px;background: url(../img/icon-lib-jt.png) no-repeat center center;background-size: 10px 6px;-webkit-transform: rotate(180deg);-webkit-transition:-webkit-transform .2s ease-in-out;}
+.jt_up .catalog_list div:after{content: '';display: block;position: absolute;height: 6px;width: 10px;right: 10px;top:18px;background: url(../img/icon-lib-jt.png) no-repeat center center;background-size: 10px 6px;-webkit-transform: rotate(0deg);}
+.spread{float: right;height: 5px;margin-right: 15px;}
+.library_info{background-color: #fff;padding: 10px;color: #22282B;border-bottom:1px solid #d7d7d7; overflow: hidden;}
+.library_info_item{color: #AAAAAA;line-height: 25px;}
+.library_content{line-height: 25px;}
+.info_item_wrap{ float: left; min-width: 50%;}
+.subs_on{float: right;color: #3498DB;font-size:12px;border:1px solid  #3498DB;padding: 2px 5px;}
+.subs_off{float: right;color: #d7d7d7;font-size:12px;border:1px solid  #d7d7d7;padding: 2px 5px;}
+.check_other{background-color: #fff;border-bottom:1px solid  #d7d7d7;}
+.check_other_lib{color: #0B61FE;text-align: center;line-height: 40px;}
+
+.lib_name{background-color: #f8f8f8;padding: 8px 15px;border-bottom:1px solid  #d7d7d7;}
+.lib_name p{line-height: 40px;color: #6D6D72;margin-right: 50px;}
+.libspread-icon{float: right;height: 17;line-height: 17px;}
+.libspread-icon img{width:12px;}
+
+.libcol-list{background-color: #fff;padding: 15px;position: relative;border-bottom:1px solid  #d7d7d7;}
+.libcol-item,.libcol-item-r {color: #AAAAAA;}
+.libcol-content,.libcol-content-r {color: #22282B;}
+.libcol-item-r{position: absolute;}
+.libcol-item-r{left: 50%;}
+.scau{display: none;}
+.gzlib{display: none;}
+.scut{display: none;}
+.scnu{display: none;}
+.jnu{display: none;}
+
+
+/*增加 by Ben*/
+#overload{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: none; z-index: 500;color: #fff;text-align: center;}
+#overload h2{position: relative;top:40%;}
+.library_order_blue{color:#3498db;margin-right:15px;border: 1px solid #3498db;display: block;float: right;width:37px;height: 18px;text-align: center;line-height: 18px;margin-top: 5px;}
+.library_order_gray{color:#aaa;margin-right:15px;border: 1px solid #aaa;display: block;float: right;width:37px;height: 18px;text-align: center;line-height: 18px;margin-top: 5px;}
+.other_book{background-color: #fff;height: 40px;text-align: center;border-bottom: 1px solid #d7d7d7;}
+.other_book a{line-height: 40px;text-decoration: none;color:#3498DB;display: block;}
+.other_lib a{text-decoration: none;color:#6D6D72;display: block;;height: 35px;line-height: 35px;border-bottom: 1px solid #d7d7d7;padding-left: 15px;}
+.other_lib a:after{content: '';display: block;position: absolute;height: 6px;width: 10px;right: 10px;top:15px;background: url(../img/icon-lib-jt.png) no-repeat center center;background-size: 10px 6px;-webkit-transform: rotate(0deg);-webkit-transition:-webkit-transform .2s ease-in-out;}
+.other_lib .jt_up a:after{content: '';display: block;position: absolute;height: 6px;width: 10px;right: 10px;top:15px;background: url(../img/icon-lib-jt.png) no-repeat center center;background-size: 10px 6px;-webkit-transform: rotate(180deg);}
+.other_lib div{/* float: left;width: 100%; */overflow: hidden;position: relative;}
+#content{word-wrap:break-word;display: block;margin-left: 10px;}
+.load_more{color: #3498DB;}
+#sure_height{margin-left: 10px;}

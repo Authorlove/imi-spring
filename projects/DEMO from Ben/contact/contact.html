@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>通讯录</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable =no">
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<link rel="stylesheet" type="text/css" href="./css/addressVer2.css">
+	<link rel="stylesheet" type="text/css" href="../layout.css">
+
+</head>
+
+
+<style type="text/css">
+	.wrap_namecard{background-color: #fff;line-height: 1;margin-left: 62px;border-top:1px solid #fff;border-bottom: 1px solid #eaeaea;}
+	.wrap_namecard:last-child{border-bottom-color: #fff;}
+	.card_main{padding: 12px 0 16px;}
+	
+	.wrap_card_up_left{margin-left: -52px; float:left;height: 41px;width: 41px;border-radius: 21px;border:1px solid #ddd;overflow: hidden;}
+	.card_up_left{height: 41px;width: 41px;border-radius: 99999px;}
+	
+	.card_up_right{margin-top: 6px;font-size: 16px;color: #000;}
+	.card_up_right .nickname{font-size: 16px;color: #000;}
+	.card_up_right span{color: #a0a0a0;font-size: 12px;}
+	.card_bot{margin-left:-62px; clear:both; height: 0;overflow: hidden;-webkit-transition:height .2s ease-in-out,padding .2s ease-in-out;}
+	.card_bot li{margin-top: 12px;color: #a0a0a0;padding-right: 10px;}
+	.card_bot li:first-child{margin-top: 0;}
+	.card_bot li:last-child{padding-right: 0;}
+	.card_bot li div{min-height: 25px;margin:0 15px;background-color: #f9f9f9;line-height: 25px;text-align: center;border-radius: 3px;}
+	.card_bot li label{width:62px;display: inline-block;text-align: center;}
+	.card_bot span{color: #444;}
+	.card_bot a{color:#0278e4; text-decoration: none;}
+
+
+	.expand{border-top-color:#eaeaea; margin-left: 0; margin-top: -1px; padding-top: 1px;}
+	/*.data_wrap li:nth-child(2){border-top-color: #fff;}*/
+	.expand .wrap_card_up_left{margin-left: 10px;}
+	.expand .card_up_right{margin-left:62px;}
+	.expand .card_bot{margin-left:0;padding:0 0 16px;color: #fff;background-color: #fff;height:150px;}
+
+	.icon_jt{display: block;position: absolute;top: 14px;right: 10px;background: url(./img/icon-jt-up.png) no-repeat center center;background-size:9px 5px;height: 5px;width: 9px;-webkit-transform:rotate(0deg);-webkit-transition:-webkit-transform 0.2s linear;}
+	.down .icon_jt{-webkit-transform:rotate(-180deg);}
+
+	/*share mask*/
+	.share_page{position: fixed;z-index: 100;width: 100%;height: 100%;display: none;}
+	.share_card{width: 100%;height: 100%;background-color: rgba(102,102,102,0.8);position: absolute;z-index: 200;}
+	.icon-tubiao{width: 60px;height: 60px;background: url(./img/addressBook/icon-share.png) no-repeat center center;background-size: 60px 60px;position: absolute;top: 80px;z-index: 300;left: 50%;margin-left: -30px;}
+	.share_page p{color: #fff;font-size: 18px;position: absolute;z-index: 300;padding: 0 40px;top: 160px;text-align: center;}
+	.share_page .p2{top: 220px;font-size: 14px;}
+
+	.share_icon{width: 15px;height: 15px;background: url(./img/addressBook/icon-baocun.png) no-repeat center center;background-size: 15px 15px;position: absolute;right: 40px;top: 14px;}
+	.active{width: 14px;height: 14px;background: url(./img/addressBook/market.png) no-repeat center center;background-size: 14px 14px;position: absolute;right: 67px;top:14px;}
+	.icon_guide{height: 100px;width: 75px;z-index: 400;position: absolute;top:10px;right: 25px;}
+
+	.add_contact{text-align: center;}
+
+	.contact_red_point{position: absolute;height: 8px;width: 8px;border-radius: 10px;background-color: red;right: 33px;top: 7px;}
+</style>
+
+
+<body>
+
+ 	<!-- 分享时蒙版 -->
+ 	<div class="share_page" onclick="stop_share(this);">
+		<div class="share_card"></div>
+		<img class="icon_guide" src="./img/addressBook/icon_guide.png"/>
+		<div class="icon-tubiao"></div>
+		<p>邀请＂<span id="show_heading"></span>＂的小伙伴一起来使用</p>
+		<p class="p2">为了保护小伙伴们的隐私，加入通讯录需要姓名验证，通过验证的小伙伴可在微信使用此通讯录。请勿发送给组织外的人。</p>
+	</div>
+	
+	<!-- 加载时蒙版 -->
+	<div id="overload"><h2>正在加载中...</h2></div> 
+
+
+	<!-- header -->
+	<div style="width:100%;overflow:hidden;background-color:#f7f7f7;border-bottom:1px solid #eaeaea;">
+		<div id="heading_wrap">
+		<!-- 组织 -->
+			<div class="header_l">
+				<div class="heading" onclick="showList(1)"><span id="heading"></span><span class="icon"></span></div>
+				<div class="search_index" onclick="showSearch(1),showList(2)"></div>
+				<div class="active" onclick="" name="统计信息图标" style="display:none;"></div>
+				<div class="share_icon" onclick="show_share()"></div>
+				<div class="contact_red_point"></div>
+				<div class="clear:both"></div>
+			</div>
+			<!-- end 组织 -->
+			<!-- 搜索 -->
+			<div class="search-wrap">
+			    <div class="search-input-wrap">
+				    <form class="search-input-wrap-inner" onsubmit="return false;">
+				    	<input id="search-words" type="search" placeholder="输入关键字搜索名片" onkeypress="checkData()" />
+				    </form>
+				    <a class="search-clear" href="javascript:void(0)">清除</a><a class="search-up" href="javascript:void(0)">取消</a>
+				</div>
+			</div>
+			<!-- end 搜索 -->
+		</div>
+	</div>
+	<!-- end header -->
+
+
+	<!-- xiala -->
+	<ul id="list" style="display:none;">
+		<!-- <li>我的班级</li>
+		<li>卓效网络科技有限公司</li>
+		<li>Enactus</li> -->
+	</ul>
+	<!-- end xiala -->
+
+
+	<!-- display address book data -->
+	<div id="left_screen"></div>
+	<div id="right_screen" style="display=none" class="data_wrap"><ul></ul></div>
+	<!-- end display -->
+
+	<!-- when data = null -->
+	<div class="null_data" id="null_data" style="display:none;">
+		<img src="./img/addressBook/null-data.png">
+		<h2>暂无您所在班级的通讯录</h2>
+		<p>如您有本班通讯录，请联系智慧哥哥<br/>进行上传。一人上传，全班使用</p>
+	</div>
+	<!-- end when  -->
+
+	<!--  弹层模型 -->
+	<div class="overlay">
+		<div class="zhezhao"></div>
+		<div id="pop-message" class="pop-message">
+			<div class="card-name">
+				<h2>王大锤</h2>
+				<p>设计中心</p>
+			</div>
+			<ul id="detail_data">
+				<li>长号<span class="blue">13533824954</span></li>
+				<li>短号<span class="blue">664954</span></li>
+				<li>班级<span>12理学信息与计算科学2班</span></li>
+				<li>生日<span>一月一日</span></li>
+				<li>宿舍<span>五山6栋716</span></li>
+			</ul>
+		</div>
+	</div>
+	<!-- end 弹层模型 -->
+
+	<!-- info -->
+	<div class="noInfo" style="background-color: #fff;"></div>
+	<div class="search-info" style="background-color: #fff;"></div>
+
+    <p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+	
+	
+	<!-- 弹层-编辑确定 -->
+	<div id="confirm_show" style="display:none;">
+		<div class="share_card"></div>
+		<div class="edit_confirm">
+			<h5>编辑须知</h5>
+			<p>编辑小伙伴通讯录信息，需经对方或通讯录创建者确认，确认后即可成功编辑。</p>
+			<span></span>
+			<div class="confirm_yes" onclick="show_edit_page(this)">确定</div>
+			<div class="confirm_no" onclick="hide_edit_confirm(this)">取消</div>
+		</div>
+	</div>
+	
+	<!-- 弹层－勾 -->
+	<div class="notifitation_gou" style="display:none;">
+		<img src="./img/addressBook/icon-gou.png">
+		<p>后台努力开发中</p>
+	</div>
+	
+</body>
+
+
+<script type="text/javascript">
+        var data = {"result":[{"id":2,"name":"卓效text","inviter":"冯科棉","contactId":19,"department":["打杂","设计组","开发组","运营组"],"打杂":[{"id":11,"nickname":"林**","phone":"186*****272","shortphone":"","department":"打杂","job":"CEO","address":"海珠区","college":"腾讯","classroom":"电子信息工程","photo":null,"created_at":"2014-09-04 12:28:21","updated_at":"2014-09-04 12:28:21","deleted_at":null,"organization_id":2,"openid":"o_32JjnZwZE6fG_MZNo2T9mF6WqU","headimg":"/head/1410423116.jpg","isJoin":true}],"设计组":[{"id":12,"nickname":"黄**","phone":"18*****1921","shortphone":"6****1","department":"设计组","job":"设计","address":"五山24-405","college":"经管","classroom":"经济类","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjnOjo5rznrQIcyai5A9fNOs","headimg":"/head/1413252994.jpg","isJoin":true},{"id":13,"nickname":"陈**","phone":"1881375****","shortphone":"6****","department":"设计组","job":"设计","address":"五山08-124","college":"工程","classroom":"电子信息类","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-11-01 10:47:23","deleted_at":null,"organization_id":2,"openid":"o_32JjlUUn5i-4ftfzsxOrAJz1BU","headimg":"/head/1415686987.jpg","isJoin":true},{"id":17,"nickname":"宣*","phone":"134276*****","shortphone":"6*****","department":"设计组","job":"设计","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjpbX7mJZsrY9yXvLwnSaM10","headimg":"/head/1410679342.jpg","isJoin":true},{"id":3356,"nickname":"**丽","phone":"1881441*****","shortphone":"6*****","department":"设计组","job":"设计","address":"","college":"资环","classroom":"植物学","photo":null,"created_at":"2014-11-01 12:45:47","updated_at":"2014-11-01 12:46:59","deleted_at":null,"organization_id":2,"openid":"o_32JjspGy1_5qswYMNkKfsxUJBE","headimg":"/head/1414912540.jpg","isJoin":true}],"开发组":[{"id":16,"nickname":"高*","phone":"1355****9","shortphone":"66****","department":"开发组","job":"开发","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-10-14 19:51:05","deleted_at":null,"organization_id":2,"openid":"o_32Jjoq7qoLTW7hmz4oz3ZnJ7BM","headimg":"/head/1413287640.jpg","isJoin":true},{"id":18,"nickname":"叶**","phone":"13580***","shortphone":"65**6","department":"开发组","job":"开发","address":"五山15-524","college":"工程","classroom":"电气自动化","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 15:27:26","deleted_at":null,"organization_id":2,"openid":"o_32Jjr6pZkAzhGgD3T3PQNROt0o","headimg":"/head/1410487103.jpg","isJoin":true},{"id":19,"nickname":"冯**","phone":"15****9065","shortphone":"6***55","department":"开发组","job":"CTO","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 15:15:19","deleted_at":null,"organization_id":2,"openid":"o_32JjkPQgXEqSbLbZhcyGkNvu3c","headimg":"/head/1415411388.jpg","isJoin":true},{"id":20,"nickname":"张力本","phone":"15626269516","shortphone":"wu","department":"开发组","job":"开发","address":"五山15-524","college":"理学","classroom":"信科","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjvyYqX7D7l0ajit32K-tXE4","headimg":"/head/1409856265.jpg","isJoin":true},{"id":2364,"nickname":"王***","phone":"18***59","shortphone":"**9","department":"开发组","job":"开发","address":"五山08-504","college":"工程","classroom":"电子信息类","photo":null,"created_at":"2014-10-23 22:01:28","updated_at":"2014-10-23 22:02:36","deleted_at":null,"organization_id":2,"openid":"o_32JjmkRBw0h4CKtT4R0De-_IWc","headimg":"/head/1412234468.jpg","isJoin":true},{"id":2365,"nickname":"**诚","phone":"*****3","shortphone":"***566","department":"开发组","job":"开发","address":"华山23-306","college":"信软","classroom":"计科","photo":null,"created_at":"2014-10-23 22:01:28","updated_at":"2014-10-23 22:18:47","deleted_at":null,"organization_id":2,"openid":"o_32JjjBGFiDc4xNA07vIAUfTah0","headimg":"/head/1412083116.jpg","isJoin":true},{"id":2892,"nickname":"何***","phone":"188***9","shortphone":"***9","department":"开发组","job":"开发","address":"","college":"信软","classroom":"信管","photo":null,"created_at":"2014-10-26 12:44:47","updated_at":"2014-10-26 12:46:17","deleted_at":null,"organization_id":2,"openid":"o_32JjiTjCY_HGbU83Bs1WPMfQBg","headimg":"/head/1410960325.jpg","isJoin":true},{"id":3448,"nickname":"王**","phone":"****0","shortphone":"**10","department":"开发组","job":"开发","address":"五山-6-716","college":"理学","classroom":"信科","photo":null,"created_at":"2014-11-16 15:48:32","updated_at":"2014-11-16 15:50:35","deleted_at":null,"organization_id":2,"openid":"o_32JjhNwIupX9UW_tllnE2DamJQ","headimg":"/head/1410934524.jpg","isJoin":true}],"运营组":[{"id":2922,"nickname":"许**","phone":"188***","shortphone":"62**","department":"运营组","job":"运营","address":"","college":"人文","classroom":"法学","photo":null,"created_at":"2014-10-28 20:23:47","updated_at":"2014-10-29 23:14:31","deleted_at":null,"organization_id":2,"openid":"o_32Jjt5hkAzy13iDaWC5loyxoxo","headimg":"/head/1414147618.jpg","isJoin":true},{"id":3355,"nickname":"张**","phone":"135**8","shortphone":"**048","department":"运营组","job":"运营","address":"跃北54-418","college":"人文","classroom":"哲学","photo":null,"created_at":"2014-11-01 12:32:09","updated_at":"2014-11-01 12:35:43","deleted_at":null,"organization_id":2,"openid":"o_32JjvZ4FORQnL7q1RUBFKYbwtE","headimg":"/head/1414816576.jpg","isJoin":true}]},{"id":2,"name":"卓效text2","inviter":"冯科棉","contactId":19,"department":["打杂","设计组","开发组","运营组"],"打杂":[{"id":11,"nickname":"林**","phone":"186*****272","shortphone":"","department":"打杂","job":"CEO","address":"海珠区","college":"腾讯","classroom":"电子信息工程","photo":null,"created_at":"2014-09-04 12:28:21","updated_at":"2014-09-04 12:28:21","deleted_at":null,"organization_id":2,"openid":"o_32JjnZwZE6fG_MZNo2T9mF6WqU","headimg":"/head/1410423116.jpg","isJoin":true}],"设计组":[{"id":12,"nickname":"黄**","phone":"18*****1921","shortphone":"6****1","department":"设计组","job":"设计","address":"五山24-405","college":"经管","classroom":"经济类","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjnOjo5rznrQIcyai5A9fNOs","headimg":"/head/1413252994.jpg","isJoin":true},{"id":13,"nickname":"陈**","phone":"1881375****","shortphone":"6****","department":"设计组","job":"设计","address":"五山08-124","college":"工程","classroom":"电子信息类","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-11-01 10:47:23","deleted_at":null,"organization_id":2,"openid":"o_32JjlUUn5i-4ftfzsxOrAJz1BU","headimg":"/head/1415686987.jpg","isJoin":true},{"id":17,"nickname":"宣*","phone":"134276*****","shortphone":"6*****","department":"设计组","job":"设计","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjpbX7mJZsrY9yXvLwnSaM10","headimg":"/head/1410679342.jpg","isJoin":true},{"id":3356,"nickname":"**丽","phone":"1881441*****","shortphone":"6*****","department":"设计组","job":"设计","address":"","college":"资环","classroom":"植物学","photo":null,"created_at":"2014-11-01 12:45:47","updated_at":"2014-11-01 12:46:59","deleted_at":null,"organization_id":2,"openid":"o_32JjspGy1_5qswYMNkKfsxUJBE","headimg":"/head/1414912540.jpg","isJoin":true}],"开发组":[{"id":16,"nickname":"高*","phone":"1355****9","shortphone":"66****","department":"开发组","job":"开发","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-10-14 19:51:05","deleted_at":null,"organization_id":2,"openid":"o_32Jjoq7qoLTW7hmz4oz3ZnJ7BM","headimg":"/head/1413287640.jpg","isJoin":true},{"id":18,"nickname":"叶**","phone":"13580***","shortphone":"65**6","department":"开发组","job":"开发","address":"五山15-524","college":"工程","classroom":"电气自动化","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 15:27:26","deleted_at":null,"organization_id":2,"openid":"o_32Jjr6pZkAzhGgD3T3PQNROt0o","headimg":"/head/1410487103.jpg","isJoin":true},{"id":19,"nickname":"冯**","phone":"15****9065","shortphone":"6***55","department":"开发组","job":"CTO","address":"五山15-524","college":"信软","classroom":"软件工程","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 15:15:19","deleted_at":null,"organization_id":2,"openid":"o_32JjkPQgXEqSbLbZhcyGkNvu3c","headimg":"/head/1415411388.jpg","isJoin":true},{"id":20,"nickname":"张力本","phone":"15626269516","shortphone":"wu","department":"开发组","job":"开发","address":"五山15-524","college":"理学","classroom":"信科","photo":null,"created_at":"2014-09-04 12:28:22","updated_at":"2014-09-20 13:51:15","deleted_at":null,"organization_id":2,"openid":"o_32JjvyYqX7D7l0ajit32K-tXE4","headimg":"/head/1409856265.jpg","isJoin":true},{"id":2364,"nickname":"王***","phone":"18***59","shortphone":"**9","department":"开发组","job":"开发","address":"五山08-504","college":"工程","classroom":"电子信息类","photo":null,"created_at":"2014-10-23 22:01:28","updated_at":"2014-10-23 22:02:36","deleted_at":null,"organization_id":2,"openid":"o_32JjmkRBw0h4CKtT4R0De-_IWc","headimg":"/head/1412234468.jpg","isJoin":true},{"id":2365,"nickname":"**诚","phone":"*****3","shortphone":"***566","department":"开发组","job":"开发","address":"华山23-306","college":"信软","classroom":"计科","photo":null,"created_at":"2014-10-23 22:01:28","updated_at":"2014-10-23 22:18:47","deleted_at":null,"organization_id":2,"openid":"o_32JjjBGFiDc4xNA07vIAUfTah0","headimg":"/head/1412083116.jpg","isJoin":true},{"id":2892,"nickname":"何***","phone":"188***9","shortphone":"***9","department":"开发组","job":"开发","address":"","college":"信软","classroom":"信管","photo":null,"created_at":"2014-10-26 12:44:47","updated_at":"2014-10-26 12:46:17","deleted_at":null,"organization_id":2,"openid":"o_32JjiTjCY_HGbU83Bs1WPMfQBg","headimg":"/head/1410960325.jpg","isJoin":true},{"id":3448,"nickname":"王**","phone":"****0","shortphone":"**10","department":"开发组","job":"开发","address":"五山-6-716","college":"理学","classroom":"信科","photo":null,"created_at":"2014-11-16 15:48:32","updated_at":"2014-11-16 15:50:35","deleted_at":null,"organization_id":2,"openid":"o_32JjhNwIupX9UW_tllnE2DamJQ","headimg":"/head/1410934524.jpg","isJoin":true}],"运营组":[{"id":2922,"nickname":"许**","phone":"188***","shortphone":"62**","department":"运营组","job":"运营","address":"","college":"人文","classroom":"法学","photo":null,"created_at":"2014-10-28 20:23:47","updated_at":"2014-10-29 23:14:31","deleted_at":null,"organization_id":2,"openid":"o_32Jjt5hkAzy13iDaWC5loyxoxo","headimg":"/head/1414147618.jpg","isJoin":true},{"id":3355,"nickname":"张**","phone":"135**8","shortphone":"**048","department":"运营组","job":"运营","address":"跃北54-418","college":"人文","classroom":"哲学","photo":null,"created_at":"2014-11-01 12:32:09","updated_at":"2014-11-01 12:35:43","deleted_at":null,"organization_id":2,"openid":"o_32JjvZ4FORQnL7q1RUBFKYbwtE","headimg":"/head/1414816576.jpg","isJoin":true}]}],"showId":0};
+        var showId = 0    
+    </script>
+
+
+<script type="text/javascript" src="./js/addressVer2.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		initSearch();
+		(function(){
+			var list = document.getElementById('list');
+			list.innerHTML += 
+	    		'<li class="organization add_contact" onclick="location.href=\'http://wx.joshell.com/create_contact.html\';">'
+	                +'+创建通讯录'+
+	            '</li>';
+		})()
+	}
+</script>
+</html>

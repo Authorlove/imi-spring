@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登陆页</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<link rel="stylesheet" type="text/css" href="./css/loginpage.css">
+	<link rel="stylesheet" type="text/css" href="../layout.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script type="text/javascript">
+        
+        var data = {"headimg":".\/head_img.png","jwc":true,"library":true,"ecard":true,"course":0,"balance":"8.22","lending":"\u6682\u65e0\u6570\u636e","name":"\u51af\u79d1\u68c9"};
+    </script>
+    <script type="text/javascript">
+        var aid = '<?php echo $aid;?>';
+    </script>
+</head>
+<style type="text/css">
+    .no_login{width:100%;text-align: center;font-size: 12px;color: #aaadad;margin-top: 20px;line-height: 1.5;}
+    .nl_nav{padding-left: 15px;font-size: 18px;line-height: 55px;border-bottom: 1px solid #e2e2e2;}
+    .nl_nav li{border-bottom: 1px solid #e2e2e2;position: relative;}
+    .nl_nav li:last-child{border-bottom: 0;}
+    .denglu{position: absolute;width: 38px;height: 19px;line-height:19px;font-size: 12px; text-align: center;color: #0095f5;border:1px solid #0095f5;top:18px;right: 18px;border-radius: 2px;}
+    .no_wrap_num{margin: 8px auto 0;font-size: 12px;color: #fff;display: block;line-height: 1;}
+    #canvas{display: block;width: 100%;background-color: white;height: 225px;}
+    #blur-bgc{display: none;}
+</style>
+
+<body style="background-color:#fff;">
+	<!-- 加载时蒙版 -->
+	<div class="loading_page"><div class="loading_center"></div></div>
+	
+	<!-- 顶部 -->
+	<div class="header">
+
+		<!-- 模糊层 -->
+		<div class=" rela mohu">
+			<canvas id="canvas">您的浏览器暂不支持canvas By Ben</canvas>
+			<img style="width:100%;" src="" id="blur-bgc"/>
+		</div>
+		<!-- 遮罩层 -->
+		<div class="mask"></div>
+
+		<div class="header_up">
+			<div class="wrap_head_img">
+				<div class="head_img"><img src=""></div>
+				<span class="wrap_name">陈晓兵</span>
+			</div>
+		</div>
+		
+		<div class="header_bot">
+			<ul id="header_bot">
+				<li class="fl">
+					<div class="st">
+						今日课程<span class="r_line"></span>
+						<br/><span class="wrap_num"><span>门</span></span>
+					</div>
+				</li>
+				<li class="fl">
+					<div class="nd">
+						校园卡余额<span class="r_line"></span>
+						<br/><span class="wrap_num"><span>元</span></span>
+					</div>
+				</li>
+				<li class="fl">
+					<div class="rd">
+						图书馆借阅
+						<br/><span class="wrap_num"><span>本</span></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="headline">我的智慧校园</div>
+	<ul class="nav nl_nav" id="headline_up">
+		<!-- <li><a href="/user/jwc">我的教务处</a></li>
+		<li><a href="/user/library">我的一卡通</a></li>
+		<li><a href="/user/ecard">我的图书馆</a></li> -->
+	</ul>
+
+<!--    <ul class="nl_nav">-->
+<!--        <li><a href="/jwc/show">我的教务处</a><div class="denglu">登陆</div></li>-->
+<!--        <li><a href="/ecard/show">我的一卡通</a><div class="denglu">登陆</div></li>-->
+<!--        <li><a href="/library/show">我的图书馆</a><div class="denglu">登陆</div></li>-->
+<!--    </ul>-->
+
+	<div class="headline" style="display:none;">我的大数据</div>
+	<ul class="nav" style="border-bottom: 1px solid #dcdcdc;;" id="headline_bot">
+		<li><a href="javascript:void(0)">成绩分析</a></li>
+		<li><a href="javascript:void(0)">消费统计</a></li>
+		<li><a href="javascript:void(0)">借阅统计</a></li>
+	</ul>
+	<div class="no_login"></div>
+	<div style="height:70px;"></div>
+	<p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+</body>
+<script type="text/javascript" src="./js/CanvasBlur.js"></script>
+<script type="text/javascript" src="./js/loginpage.js"></script>
+</html>

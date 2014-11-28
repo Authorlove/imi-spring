@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<title>图书馆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable =no">
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css"  href="./css/lib.css">
+	<link rel="stylesheet" type="text/css"  href="../common.css">
+    <script type="text/javascript">
+        var aid = '<?php echo $aid;?>';
+    </script>
+</head>
+<body>
+	<!-- 加载时蒙版 -->
+	<!-- <div id="overload"><h2>正在加载中...</h2></div>  -->
+	<div class="loading_page" style="display:none;"><div class="loading_center"></div></div>
+
+
+	<div class="head_wrap">
+		<img class="book_img" src="" alt="" id="book_img">
+		<h1 class="book_title" id="book_title"></h1>
+		<p class="book_author" id="book_author"></p>
+	</div><div class="interval">
+		<h2 class="book_info_title">书目信息</h2>
+	</div><div class="book_info">
+		<div id="sure_height">
+			<div><span>出版社:</span><p class="book_publish" id="book_publish"></p></div>
+			<div class="intro_div" id='intro_span'>(<span>更多</span>)</span> --></div>
+		</div>
+		<div class="catalog">
+			<h2 class="catalog_list" onclick="express();" id="catalog_list"><div>目录</div></h2>
+			<p style="display:none;" id="content"></p>
+		</div>
+	</div>
+	<div class="interval">
+		<h2 class="library_info_title">馆藏信息</h2>
+	</div>
+	<div id="in_place">
+
+		</div>
+		<div class="other_book">
+			<a href="javascript:void(0)" onclick="spreadSchool(this)" name="1">查看其他图书馆本书馆藏信息</a>
+		</div>
+		<div class="other_lib" style="display:none;" id="more_school">
+			<div><a href="javascript:void(0)" onclick="show_stop(SCUT,this)" id="lib_scut">华南理工大学图书馆()</a></div>
+			<div id="scut_info" style="display:none;">
+
+			</div>
+
+			<div><a href="javascript:void(0)" onclick="show_stop(SCNU,this)" id="lib_scnu">华南师范大学图书馆()</a></div>
+			<div id="scnu_info" style="display:none;">
+
+			</div>
+			<div><a href="javascript:void(0)" onclick="show_stop(GT,this)" id="lib_gt">广州图书馆()</a></div>
+			<div id="gt_info" style="display:none;">
+
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+
+		<div style="height:10px;"></div>
+  		<p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+
+</body>
+<script type="text/javascript">
+    var marc_no = '<?php echo $marc_no;?>';
+    var where = '<?php echo $where;?>';
+</script>
+<script type="text/javascript" src="./js/info.js"></script>
+</html>

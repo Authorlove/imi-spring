@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<title>图书馆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable =no">
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<link rel="stylesheet" type="text/css" href="./css/lib_index.css">
+    <script type="text/javascript">
+        var aid = '<?php echo $aid;?>';
+    </script>
+</head>
+<body>
+	<!-- 加载时蒙版 -->
+	<!-- <div id="overload"><h2>正在加载</h2></div> -->
+	<div id="overload_two"></div>
+	<div class="loading_page" style="display:none;"><div class="loading_center"></div></div>
+	<div id="search_wrap" class="search_wrap">
+		<div id="tab" ifspread="0"><span>我的借阅</span><img src="./img/index_arrow.png"></div>
+		<span id="search_cancel">取消</span>
+		<div id="input_wrap">
+			<div class="input_wrap_one">
+				<form class="input_wrap_two" onsubmit="return false">
+					<img src="./img/search-icon.png" alt="">
+					<input id="input_word" type="search" placeholder="检索馆藏图书">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tab_list">
+		<div shownum="1" class="on"><span>我的借阅</span><img src="./img/checked.png" alt=""></div>
+		<div shownum="2" class="off"><span>我的预约</span><img src="./img/checked.png" alt=""></div>
+	</div>
+	<div id="search_block">
+		<div class="img_wrap">
+			<img src="./img/lib.png" alt="">
+		</div>
+		<p>你可同时检索到以下图书馆馆藏图书</p>
+		<p>华南农业大学  广州图书馆</p>
+		<p>中山大学  华南理工大学</p>
+		<p>华南师范大学  暨南大学</p>
+	</div>	
+
+	<div id="showlist"  style="display:block;">
+
+	</div>
+
+	<div id="showOrder" style="display:none;">
+
+	</div>
+
+	<div class="lib_name" id="scau">
+	    <div class="libspread-icon" >
+    		<img  class="libspread" src="./img/arrow_down.png" alt=""/>
+    	</div>
+    	<p>华南农业大学图书馆<span class="total_number"></span></p>	
+    </div>
+    <div class="search_item_wrap">
+	</div>
+	
+
+	<div class="lib_name" id="gzlib">
+	    <div class="libspread-icon">
+    		<img src="./img/arrow_down.png" alt="" />
+    	</div>
+    	<p>广州图书馆<span class="total_number"></span></p>	
+    </div>
+    <div class="search_item_wrap">
+	</div>
+	
+
+    <div class="lib_name" id="scut">
+	    <div class="libspread-icon">
+    		<img src="./img/arrow_down.png" alt=""/>
+    	</div>
+    	<p>华南理工大学图书馆<span class="total_number"></span></p>	
+    </div>
+    <div class="search_item_wrap">
+	</div>
+	
+
+    <div class="lib_name" id="scnu">
+	    <div class="libspread-icon">
+    		<img src="./img/arrow_down.png" alt=""/>
+    	</div>
+    	<p>华南师范大学图书馆<span class="total_number"></span></p>	
+    </div>
+    <div class="search_item_wrap">
+	</div>
+	
+
+    <div class="lib_name" >
+	    <div class="libspread-icon">
+    		<img src="./img/arrow_down.png" alt=""/>
+    	</div>
+    	<p>暨南大学图书馆<span class="total_number"></span></p>	
+    </div>
+    <div class="search_item_wrap">
+	</div>
+	
+	<div id="check_other">
+		<p class="check_other_lib">查看其它图书馆本书馆藏信息</p>
+	</div>
+
+	<div style="height:10px;"></div>
+    <p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+
+</body>
+
+<script type="text/javascript" src="./js/lib_index.js"></script>
+<script type="text/javascript" src="./js/search_new.js"></script>
+    
+<script>
+	
+</script>
+</html>

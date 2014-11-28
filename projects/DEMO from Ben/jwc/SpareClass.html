@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>空余课室</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css" href="../common.css">
+	<link rel="stylesheet" type="text/css" href="../layout.css">
+	<link rel="stylesheet" type="text/css" href="./css/spare_class.css">
+</head>
+	
+<body style="background-color:#f2f2f2;">
+	<div class="choice">
+		<div>
+			<h5 class="title">校区:</h5>
+			<div class="boxselect" onclick="more_select(this,3);" value="2"><span>东区</span><span class="icon_jt"></span></div>
+			<ul class="more_choice">
+				<li onclick="change_area(this)" value="1">华山区</li>
+				<li onclick="change_area(this)" value="2">东区</li>
+				<li onclick="change_area(this)" value="3">启林区</li>
+				<li onclick="change_area(this)" value="0">所有</li>
+			</ul>
+		</div>
+		<div>
+			<h5 class="title">时间段:</h5>
+			<div class="boxselect" onclick="more_select(this,2);" value="0"><span>上午</span><span class="icon_jt"></span></div>
+			<ul class="more_choice">
+				<li value="0" onclick="change_time_line(this)">上午</li>
+				<li value="1" onclick="change_time_line(this)">下午</li>
+				<li value="2" onclick="change_time_line(this)">晚上</li>
+				<li value="3" onclick="change_time_line(this)">第1、2节</li>
+				<li value="4" onclick="change_time_line(this)">第3、4节</li>
+				<li value="5" onclick="change_time_line(this)">第5、6节</li>
+				<li value="6" onclick="change_time_line(this)">第7、8节</li>
+				<li value="7" onclick="change_time_line(this)">第9、10节</li>
+				<li value="8" onclick="change_time_line(this)">第11、12、13节</li>
+			</ul>
+		</div>
+		<div>
+			<h5 class="title" value="">日期:</h5>
+			<div class="boxselect" onclick="more_select(this,1);" value="0"><span>今天</span><span class="icon_jt"></span></div>
+			<ul class="more_choice">
+				<li onclick="change_day(this),show_ymd(1)" value="0">今天</li>
+				<li onclick="change_day(this),show_ymd(1)" value="1">明天</li>
+				<li onclick="show_ymd(2),change_day(this)" value="2">自定义</li>
+			</ul>
+		</div>
+	</div>
+
+	<div>
+		<div class="wrap_time_line">
+			<div class="time_line">
+				<span class="wrap_neirong" onclick="more_date(this,1);"><span>2014年</span><span class="icon_jt"></span></span>
+				<ul class="year_more" value="">
+					<li>2014年</li>
+					<li>2015年</li>
+				</ul>
+			</div>
+			<div class="time_line">
+				<span class="wrap_neirong" onclick="more_date(this,2);"><span>9月</span><span class="icon_jt"></span></span>
+				<ul class="month_more" value="">
+					<!-- 放月份 -->
+				</ul>
+			</div>
+			<div class="time_line">
+				<span class="wrap_neirong" onclick="more_date(this,3);"><span>28日</span><span class="icon_jt"></span></span>
+				<ul class="day_more" value="">
+					<!-- 放日期 -->
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<div class="check_box" onclick="checkOut()">查询</div>
+
+	<p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:(0);"> XX </a>提供</p>
+</body>
+
+<script type="text/javascript" src="./js/spare_class.js"></script>
+
+</html>

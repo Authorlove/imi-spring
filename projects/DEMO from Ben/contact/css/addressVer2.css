@@ -1,0 +1,106 @@
+/*遮罩层*/
+#mask{background: #fff;opacity: 0.7;-webkit-filter:blur(5px);-ms-filter: blur(5px);filter: blur(5px);width: 100%;position: absolute;left: 0;z-index: 9}
+#overload{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: none; z-index: 500;color: #fff;text-align: center;}
+#overload h2{position: relative;top:40%;}
+/*end 遮罩层*/
+
+/* search */
+.search-wrap{ padding: 8px 0; background-color: #f7f7f7;width: 100%;position: absolute;top: 0;left: 100%;}
+.search-input-wrap{ display: block; position: relative; margin: 0 50px 0 10px; border: 1px solid #d7d7d7; border-radius: 5px;background: url(../img/addressBook/search-icon.png) no-repeat 6px; background-size: 18px; -webkit-background-size:18px; background-color: #fafafa;}
+.search-clear{position: absolute; top: 0px; right: 0px; text-indent: -9999px; width: 32px; height: 27px; background: url(../img/addressBook/search-clear.png) no-repeat 4px 4px; background-size: 20px; display: block; z-index: 10;}
+.search-up{position: absolute; top: 0px; right: -50px; width: 50px; text-align: center; height: 27px; line-height: 27px; color: #426bf2; font-size: 16px; text-decoration: none; display: block;}
+.search-input-wrap-inner{margin:0 30px 0 30px;}
+.search-input-wrap input{ display: block; padding: 6px 0 6px; font-size: 14px; width: 100%; height: 30px; line-height: 15px; border: none; background-color: #fafafa; outline: none; z-index: 9;}
+/* end search */
+
+
+/*head*/
+.header_l{width: 100%}
+.heading{height:45px;line-height:45px;word-wrap:break-word;word-break:break-all;font-size: 16px;color: #000;position: relative;padding-right: 20px;margin-left: 10px;float: left;}
+#heading{display: inline-block;max-width: 200px;}
+.icon{content: "";display: block;position: absolute;width: 13px;height: 7px;top:18px;right: 0px;background:url(../img/addressBook/icon-grayDown.png) no-repeat right center;background-size: 13px 7px;-webkit-transition:-webkit-transform 0.2s;}
+.up .icon{-webkit-transform:rotate(180deg);}
+.search_index{height:17.5px;width:17.5px;position:absolute;background: url(../img/addressBook/icon-graySearch.png) no-repeat right center;background-size: 16px 16px;top:12px;right:12px;}
+#heading_wrap{position:relative;-webkit-transition: right 0.3s ease-in-out;right: 0;}
+
+#list{width: 100%;position: absolute;top:46px;left:0;z-index: 10; padding:0px 0; background-color: #fff; border-bottom: 1px solid #ddd;}
+#list li{line-height: 40px;font-size: 16px;color: #666;padding-left: 10px;border-bottom: 1px solid #eee;}
+#list li:last-child{border-bottom-color: #fff;}
+/*end head*/
+
+
+/*show address book */
+.data_wrap{}
+.my_card{height: 45px;font-size: 14px;line-height: 45px;padding-left: 10px;border-bottom: 1px solid #eee;background-color: #fff;}
+.data_wrap ul{background-color: #fff}
+.data_wrap .group{height: 24px;font-size: 14px;line-height: 24px;background-color: #f7f7f7;border-top:1px solid #eaeaea; padding:4px 10px;color: #888;position: relative;}
+.data_wrap ul:first-child .group{border-top: 0;}
+/*#right_screen ul li{margin:0 10px;font-size: 14px;line-height: 45px;border-bottom: 1px solid #eee;}
+#right_screen ul li:last-child{margin: 0;padding: 0 10px;border-bottom: 1px solid #eee;}*/
+/*.data_wrap ul li{margin:0 10px;font-size: 14px;line-height: 45px;border-bottom: 1px solid #eee;}
+.data_wrap ul li:last-child{margin: 0;padding: 0 10px;border-bottom: 1px solid #eee;}*/
+
+.null_data{font-size: 14px;color: #666;text-align: center;background-color: #fff;height: 435px;padding: 100px 10px 0;line-height: 1.5}
+.null_data img{width: 47px;}
+.null_data h2{font-size: 16px;}
+.null_data p{}
+/*end address book*/
+
+
+/* overlay */
+	.overlay{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 11;display: none;}
+	.zhezhao{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);z-index: 20;}
+	.pop-message{ height: 320px; margin:-160px 25px 0;  position: relative; top: 50%; background-color: #fff; border-radius: 8px; display: none; overflow: hidden;z-index: 21;-webkit-animation:bounceIn .3s ease;}
+	@-webkit-keyframes bounceIn{
+		0%{opacity:0;-webkit-transform:scale(.3)}
+		100%{-webkit-transform:scale(1)}
+	}
+	.card-name{height: 75px;color: #fff;line-height: 1;padding-top: 25px;text-align: center;background: url(../img/addressBook/cardBg.png) no-repeat center center;background-size:100% 100%;}
+	.card-name h2{font-size: 30px;}
+	.card-name p{font-size: 14px;margin-top: 10px;}
+	#detail_data{padding-left: 20px;}
+	#detail_data li{line-height: 43px;border-bottom: 1px solid #cacaca;font-size: 12px;color: #666;}
+	#detail_data li span{margin-left:10px;font-size: 14px;color: #000;}
+	#detail_data .blue{color: #426bf2;}
+/* end overlay */
+
+
+/*page info*/
+.noInfo{display: none;background: url(../img/addressBook/noInfo.png) no-repeat center center;background-size: 231px 151px;}
+.search-info{display: none;background: url(../img/addressBook/searchInfo.png) no-repeat center center;background-size: 180px 150px;}
+
+
+
+
+.wrap_namecard .color_gray{color:#a0a0a0;}
+.wrap_namecard .color_white{color:#fff;}
+
+body{height:auto;padding-bottom: 34px;}
+.note{padding-bottom: 0;position: absolute;bottom: 10px;}
+
+/*弹层编辑确定*/
+#confirm_show{height: 100%;width: 100%;position: fixed;z-index:100;top:0;left: 0;}
+.edit_confirm{height: 220px;background-color: #fff;padding-top: 20px;text-align: center;margin: 0 25px;border-radius: 3px;position: absolute;top:50%;margin-top: -110px;z-index: 300;}
+.edit_confirm h5{font-size: 14px;}
+.edit_confirm p{margin: 20px 18px 0;line-height: 1.5;color: #999;min-height: 63px;}
+.edit_confirm span{margin-top: 20px;height: 1px;display: block;background-color: #e3e3e3;}
+.confirm_yes{color: #fff;margin: 10px 10px;line-height: 35px;background-color: #249bf3;border-radius: 3px;}
+.confirm_no{color: #fff;margin: 0 10px;line-height: 35px;background-color: #bdc3c7;border-radius: 3px;}
+
+/*编辑菜单*/
+.card_bot_edit{clear:both;overflow: hidden;padding:2px 0 16px;color: #fff;background-color: #fff;height:166px;}
+.card_bot_edit li{margin-top: 12px;color: #a0a0a0;padding-right: 10px;}
+.card_bot_edit li:first-child{margin-top: 0;}
+.card_bot_edit li:last-child{padding-right: 0;}
+.card_bot_edit li label{width:62px;display: inline-block;text-align: center;}
+.card_bot_edit input{color: #444;border: 0;margin: 0;padding: 0;font-size: 14px;}
+.card_bot_edit input{color:#0278e4; text-decoration: none;}
+.card_bot_edit .yes_or_no{min-height: 25px;text-align: center;line-height: 23px;}
+.card_bot_edit .confirn_yes3{min-height: 23px;float: left;background-color: #249bf3;color: #fff;border-radius: 3px;border: 1px solid #249bf3;margin-left: 15px;width: 42%;}
+.card_bot_edit .confirn_no2{min-height: 23px;float: right;border-radius: 3px;border: 1px solid #249bf3;margin-right: 15px;width:42%;}
+.card_bot_edit .confirm_grayfont{color:#aaadad;}
+
+/*弹层－勾*/
+.notifitation_gou{height: 150px;width:150px;border-radius: 5px;background: rgba(102,102,102,0.8);position:fixed;left: 50%;margin-left: -75px;top:50%;margin-top: -75px;}
+.notifitation_gou img{height: 60px;width: 75px;background-size: 75px 60px;position: absolute;left: 50%;margin-left: -36px;top:30px;}
+.notifitation_gou p{color: #fff;text-align: center;font-size: 16px;margin-top: 110px;}

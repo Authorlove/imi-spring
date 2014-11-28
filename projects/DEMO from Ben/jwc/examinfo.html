@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>考试信息</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="format-detection" content="telephone=no"/>
+    <script type="text/javascript">
+        var aid = '<?php echo $aid;?>';
+    </script>
+</head>
+<style type="text/css">
+	/*初始化*/
+	body{margin: 0px;font-family:"Helvetica",Roboto;line-height: 1.5;}
+	ul,li{list-style-type:none;margin:0;padding:0;}
+	/*顶部标签*/
+	.tag{padding: 0; background-color: #f8f8f8;border-bottom: 1px solid #d7d7d7;height: 40px;position: relative;}
+	.tag a{font-size:15px;line-height:40px;text-align: center;color: #333;width: 50%;height: 40px;display: inline-block;}.tag a:link {text-decoration: none;}
+	.tag .font_blue{color: #3697DE;}
+	.r-line{position: absolute;width: 50%;height: 2px;background-color: #1e95dd;top: 39px;left: 0;}
+	/*下拉框*/
+	.xl2{background-color: #fff;font-size:14px;}
+	.rows li{position: relative;display:inline-block;width: 50%;}
+	.r_line_1,.r_line_2{position: absolute;width: 100%;height:1px;background-color: #ddd;top: 35px;right:0px;z-index: 100;}/*下滑灰线*/
+	.a_left{border-right: 1px solid #ddd;}
+	.rows a{padding: 0 10px;color: #666;display: block;height: 35px;line-height: 35px;}
+	.rows a:after{content: "";display: block;position: absolute;height: 35px;width: 11px;top: 0;right: 10px;background: #fff url(./img/icon-jt-down.png) no-repeat right center;background-size: 11px 43px;}
+	.expand_1 .rows .a_left:after,.expand_2 .rows .a_right:after{content: "";display: block;position: absolute;height: 35px;width: 11px;top: 0;right: 10px;background: #fff url(./img/icon-jt-up.png) no-repeat right center;background-size: 11px 43px;}
+	.expand_1 .rows .a_left,.expand_2 .rows .a_right{color: #0095f5;}
+	.xl2 a:link {text-decoration: none;} 
+	.c-line{position: absolute;height: 35px;width: 1px;right: 0px;top: 0px;background-color: #ddd;}
+	.expand_1 .r_line_1,.expand_2 .r_line_2{display: none;}
+	.cols_1,.cols_2{display: none;}
+	.expand_1 .cols_1,.expand_2 .cols_2{display: block;position: absolute;width:100%;background-color:#fff;z-index: 50;}
+	.cols_1 li,.cols_2 li{border-bottom: 1px solid #e6e6e6;margin:0 10px;}
+	.cols_1 li a,.cols_2 li a{color: #666;display: block;height: 40px;line-height:40px;padding-left: 5px;}
+
+	#mask{background: #000;opacity: 0.7;width: 100%;position: absolute;left: 0;}/*遮罩层*/
+	#overload{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: none; z-index: 500;color: #fff;text-align: center;}
+	#overload h2{position: relative;top:40%;}
+	/*------------------------------------------------------------考试查询----------------------------------------------------------------------------------*/
+	/*考试信息*/
+	.exam li{border-bottom: 1px solid #d7d7d7;padding-top: 14px;padding-bottom:14px;overflow:hidden;position: relative;}
+	.exam h2{color: #333;font-size:18px;margin: 0;padding: 0;float:left;margin-left: 10px;margin-right: 50px;}
+	.exam p{color: #666;margin: 0;padding: 0;font-size:14px;}
+	.exam .p_up{clear: both;margin-left: 10px;padding-left: 20px;background: #fff url(./img/icon-clock.png) no-repeat left center;background-size: 14px 14px;}
+	.exam .p_bot{margin-left: 10px;padding-left: 20px;background: #fff url(./img/icon-map.png) no-repeat left center;background-size: 11px 14.5px;}
+	/*-----------------------------------------------------------END-考试查询----------------------------------------------------------------------------------*/
+
+	.loading_page{background:rgba(255,255,255,.8);width:100%;position:fixed;top:0;bottom:0;z-index:999;display: none;}
+	.loading_center,.loading_page:after{background-repeat:no-repeat;background-size:100px 100px;width:100px;height:100px;position:absolute;top:50%;left:50%;margin:-50px 0 0 -50px;}
+	.loading_page:after{content:'';background-image:url(./img/global_loading_in.png);}
+	.loading_center{background-image:url(./img/global_loading.png);-webkit-animation:loadingrotate 1.6s infinite ease-in-out;}
+	@-webkit-keyframes loadingrotate {
+	  0% {-webkit-transform:rotate(0);}
+	  70% {-webkit-transform:rotate(180deg);}
+	  100% {-webkit-transform:rotate(180deg);}
+	}
+	.note{ width: 100%; font-size: 12px; color: #898989;  text-align: center;padding-bottom: 10px;margin: 0;}
+	.note .blue_size{ text-decoration: none; color: #249bf3;display: inline;}
+</style>
+<body>
+	<!-- 加载时蒙版 -->
+	<!-- <div id="overload"><h2>正在加载中...</h2></div> -->
+	<div class="loading_page"><div class="loading_center"></div></div>
+
+
+
+<!-- ********************************************************************考试查询******************************************************************** -->
+<!-- 考试信息 -->
+	<div id="exam_check" style="display:block;">
+	<!-- 下拉框 -->
+	<div class="xl2 expand_0" id="expand_01">
+		<ul class="rows">
+			<li><a id="score_a_left_01" class="a_left" href="javascript:;" onclick="showxiala_01(1)">2013 - 2014年</a><span class="r_line_1"></span></li><li><a id="score_a_right_01" class="a_right" href="javascript:;" onclick="showxiala_01(2)">第二学期</a><span class="r_line_2"></span></li>
+		</ul>
+		<ul class="cols_1" id="cols_1_01">
+		
+		</ul>
+		<ul class="cols_2">
+			<li><a href="javascript:;" onclick="semesterchoice_01(1)">第一学期</a></li>
+			<li><a href="javascript:;" onclick="semesterchoice_01(2)">第二学期</a></li>
+		</ul>
+	</div>
+	<ul class="exam" id="exam">
+	<!-- 	<li>
+			<h2>计算机组成原理</h2>
+			<p class="p_up">2014年06月27日&nbsp;09:00-11:00&nbsp;</span></p>
+			<p class="p_bot">五山区&nbsp;4202&nbsp;座位号: 55</p>
+		</li> -->
+	</ul>
+	</div>
+<!-- ******************************************************************END**考试查询******************************************************************** -->
+
+<!-- ********************************************************************成绩查询******************************************************************** -->
+	<div id="score_check" style="display:none;">
+	<!-- 下拉框 -->
+	<div class="xl2 expand_0" id="expand">
+		<ul class="rows">
+			<li><a id="score_a_left" class="a_left" href="javascript:;" onclick="showxiala(1)">2013 - 2014年</a><span class="r_line_1"></span></li><li><a id="score_a_right" class="a_right" href="javascript:;" onclick="showxiala(2)">第二学期</a><span class="r_line_2"></span></li>
+		</ul>
+		<ul class="cols_1" id="cols_1">
+			<!-- <li><a href="javascript:;">我是下拉一</a></li>
+			<li><a href="javascript:;">选项二</a></li>
+			<li><a href="javascript:;">下拉一</a></li>
+			<li><a href="javascript:;">选项若干</a></li> -->
+		</ul>
+		<ul class="cols_2">
+			<li><a href="javascript:;" onclick="semesterchoice(1)">第一学期</a></li>
+			<li><a href="javascript:;" onclick="semesterchoice(2)">第二学期</a></li>
+		</ul>
+	</div>
+	<!-- 蓝色屏幕 -->
+	<div class="src">
+		<div class="b_p_div">
+			<p class="b_l" id="studentname"><!-- 小明 --></p>
+			<p class="b_r" id="studentid"><!-- 201241020222 --></p>
+		</div>
+		<h1 id="aver_gpa">&nbsp;</h1>
+		<h4>平均绩点</h4>
+	</div>
+
+	<!-- 学科成绩 -->
+	<ul class="score" id="score">
+	<!-- 	<li>
+			<h2>计算机组成原理</h2>
+			<p class="s_num">95</p>
+			<div class="b_div">
+				<p class="p_l">学分：<span>2</span></p>
+				<p class="p_r">平时：<span>95</span>&nbsp;&nbsp;期末：<span>95</span></p>
+			</div>
+		</li>
+		<li>
+			<h2>计算机组成原理</h2>
+			<p class="s_num">95</p>
+			<div class="b_div">
+				<p class="p_l">学分：<span>2</span></p>
+				<p class="p_r">平时：<span>95</span>&nbsp;&nbsp;期末：<span>95</span></p>
+			</div>
+		</li> -->
+	</ul>
+	</div>
+<!-- ******************************************************************END**成绩查询******************************************************************** -->
+	<div style="height:10px;"></div>
+    <p class="note">本服务由<a id="comBtn" class="blue_size" href="javascript:void(0);"> XX </a>提供</p>
+</body>
+
+<script type="text/javascript" src="./js/examscore.js"></script>
+<script type="text/javascript">
+	var data = {"item":[{"name":"\u7ebf\u6027\u4ee3\u6570","time":"\u7b2c12\u5468\u54686(2014-05-10) 15:00-17:00","classroom":"4306","seat":"55","area":"\u4e1c\u533a"},{"name":"\u6c47\u7f16\u8bed\u8a00\u7a0b\u5e8f\u8bbe\u8ba1\u5b9e\u9a8c","time":" ","classroom":" ","seat":" ","area":" "},{"name":"\u8ba1\u7b97\u673a\u7ec4\u6210\u5b9e\u9a8c","time":" ","classroom":" ","seat":" ","area":" "},{"name":"Linux\u5e94\u7528\u57fa\u7840","time":" ","classroom":" ","seat":" ","area":" "},{"name":"\u7a0b\u5e8f\u8bbe\u8ba1\u4e0e\u7b97\u6cd5\u7efc\u5408\u5b9e\u4e60\u2162","time":" ","classroom":" ","seat":" ","area":" "},{"name":"\u5f62\u52bf\u4e0e\u653f\u7b562","time":" ","classroom":" ","seat":" ","area":" "},{"name":"\u6c47\u7f16\u8bed\u8a00\u7a0b\u5e8f\u8bbe\u8ba1","time":" ","classroom":" ","seat":" ","area":" "},{"name":"\u5de5\u7a0b\u6280\u80fd\u901a\u8bc6\u8bad\u7ec3","time":" ","classroom":" ","seat":" ","area":" "}]};
+	var studentid = 201230760222;
+	schoolyear(studentid);
+	readData2(data);
+</script>
+
+</html>
