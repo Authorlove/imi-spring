@@ -12,21 +12,21 @@ body {
   color: @my-color;
 }
 ```
-	变量用于选择器名
-	``` less
-	@test-class-name: classA;
-	#header {
-	  color: blue;
-	  .@{test-class-name} {   // 即.classA
-	    color: red;    
-	  }
-	}
-	```
-	变量用于属性名
-	``` less
-	@property-name: color;
-	#footer {
-	  @{property-name}: blue;
-	  background-@{property-name}: #999;
-	}
-	```
+变量用于选择器名
+``` less
+@test-class-name: classA;
+#header {
+  color: blue;
+  .@{test-class-name} {   // 即.classA
+    color: red;    
+  }
+}
+```
+变量用于属性名
+``` less
+@property-name: color;
+#footer {
+  @{property-name}: blue;
+  background-@{property-name}: #999;
+}
+```
