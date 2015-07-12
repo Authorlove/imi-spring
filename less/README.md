@@ -1,4 +1,5 @@
-zlbben.github.io
+less的使用说明
 ================
 
-my blog and test page
+##注释
+和css不同，less可以使用行注释`// ...`，而css只能使用块注释`/* ... */`
