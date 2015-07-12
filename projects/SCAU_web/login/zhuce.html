@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>zhuce demo</title>
+		<link rel="stylesheet" type="text/css" href="login.css" />
+	</head>
+
+	<body>
+		<div id="errmsg">
+			错误提示：
+			<span id="err_info"></span>
+			<br />
+			<span id="err_info2"></span>
+			<br />
+			<span id="err_info3"></span>
+		</div>
+		<form method="post" action="https://reg.163.com/reg/all/submit.do" autocomplete="off" class="zhuce_f">
+			<div id="regEmail">
+
+				<input type="hidden" id="url" name="url" value="" />
+				<input type="hidden" id="product" name="product" value="urs" />
+				<input type="hidden" id="refererPdt" name="refererPdt" value="" />
+				<input type="hidden" id="loginurl" name="loginurl" value="http:&#47;&#47;reg.163.com&#47;" />
+				<input type="hidden" id="fromUrl" name="fromUrl" value="http&#37;3A&#37;2F&#37;2Freg.163.com&#37;2F" />
+				<input type="hidden" id="u1" name="u1" value="0" />
+				<input type="hidden" id="codez" name="codez" value="" />
+				<input type="hidden" name="radomPassID" id="syscheckcode" value="" />
+
+				<div class="m-ipt f-mb0">
+					<div class="u-ipt ">
+						<div class="iptctn">
+							<input type="text" name="username_r" id="email_name_r" value="" autocapitalize="off" placeholder="常用邮箱地址" />
+						</div>
+					</div>
+					<p class="u-tips ">
+						<em>&nbsp;</em><span></span>
+					</p>
+				</div>
+				<div class="regFormSplit">
+					<a href="http://reg.163.com/reg/innerDomainReg.do?product=urs&url=&loginurl=http&#37;3A&#37;2F&#37;2Freg.163.com&#37;2F">没有邮箱？注册网易邮箱</a>
+				</div>
+				<div class="m-ipt">
+					<div class="u-popup f-dn" id="j-popup">
+						<div class="pophd">
+							<p class="f-ff1 f-fwb">网易用户中心的 程序猿们建议您:</p>
+						</div>
+						<div class="popcnt">
+							<ul>
+								<li>
+									<div class="popidx f-fl"><span class="f-fwb f-ff1">1</span>
+									</div><span class="f-fs1">避免使用常用词汇（比如521），生日或手机号作密码</span>
+								</li>
+								<li class="after">
+									<div class="popidx f-fl"><span class="f-fwb f-ff1">2</span>
+									</div><span class="f-fs1">建议加上些谐音，特殊字符或其他的隐私信息，亲妈都不告诉！</span>
+								</li>
+								<li class="after1">
+									<div class="popidx f-fl"><span class="f-fwb f-ff1">3</span>
+									</div><span class="f-fs1">建议您不要“一码平川”，给网易一个不一样的密码吧</span>
+								</li>
+								<li class="after1">
+									<div class="popidx f-fl"><span class="f-fwb f-ff1">4</span>
+									</div><span class="f-fs1">最重要的，记得来安全中心完善安全设置(笑)！</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="u-ipt ">
+						<div class="iptctn">
+							<input type="password" name="password" id="password" value="" autocapitalize="off" placeholder="设置密码" />
+						</div>
+					</div>
+					<p class="u-tips ">
+						<em>&nbsp;</em><span></span>
+					</p>
+				</div>
+				<div class="m-ipt">
+					<div class="u-ipt ">
+						<div class="iptctn">
+							<input type="password" name="cpassword" id="re_password" value="" autocapitalize="off" placeholder="确认密码" />
+						</div>
+					</div>
+					<p class="u-tips ">
+						<em>&nbsp;</em><span></span>
+					</p>
+				</div>
+				<button type="submit" class="u-btn2">立即注册</button>
+			</div>
+
+			<span class="u-check"><input type="checkbox" name="agree" id="agree" checked="checked" /><label for="agree">我同意  <a href="http://reg.163.com/agreement.shtml?20150331100" target="_blank">" 服务条款  "</a> 和  <a href="http://reg.163.com/agreement_game.shtml?20150331100" target="_blank">" 网络游戏用户隐私权保护和个人信息利用政策 "</a></label></span>
+		</form>
+		<script src="zhucce.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

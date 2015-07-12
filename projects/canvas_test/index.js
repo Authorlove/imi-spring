@@ -166,5 +166,5 @@ window.onload = function() {
 	setInterval(function() {
 		render(context);
 		update();
-	}, 50)
+	}, 50);
 }

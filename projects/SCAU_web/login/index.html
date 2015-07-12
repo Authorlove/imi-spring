@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>login demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="login.css" />
+	</head>
+
+	<body>
+		<div class="contain">
+			<header>login demo</header>
+
+			<div class="in_pg page2">
+				<div class="login">登录网易通行证</div>
+				<div class="login_form">
+					<form id="loginform" action="https://reg.163.com/logins.jsp" method="POST" target="_self">
+						<div class="wp_login">
+							<div class="login_t">账号：</div>
+							<input id="username" name="username" type="text" autocomplete="off" placeholder="网易通行证  如guojian@163.com" />
+							<div class="login_t">密码：</div>
+							<input id="password" name="password" type="password" placeholder="输入密码" />
+						</div>
+						<input type="submit" class="btnLogin" value="登 录">
+						<input type="hidden" name="url" value="" />
+						<input type="hidden" name="url2" value="" />
+						<input type="hidden" name="product" value="vipbar" />
+						<input type="hidden" name="type" value="1" />
+						<input type="hidden" name="domains" value="163.com" />
+					</form>
+				</div>
+				<a href="javascript:" class="jihuoma">领取激活码</a>
+			</div>
+			
+			<footer id="footer">
+				<div class="share">分享到：
+					<a href="http://www.qq.com" rel="nofollow" id="yx_share">易信</a>
+					<a href="http://mail.qq.com" rel="nofollow" id="sina_share" class="sina_share">新浪微博</a>
+					<a href="http://isux.tencent.com" rel="nofollow" id="qzone_share">QQ空间</a>
+				</div>
+				<a href="http://f1racestars.163.com/index.html?from=mobile" class="goto-pc">查看电脑版官网</a>
+			</footer>
+			
+			<a href="./zhuce.html" class="zhuce">创建用户</a>
+		</div>
+		<script src="index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

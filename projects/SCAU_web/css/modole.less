@@ -1,0 +1,103 @@
+#NIE-topshare{font-size: 1.2rem;}
+//ban scroll the screen
+#hengpin{width: 100%;height: 100%;z-index: 200;position: fixed;display: none;}
+.maskhp{background-color: #000;opacity: .6;position: absolute;height: 100%;width: 100%;z-index: 201;}
+#hengpin p{font-size: 2rem;color: #fff;text-align: center;position: absolute;z-index: 202;width: 100%;height: 100%;top: 50%;margin-top: -1rem;}
+
+//**********************************鎴戞槸鍒嗗壊绾匡紝涓嬮潰涓哄嚱鏁�*****************************************************************
+
+
+.radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+          border-top-left-radius: @radius;
+          border-top-right-radius: @radius;
+          border-bottom-right-radius: @radius;
+          border-bottom-left-radius: @radius;
+}
+
+.bgs{
+    background-size: 100% 100%;
+}
+
+// 居中
+.mr_t(@aaa){
+    top: 50%;
+    margin-top: -@aaa/40rem;
+}
+.mr_l(@aaa){
+    left: 50%;
+    margin-left: -@aaa/40rem;
+}
+.tr_t{
+    top: 50%;
+    -ms-transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+}
+.tr_l{
+    left: 50%;
+    -ms-transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%,0,0);
+}
+
+
+
+.h_l(@aaa){
+    height: @aaa/20rem;;
+    line-height: @aaa/20rem;;
+}
+
+
+.rotate(@aaa){
+    transform: rotate(@aaa);
+    -ms-transform: rotate(@aaa);       /* IE 9 */
+    -webkit-transform: rotate(@aaa);   /* Safari and Chrome */
+    -o-transform: rotate(@aaa);        /* Opera */
+    -moz-transform: rotate(@aaa);  
+}
+
+.trsi(@aaa,@bbb:.5s){
+    transition: @aaa @bbb ease-in-out;
+    -moz-transition: @aaa @bbb ease-in-out;  /* Firefox 4 */
+    -webkit-transition: @aaa @bbb ease-in-out;   /* Safari  Chrome */
+    -o-transition: @aaa @bbb ease-in-out;    /* Opera */
+}
+
+.box{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -webkit-justify-content:center;
+}
+
+.flex(@value){
+    display: block;
+    -webkit-box-flex: @value;
+    -webkit-flex: @value;
+}
+
+.h(@aaa){height: @aaa/20rem;}.w(@aaa){width: @aaa/20rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
