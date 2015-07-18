@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+		<title>QQ音乐滑动活动页面模板</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Content-Language" content="zh-cn" />
+		<meta name="author" content="Tencent-ISUX-Music" />
+		<meta name="Copyright" content="Tencent" />
+		<!--关键字和描述一定要写-->
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--如果该页面只适合在手机上进行浏览，请添加以下代码-->
+		<meta name="applicable-device" content="mobile">
+		<link rel="stylesheet" type="text/css" href="callback.less" />
+	</head>
+
+	<body class="cal_bg">
+		<div class="wrap">
+			<img src="/img/extra/goback.jpg" />
+		</div>
+		<a href="javascript:" class="share_btn"></a>
+
+		<!-- 分享蒙版 _S -->
+		<div class="mod_dialog">
+			<div class="dialog_mask">
+				<div class="dialog_mask__wechat_share">
+					<p class="txt">点此分享</p>
+				</div>
+			</div>
+		</div>
+		<!-- 分享蒙版 _E -->
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".mod_dialog").click(function(){
+				$(".mod_dialog").hide()
+			})
+			$(".share_btn").live('click', function() {
+				$(".mod_dialog").css('display', 'block');
+			})
+		</script>
+	</body>
+
+</html>

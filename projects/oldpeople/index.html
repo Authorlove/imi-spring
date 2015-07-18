@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+		<title>QQ音乐滑动活动页面模板</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Content-Language" content="zh-cn" />
+		<meta name="author" content="Tencent-ISUX-Music" />
+		<meta name="Copyright" content="Tencent" />
+		<!--关键字和描述一定要写-->
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--如果该页面只适合在手机上进行浏览，请添加以下代码-->
+		<meta name="applicable-device" content="mobile">
+		<link rel="stylesheet" type="text/css" href="index.less" />
+	</head>
+
+	<body class="bodybox">
+
+		<div class="loading">
+			<div class="load_yx"></div>
+			<div class="load_card--one"></div>
+			<div class="load_card--two"></div>
+			<p class="loading_num">11%</p>
+		</div>
+
+		<div class="wrap" id="wrap">
+
+			<div class="item item-1">
+				<div class="box first">
+					<div class="first_name">致：<span><img src="img/extra/head.jpeg" alt="" />Greece</span></div>
+					<div class="first_post"></div>
+					<div class="first_txt1"></div>
+					<div class="first_txt2"></div>
+					<div class="post2"></div>
+					<div class="post"></div>
+					<div class="huojian"></div>
+				</div>
+			</div>
+
+			<div class="item item-2">
+				<div class="box zoulu">
+					<div class="mod_frameh--up"><img src="img/s2_frame.png" /></div>
+					<div class="mod_frameh--bot"><img src="img/s2_frame2.png" /></div>
+					<div class="zoulu_bg"></div>
+					<div class="zoulu_txt1"><img src="img/s2_txt1.png" /></div>
+					<div class="zoulu_txt2"><img src="img/s2_txt2.png" /></div>
+					<div class="zoulu_txt3"></div>
+				</div>
+			</div>
+
+			<div class="item item-3">
+				<div class="box star">
+					<div class="mod_frame--up"><img src="img/s3_frame.png" /></div>
+					<div class="mod_frame--bot"><img src="img/s3_frame2.png" /></div>
+					<div class="star_txt--1"></div>
+					<div class="star_txt--2"><img src="img/s3_txt2.png" /></div>
+					<div class="star_txt--3"></div>
+					<div class="star_cir1"></div>
+					<div class="star_cir2"></div>
+					<div class="star_line"></div>
+				</div>
+			</div>
+
+			<div class="item item-4">
+				<div class="box mafeng">
+					<div class="mod_frame--up"><img src="img/s4_frame.png" /></div>
+					<div class="mod_frame--bot"><img src="img/s4_frame2.png" /></div>
+					<div class="mafeng_txt1"><img src="img/s4_txt1.png" /></div>
+					<div class="mafeng_txt2"></div>
+					<div class="mafeng_txt3"><img src="img/s4_txt3.png" /></div>
+					<div class="mafeng_txt4"></div>
+					<div class="mafeng_bg"></div>
+				</div>
+			</div>
+
+			<div class="item item-5">
+				<div class="box">
+					<div style="height: 3rem;"></div>
+					<div class="last_txt"></div>
+					<div class="last_post">
+						<a href="javascript:" class="last_post__left"></a>
+						<a href="javascript:" class="last_post__right"></a>
+					</div>
+					<div class="last_act"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 加载提示 _S -->
+		<div class="mod_loading" id="loading" style="display:none">
+			<div class="content">
+				<div class="progress"><span id="progress_bg" style="width:0;"></span></div>
+				<p>Loading...</p>
+			</div>
+		</div>
+		<!-- 加载提示 _E -->
+
+		<div id="hengpin">
+			<div class="maskhp"></div>
+			<div class="fuceng">
+				<a href="javascript:" class="fuceng_close"></a>
+				<a href="javascript:" class="fuceng_a fuceng_a1"></a>
+				<a href="javascript:" class="fuceng_a fuceng_a2"></a>
+				<a href="javascript:" class="fuceng_a fuceng_a3"></a>
+				<input type="text" placeholder="输入金额" class="fuceng_input" value="" />
+				<a href="javascript:" class="fuceng_confirm">确认</a>
+			</div>
+		</div>
+
+		<!-- 分享蒙版 _S -->
+		<div class="mod_dialog">
+			<div class="dialog_mask">
+				<div class="dialog_mask__wechat_share">
+					<p class="txt">点此分享</p>
+				</div>
+			</div>
+		</div>
+		<!-- 分享蒙版 _E -->
+
+		<!-- 底部固定模块 _S -->
+		<div class="mod_function_wrap">
+			<a class="mod_function_item btn_share" href="#">分享</a>
+			<a class="mod_function_item voice_play voice_pause" href="#">声音</a>
+			<div class="slider"><span></span></div>
+		</div>
+		<!-- 底部固定模块 _E -->
+		
+		<audio src="http://sc.111ttt.com/up/mp3/51714/AD4A2974052CD1CD61AD643C8CEFA79F.mp3" id="music" style="height: 0;width: 0;" autoplay="autoplay" loop="loop"></audio>
+
+		<script src="http://imgcache.gtimg.cn/music/h5/lib/js/module/iSlider-1.0.min.js?_bid=363&max_age=2592000"></script>
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fx.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fx_methods.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var _timer = [];
+			$(".loading").hide();
+			window.onload = function() {
+				var myslider = new iSlider({
+					noslide: [0],
+					index: 0,
+					wrap: '#wrap',
+					item: '.item',
+					isVertical: true, //滑动方向，false为水平滑动
+					lastLocate: false,
+					loadingImgs: [],
+					onslide: function(index) {
+						if (_timer.length) {
+							var timer_num = _timer.length;
+							for (i = 0; i < timer_num; i++) {
+								clearTimeout(_timer.shift());
+							}
+						}
+						if (index === 0) {
+							$(".zoulu_txt2").css('height', '0');
+						}
+						if (index === 1) {
+							$(".star_txt--2").css('height', '0');
+							_timer.push(setTimeout(function() {
+								$(".zoulu_txt2").css('height', '2rem');
+								_timer.push(setTimeout(function() {
+									$(".zoulu_txt2").css('height', '4rem');
+									_timer.push(setTimeout(function() {
+										$(".zoulu_txt2").css('height', '6rem');
+										_timer.push(setTimeout(function() {
+											$(".zoulu_txt2").animate({
+												height: '13rem'
+											});
+											_timer.push(setTimeout(function() {
+												$(".zoulu_txt2").css('height', '15.7rem');
+												_timer.push(setTimeout(function() {
+													$(".zoulu_txt2").css('height', '17.7rem');
+													_timer.push(setTimeout(function() {
+														$(".zoulu_txt2").css('height', '19.25rem');
+													}, 300))
+												}, 300))
+											}, 700))
+										}, 500))
+									}, 300))
+								}, 300))
+							}, 2400))
+						}
+						if (index === 2) {
+							$(".zoulu_txt2").css('height', '0');
+							$(".mafeng_txt3").css('height', '0');
+							_timer.push(setTimeout(function() {
+								$(".star_txt--2").css('height', '2rem');
+								_timer.push(setTimeout(function() {
+									$(".star_txt--2").css('height', '4.5rem');
+									_timer.push(setTimeout(function() {
+										$(".star_txt--2").css('height', '6.5rem');
+										_timer.push(setTimeout(function() {
+											$(".star_txt--2").animate({
+												height: '15.5rem'
+											});
+											_timer.push(setTimeout(function() {
+												$(".star_txt--2").css('height', '18rem');
+												_timer.push(setTimeout(function() {
+													$(".star_txt--2").css('height', '20rem');
+													_timer.push(setTimeout(function() {
+														$(".star_txt--2").css('height', '21.95rem');
+													}, 300))
+												}, 300))
+											}, 700))
+										}, 700))
+									}, 300))
+								}, 300))
+							}, 2400))
+						}
+						if (index === 3) {
+							$(".star_txt--2").css('height', '0');
+							_timer.push(setTimeout(function() {
+								$(".mafeng_txt3").css('height', '2rem');
+								_timer.push(setTimeout(function() {
+									$(".mafeng_txt3").css('height', '3.8rem');
+									_timer.push(setTimeout(function() {
+										$(".mafeng_txt3").css('height', '5.5rem');
+										_timer.push(setTimeout(function() {
+											$(".mafeng_txt3").css('height', '7.5rem');
+											_timer.push(setTimeout(function() {
+												$(".mafeng_txt3").animate({
+													height: '13.5rem'
+												});
+												_timer.push(setTimeout(function() {
+													$(".mafeng_txt3").css('height', '15.5rem');
+													_timer.push(setTimeout(function() {
+														$(".mafeng_txt3").css('height', '17.5rem');
+														_timer.push(setTimeout(function() {
+															$(".mafeng_txt3").css('height', '19.5rem');
+															_timer.push(setTimeout(function() {
+																$(".mafeng_txt3").css('height', '21.05rem');
+															}, 300))
+														}, 300))
+													}, 300))
+												}, 700))
+											}, 700))
+										}, 300))
+									}, 300))
+								}, 300))
+							}, 2400))
+						}
+					}
+				});
+				$(".first_post").click(function() {
+					$(".first_name").fadeOut(700);
+					$(".first_post").fadeOut(700);
+					$('.post').fadeIn(1000);
+					$('.post2').fadeIn(1000);
+					$('.first').addClass('go');
+					$(".huojian").animate({
+						bottom: '4rem'
+					}, 1000)
+					setTimeout(function() {
+						$('.post').fadeIn(500);
+						$('.post2').fadeIn(500);
+					}, 2500)
+					setTimeout(function() {
+						myslider.next();
+					}, 2500)
+				})
+				$(".fuceng_close").live('click',function() {
+					$("#hengpin").hide()
+				});
+				$(".last_post__left").live('click',function() {
+					$("#hengpin").show();
+				});
+				$(".fuceng_input").live('focus', function() {
+					$(".fuceng_confirm").show()
+				});
+				$(".fuceng_input").live('blur', function() {
+					if (!$(".fuceng_input").val()) {
+						$(".fuceng_confirm").hide();
+					}
+				})
+				$(".mod_dialog").live('click',function(){
+					$(".mod_dialog").hide();
+				})
+				$(".last_post__right").live('click',function(){
+					$(".mod_dialog").css('display','block');
+				})
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,12 @@
+@import "less/qm_reset.less";
+@import (reference) "less/modole.less";
+/*  ========== 以上为初始化样式,以下为自定义样式  ===========*/ 
+.cal_bg{height: 100%;width: 100%;background-image: url(img/bg.jpg);padding: 2.25rem 0;}
+.wrap{.w(530);.h(760);margin: 0 auto;}
+.wrap img{height: 100%;width: 100%;}
+.share_btn{.w(530);.h(74);background-image: url(img/extra/come.png);.bgs;margin: 3rem auto 0;display: block;}
+/*微信分享提示样式*/
+.dialog_mask__wechat_share{position:absolute;top:0;right:15px;background:url(./img/wechat_share@2x.png) no-repeat;width:159px;height:138px;background-size:159px 138px;text-indent:-9999px;}
+.dialog_mask__wechat_share .txt{display:none;}
+.dialog_mask{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10000;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;background:rgba(0,0,0,0.6);}
+.mod_dialog{display: none;}
