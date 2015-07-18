@@ -77,7 +77,7 @@
 					console.log(total);
 					this.$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
 					if (loaded == total) {
-						this.$('.loading').style.display = "none"
+						$('.loading').style.display = "none"
 					}
 				},
 				onslide: function(index) {
