@@ -132,18 +132,18 @@ body {
 }
 .mod_function_wrap .btn_share {
   right: 25px;
-  background-image: url(/slice/2x/btn_share.png);
+  background-image: url(slice/2x/btn_share.png);
   display: none;
   height: 32px;
   width: 32px;
 }
 .mod_function_wrap .voice_play {
   right: 10px;
-  background-image: url(/slice/2x/voice_play.png);
+  background-image: url(slice/2x/voice_play.png);
 }
 .mod_function_wrap .voice_pause {
   right: 10px;
-  background-image: url(/slice/2x/voice_pause.png);
+  background-image: url(slice/2x/voice_pause.png);
 }
 .mod_function_wrap .slider {
   position: absolute;
@@ -157,7 +157,7 @@ body {
   position: absolute;
   width: 23px;
   height: 12px;
-  background-image: url(/slice/2x/slider.png);
+  background-image: url(slice/2x/slider.png);
   background-size: cover;
   -webkit-animation: slide_up 2s infinite ease-in-out;
 }
