@@ -17,6 +17,220 @@
 		<meta name="applicable-device" content="mobile">
 		<link rel="stylesheet" type="text/css" href="index.css" />
 	</head>
+	<script src="http://imgcache.gtimg.cn/music/h5/lib/js/module/iSlider-1.0.min.js?_bid=363&max_age=2592000"></script>
+	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fx.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fx_methods.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var _timer = [];
+		 //$(".loading").hide();
+		window.onload = function() {
+			var myslider = new iSlider({
+				noslide: [0],
+				index: 0,
+				wrap: '#wrap',
+				item: '.item',
+				isVertical: true, //滑动方向，false为水平滑动
+				lastLocate: false,
+				loadingImgs: [
+					'http://zlbben.github.io/projects/oldpeople/img/bg_post.png',
+					'http://zlbben.github.io/projects/oldpeople/img/bg.jpg',
+					'http://zlbben.github.io/projects/oldpeople/slice/2x/btn_share.png',
+					'http://zlbben.github.io/projects/oldpeople/img/fnl_p.png',
+					'http://zlbben.github.io/projects/oldpeople/img/fnl_post.png',
+					'http://zlbben.github.io/projects/oldpeople/img/fnl_txt.png',
+					'http://zlbben.github.io/projects/oldpeople/img/extra/head.jpeg',
+					'http://zlbben.github.io/projects/oldpeople/img/huojian.png',
+					'http://zlbben.github.io/projects/oldpeople/img/load_bg.jpg',
+					'http://zlbben.github.io/projects/oldpeople/img/load_card1.png',
+					'http://zlbben.github.io/projects/oldpeople/img/load_yx.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s1_post.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s1_post2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s1_txt.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s1_txt2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_bg.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_frame.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_frame2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_txt1.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_txt2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s2_txt3.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_cir.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_cir2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_frame.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_frame2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_line.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_txt1.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_txt2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s3_txt3.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_bg.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_frame.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_frame2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_txt1.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_txt2.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_txt3.png',
+					'http://zlbben.github.io/projects/oldpeople/img/s4_txt4.png',
+					'http://zlbben.github.io/projects/oldpeople/slice/2x/slider.png',
+					'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
+				],
+				onloading: function(loaded, total) {
+					console.info(loaded);
+					console.log(total);
+					this.$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
+					if (loaded == total) {
+						this.$('.loading').style.display = "none"
+					}
+				},
+				onslide: function(index) {
+					if (_timer.length) {
+						var timer_num = _timer.length;
+						for (i = 0; i < timer_num; i++) {
+							clearTimeout(_timer.shift());
+						}
+					}
+					if (index === 0) {
+						$(".zoulu_txt2").css('height', '0');
+					}
+					if (index === 1) {
+						$("#icon_music").addClass('voice_play__open')
+						$(".slider").addClass('slider_open');
+						$(".star_txt--2").css('height', '0');
+						_timer.push(setTimeout(function() {
+							$(".zoulu_txt2").css('height', '2rem');
+							_timer.push(setTimeout(function() {
+								$(".zoulu_txt2").css('height', '4rem');
+								_timer.push(setTimeout(function() {
+									$(".zoulu_txt2").css('height', '6rem');
+									_timer.push(setTimeout(function() {
+										$(".zoulu_txt2").animate({
+											height: '13rem'
+										});
+										_timer.push(setTimeout(function() {
+											$(".zoulu_txt2").css('height', '15.7rem');
+											_timer.push(setTimeout(function() {
+												$(".zoulu_txt2").css('height', '17.7rem');
+												_timer.push(setTimeout(function() {
+													$(".zoulu_txt2").css('height', '19.25rem');
+												}, 300))
+											}, 300))
+										}, 700))
+									}, 500))
+								}, 300))
+							}, 300))
+						}, 2400))
+					}
+					if (index === 2) {
+						$(".zoulu_txt2").css('height', '0');
+						$(".mafeng_txt3").css('height', '0');
+						_timer.push(setTimeout(function() {
+							$(".star_txt--2").css('height', '2rem');
+							_timer.push(setTimeout(function() {
+								$(".star_txt--2").css('height', '4.5rem');
+								_timer.push(setTimeout(function() {
+									$(".star_txt--2").css('height', '6.5rem');
+									_timer.push(setTimeout(function() {
+										$(".star_txt--2").animate({
+											height: '15.5rem'
+										});
+										_timer.push(setTimeout(function() {
+											$(".star_txt--2").css('height', '18rem');
+											_timer.push(setTimeout(function() {
+												$(".star_txt--2").css('height', '20rem');
+												_timer.push(setTimeout(function() {
+													$(".star_txt--2").css('height', '21.95rem');
+												}, 300))
+											}, 300))
+										}, 700))
+									}, 700))
+								}, 300))
+							}, 300))
+						}, 2400))
+					}
+					if (index === 3) {
+						$(".star_txt--2").css('height', '0');
+						_timer.push(setTimeout(function() {
+							$(".mafeng_txt3").css('height', '2rem');
+							_timer.push(setTimeout(function() {
+								$(".mafeng_txt3").css('height', '3.8rem');
+								_timer.push(setTimeout(function() {
+									$(".mafeng_txt3").css('height', '5.5rem');
+									_timer.push(setTimeout(function() {
+										$(".mafeng_txt3").css('height', '7.5rem');
+										_timer.push(setTimeout(function() {
+											$(".mafeng_txt3").animate({
+												height: '13.5rem'
+											});
+											_timer.push(setTimeout(function() {
+												$(".mafeng_txt3").css('height', '15.5rem');
+												_timer.push(setTimeout(function() {
+													$(".mafeng_txt3").css('height', '17.5rem');
+													_timer.push(setTimeout(function() {
+														$(".mafeng_txt3").css('height', '19.5rem');
+														_timer.push(setTimeout(function() {
+															$(".mafeng_txt3").css('height', '21.05rem');
+														}, 300))
+													}, 300))
+												}, 300))
+											}, 700))
+										}, 700))
+									}, 300))
+								}, 300))
+							}, 300))
+						}, 2400))
+					}
+					if (index === 4) {
+						$(".slider").removeClass('slider_open');
+					}
+				}
+			});
+			$(".first_post").click(function() {
+				$(".first_name").fadeOut(700);
+				$(".first_post").fadeOut(700);
+				$('.post').fadeIn(1000);
+				$('.post2').fadeIn(1000);
+				$('.first').addClass('go');
+				$(".huojian").animate({
+					bottom: '4rem'
+				}, 1000)
+				setTimeout(function() {
+					$('.post').fadeIn(500);
+					$('.post2').fadeIn(500);
+				}, 2500)
+				setTimeout(function() {
+					myslider.next();
+				}, 2500);
+				$("#music")[0].play();
+			});
+			$("#icon_music").click(function() {
+				if ($("#music")[0].paused) { //暂停中
+					$("#music")[0].play();
+					$("#icon_music").removeClass('voice_pause');
+				} else { //播放中
+					$("#music")[0].pause();
+					$("#icon_music").addClass('voice_pause');
+				}
+			})
+			$(".fuceng_close").live('click', function() {
+				$("#hengpin").hide()
+			});
+			$(".last_post__left").live('click', function() {
+				$("#hengpin").show();
+			});
+			$(".fuceng_input").live('focus', function() {
+				$(".fuceng_confirm").show()
+			});
+			$(".fuceng_input").live('blur', function() {
+				if (!$(".fuceng_input").val()) {
+					$(".fuceng_confirm").hide();
+				}
+			})
+			$(".mod_dialog").live('click', function() {
+				$(".mod_dialog").css('display', 'none');
+			})
+			$(".last_post__right").live('click', function() {
+				$(".mod_dialog").css('display', 'block');
+			})
+		}
+	</script>
 
 	<body class="bodybox">
 
@@ -91,8 +305,6 @@
 
 		</div>
 
-		
-
 		<div id="hengpin">
 			<div class="maskhp"></div>
 			<div class="fuceng">
@@ -125,220 +337,6 @@
 
 		<audio src="http://www.tengmeitech.com/test/bd/sound/sound.mp3" id="music" style="height: 0;width: 0;" autoplay="autoplay" loop="loop"></audio>
 
-		<script src="http://imgcache.gtimg.cn/music/h5/lib/js/module/iSlider-1.0.min.js?_bid=363&max_age=2592000"></script>
-		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/fx.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/fx_methods.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			var _timer = [];
-			//$(".loading").hide();
-			window.onload = function() {
-				var myslider = new iSlider({
-					noslide: [0],
-					index: 0,
-					wrap: '#wrap',
-					item: '.item',
-					isVertical: true, //滑动方向，false为水平滑动
-					lastLocate: false,
-					loadingImgs: [
-						'http://zlbben.github.io/projects/oldpeople/img/bg_post.png',
-						'http://zlbben.github.io/projects/oldpeople/img/bg.jpg',
-						'http://zlbben.github.io/projects/oldpeople/slice/2x/btn_share.png',
-						'http://zlbben.github.io/projects/oldpeople/img/fnl_p.png',
-						'http://zlbben.github.io/projects/oldpeople/img/fnl_post.png',
-						'http://zlbben.github.io/projects/oldpeople/img/fnl_txt.png',
-						'http://zlbben.github.io/projects/oldpeople/img/extra/head.jpeg',
-						'http://zlbben.github.io/projects/oldpeople/img/huojian.png',
-						'http://zlbben.github.io/projects/oldpeople/img/load_bg.jpg',
-						'http://zlbben.github.io/projects/oldpeople/img/load_card1.png',
-						'http://zlbben.github.io/projects/oldpeople/img/load_yx.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s1_post.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s1_post2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s1_txt.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s1_txt2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_bg.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_frame.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_frame2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_txt1.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_txt2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s2_txt3.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_cir.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_cir2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_frame.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_frame2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_line.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_txt1.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_txt2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s3_txt3.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_bg.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_frame.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_frame2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_txt1.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_txt2.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_txt3.png',
-						'http://zlbben.github.io/projects/oldpeople/img/s4_txt4.png',
-						'http://zlbben.github.io/projects/oldpeople/slice/2x/slider.png',
-						'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
-					],
-					onloading: function(loaded, total) {
-						console.info(loaded);
-						console.log(total);
-						this.$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
-						if (loaded == total) {
-							this.$('.loading').style.display = "none"
-						}
-					},
-					onslide: function(index) {
-						if (_timer.length) {
-							var timer_num = _timer.length;
-							for (i = 0; i < timer_num; i++) {
-								clearTimeout(_timer.shift());
-							}
-						}
-						if (index === 0) {
-							$(".zoulu_txt2").css('height', '0');
-						}
-						if (index === 1) {
-							$("#icon_music").addClass('voice_play__open')
-							$(".slider").addClass('slider_open');
-							$(".star_txt--2").css('height', '0');
-							_timer.push(setTimeout(function() {
-								$(".zoulu_txt2").css('height', '2rem');
-								_timer.push(setTimeout(function() {
-									$(".zoulu_txt2").css('height', '4rem');
-									_timer.push(setTimeout(function() {
-										$(".zoulu_txt2").css('height', '6rem');
-										_timer.push(setTimeout(function() {
-											$(".zoulu_txt2").animate({
-												height: '13rem'
-											});
-											_timer.push(setTimeout(function() {
-												$(".zoulu_txt2").css('height', '15.7rem');
-												_timer.push(setTimeout(function() {
-													$(".zoulu_txt2").css('height', '17.7rem');
-													_timer.push(setTimeout(function() {
-														$(".zoulu_txt2").css('height', '19.25rem');
-													}, 300))
-												}, 300))
-											}, 700))
-										}, 500))
-									}, 300))
-								}, 300))
-							}, 2400))
-						}
-						if (index === 2) {
-							$(".zoulu_txt2").css('height', '0');
-							$(".mafeng_txt3").css('height', '0');
-							_timer.push(setTimeout(function() {
-								$(".star_txt--2").css('height', '2rem');
-								_timer.push(setTimeout(function() {
-									$(".star_txt--2").css('height', '4.5rem');
-									_timer.push(setTimeout(function() {
-										$(".star_txt--2").css('height', '6.5rem');
-										_timer.push(setTimeout(function() {
-											$(".star_txt--2").animate({
-												height: '15.5rem'
-											});
-											_timer.push(setTimeout(function() {
-												$(".star_txt--2").css('height', '18rem');
-												_timer.push(setTimeout(function() {
-													$(".star_txt--2").css('height', '20rem');
-													_timer.push(setTimeout(function() {
-														$(".star_txt--2").css('height', '21.95rem');
-													}, 300))
-												}, 300))
-											}, 700))
-										}, 700))
-									}, 300))
-								}, 300))
-							}, 2400))
-						}
-						if (index === 3) {
-							$(".star_txt--2").css('height', '0');
-							_timer.push(setTimeout(function() {
-								$(".mafeng_txt3").css('height', '2rem');
-								_timer.push(setTimeout(function() {
-									$(".mafeng_txt3").css('height', '3.8rem');
-									_timer.push(setTimeout(function() {
-										$(".mafeng_txt3").css('height', '5.5rem');
-										_timer.push(setTimeout(function() {
-											$(".mafeng_txt3").css('height', '7.5rem');
-											_timer.push(setTimeout(function() {
-												$(".mafeng_txt3").animate({
-													height: '13.5rem'
-												});
-												_timer.push(setTimeout(function() {
-													$(".mafeng_txt3").css('height', '15.5rem');
-													_timer.push(setTimeout(function() {
-														$(".mafeng_txt3").css('height', '17.5rem');
-														_timer.push(setTimeout(function() {
-															$(".mafeng_txt3").css('height', '19.5rem');
-															_timer.push(setTimeout(function() {
-																$(".mafeng_txt3").css('height', '21.05rem');
-															}, 300))
-														}, 300))
-													}, 300))
-												}, 700))
-											}, 700))
-										}, 300))
-									}, 300))
-								}, 300))
-							}, 2400))
-						}
-						if (index === 4) {
-							$(".slider").removeClass('slider_open');
-						}
-					}
-				});
-				$(".first_post").click(function() {
-					$(".first_name").fadeOut(700);
-					$(".first_post").fadeOut(700);
-					$('.post').fadeIn(1000);
-					$('.post2').fadeIn(1000);
-					$('.first').addClass('go');
-					$(".huojian").animate({
-						bottom: '4rem'
-					}, 1000)
-					setTimeout(function() {
-						$('.post').fadeIn(500);
-						$('.post2').fadeIn(500);
-					}, 2500)
-					setTimeout(function() {
-						myslider.next();
-					}, 2500);
-					$("#music")[0].play();
-				});
-				$("#icon_music").click(function() {
-					if ($("#music")[0].paused) { //暂停中
-						$("#music")[0].play();
-						$("#icon_music").removeClass('voice_pause');
-					} else { //播放中
-						$("#music")[0].pause();
-						$("#icon_music").addClass('voice_pause');
-					}
-				})
-				$(".fuceng_close").live('click', function() {
-					$("#hengpin").hide()
-				});
-				$(".last_post__left").live('click', function() {
-					$("#hengpin").show();
-				});
-				$(".fuceng_input").live('focus', function() {
-					$(".fuceng_confirm").show()
-				});
-				$(".fuceng_input").live('blur', function() {
-					if (!$(".fuceng_input").val()) {
-						$(".fuceng_confirm").hide();
-					}
-				})
-				$(".mod_dialog").live('click', function() {
-					$(".mod_dialog").css('display', 'none');
-				})
-				$(".last_post__right").live('click', function() {
-					$(".mod_dialog").css('display', 'block');
-				})
-			}
-		</script>
 	</body>
 
 </html>
