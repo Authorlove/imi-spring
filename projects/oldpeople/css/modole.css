@@ -1,0 +1,39 @@
+.bgs {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.bgh {
+  background-size: 100% auto;
+}
+.cover {
+  background-size: cover;
+}
+.tr_t {
+  top: 50%;
+  -ms-transform: translate3d(0, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+}
+.tr_l {
+  left: 50%;
+  -ms-transform: translate3d(-50%, 0, 0);
+  -webkit-transform: translate3d(-50%, 0, 0);
+}
+.tr_c {
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+}
+.boxc {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+}
+.img_h {
+  height: 100%;
+  width: auto;
+}
