@@ -73,7 +73,7 @@
 					'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
 				],
 				onloading: function(loaded, total) {
-					console.info(loaded+'/'total);
+					console.info(loaded+'/'+total);
 					$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
 					if (loaded == total) {
 						console.warn('finish')
