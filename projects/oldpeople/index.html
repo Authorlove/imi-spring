@@ -49,28 +49,7 @@
 					'http://zlbben.github.io/projects/oldpeople/img/s1_txt.png',
 					'http://zlbben.github.io/projects/oldpeople/img/s1_txt2.png',
 					'http://zlbben.github.io/projects/oldpeople/img/s2_bg.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s2_frame.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s2_frame2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s2_txt1.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s2_txt2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s2_txt3.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_cir.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_cir2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_frame.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_frame2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_line.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_txt1.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_txt2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s3_txt3.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_bg.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_frame.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_frame2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_txt1.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_txt2.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_txt3.png',
-					'http://zlbben.github.io/projects/oldpeople/img/s4_txt4.png',
-					'http://zlbben.github.io/projects/oldpeople/slice/2x/slider.png',
-					'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
+					'http://zlbben.github.io/projects/oldpeople/img/s2_frame.png'
 				],
 				onloading: function(loaded, total) {
 					console.info(loaded+'/'+total);
@@ -91,7 +70,7 @@
 						$(".zoulu_txt2").css('height', '0');
 					}
 					if (index === 1) {
-						$("#icon_music").addClass('voice_play__open')
+						$("#icon_music").addClass('voice_play__open');
 						$(".slider").addClass('slider_open');
 						$(".star_txt--2").css('height', '0');
 						_timer.push(setTimeout(function() {
@@ -146,6 +125,7 @@
 						}, 2400))
 					}
 					if (index === 3) {
+						$("#icon_music").addClass('voice_play__open');
 						$(".star_txt--2").css('height', '0');
 						_timer.push(setTimeout(function() {
 							$(".mafeng_txt3").css('height', '2rem');
