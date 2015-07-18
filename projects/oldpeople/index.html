@@ -24,7 +24,7 @@
 			<div class="load_yx"></div>
 			<div class="load_card--one"></div>
 			<div class="load_card--two"></div>
-			<p class="loading_num">11%</p>
+			<p class="loading_num">0%</p>
 		</div>
 
 		<div class="wrap" id="wrap">
@@ -181,6 +181,8 @@
 						'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
 					],
 					onloading: function(loaded, total) {
+						console.info(loaded);
+						console.log(total);
 						this.$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
 						if (loaded == total) {
 							this.$('.loading').style.display = "none"
