@@ -73,7 +73,7 @@
 					'http://zlbben.github.io/projects/oldpeople/slice/2x/voice_pause.png'
 				],
 				onloading: function(loaded, total) {
-					console.info(loaded+'/'+total);
+					console.info(loaded + '/' + total);
 					$('.loading_num')[0].innerHTML = Math.floor(loaded / total * 100) + '%';
 					if (loaded == total) {
 						console.warn('finish')
@@ -91,6 +91,18 @@
 						$(".zoulu_txt2").css('height', '0');
 					}
 					if (index === 1) {
+						//
+						setTimeout(function(){
+							$(".first_name").show();
+							$(".first_post").show();
+							$('.post').hide();
+							$('.post2').hide();
+							$('.first').removeClass('go');
+							$(".huojian").css({
+								bottom: '4rem'
+							})
+						},1000)
+						//
 						$("#icon_music").addClass('voice_play__open');
 						$(".slider").addClass('slider_open');
 						$(".star_txt--2").css('height', '0');
@@ -183,7 +195,7 @@
 					}
 				}
 			});
-			$(".first_post").click(function() {
+			$(".first_post").live('click', function() {
 				$(".first_name").fadeOut(700);
 				$(".first_post").fadeOut(700);
 				$('.post').fadeIn(1000);
@@ -192,10 +204,10 @@
 				$(".huojian").animate({
 					bottom: '4rem'
 				}, 1000)
-				setTimeout(function() {
-					$('.post').fadeIn(500);
-					$('.post2').fadeIn(500);
-				}, 2500)
+//				setTimeout(function() {
+//					$('.post').fadeIn(500);
+//					$('.post2').fadeIn(500);
+//				}, 2500)
 				setTimeout(function() {
 					myslider.next();
 				}, 2500);
@@ -234,14 +246,14 @@
 	</script>
 
 	<body class="bodybox">
-		
+
 		<div class="loading">
 			<div style="height: 0;width: 0;overflow: hidden;">
 				<img src="img/load_bg.jpg" alt="" />
 				<img src="img/load_card1.png" alt="" />
-				<img src="img/load_card2.png"/>
-				<img src="img/load_yx.png"/>
-				<img src="img/fuceng.png"/>
+				<img src="img/load_card2.png" />
+				<img src="img/load_yx.png" />
+				<img src="img/fuceng.png" />
 			</div>
 			<div class="load_yx"></div>
 			<div class="load_card--one"></div>
@@ -326,7 +338,7 @@
 		</div>
 
 		<!-- 分享蒙版 _S -->
-		<div class="mod_dialog">
+		<div class="mod_dialog" style="z-index: 500;">
 			<div class="dialog_mask">
 				<div class="dialog_mask__wechat_share">
 					<p class="txt">点此分享</p>
