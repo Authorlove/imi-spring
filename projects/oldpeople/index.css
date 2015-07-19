@@ -277,11 +277,11 @@ body {
   }
 }
 /*  ========== 以上为初始化样式,以下为自定义样式  ===========*/
-@media screen and (max-height: 480px) {
+@media screen and (max-height: 430px) {
   /*iphone4 ios 6 屏幕在Safari上 < 360，ios 7 8 屏幕在Safari上 < 375 */
   html,
   body {
-    font-size: 50%;
+    font-size: 55%;
   }
 }
 .loading {

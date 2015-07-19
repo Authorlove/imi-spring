@@ -206,6 +206,20 @@
 					}
 					if (index === 4) {
 						$(".slider").removeClass('slider_open');
+						$("#first_post").on('click', function() {
+							$(".first_name").fadeOut(700);
+							$("#first_post").fadeOut(700);
+							$('.post').fadeIn(1000);
+							$('.post2').fadeIn(1000);
+							$('.first').addClass('go');
+							$(".huojian").animate({
+								bottom: '4rem'
+							}, 1000)
+							setTimeout(function() {
+								myslider.next();
+							}, 2500);
+							$("#music")[0].play();
+						});
 					}
 				}
 			});
