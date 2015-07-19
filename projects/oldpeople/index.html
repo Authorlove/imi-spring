@@ -92,17 +92,31 @@
 					}
 					if (index === 1) {
 						//
-						setTimeout(function(){
-							$(".first_name").show();
-							$(".first_post").show();
-							$('.post').hide();
-							$('.post2').hide();
-							$('.first').removeClass('go');
-							$(".huojian").css({
-								bottom: '-33rem'
-							})
-						},1000)
-						//
+						$("#first_post").on('click', function() {
+							$(".first_name").fadeOut(700);
+							$("#first_post").fadeOut(700);
+							$('.post').fadeIn(1000);
+							$('.post2').fadeIn(1000);
+							$('.first').addClass('go');
+							$(".huojian").animate({
+								bottom: '4rem'
+							}, 1000)
+							setTimeout(function() {
+								myslider.next();
+							}, 2500);
+							$("#music")[0].play();
+						});
+						setTimeout(function() {
+								$(".first_name").show();
+								$(".first_post").show();
+								$('.post').hide();
+								$('.post2').hide();
+								$('.first').removeClass('go');
+								$(".huojian").css({
+									bottom: '-33rem'
+								})
+							}, 1000)
+							//
 						$("#icon_music").addClass('voice_play__open');
 						$(".slider").addClass('slider_open');
 						$(".star_txt--2").css('height', '0');
@@ -204,10 +218,6 @@
 				$(".huojian").animate({
 					bottom: '4rem'
 				}, 1000)
-//				setTimeout(function() {
-//					$('.post').fadeIn(500);
-//					$('.post2').fadeIn(500);
-//				}, 2500)
 				setTimeout(function() {
 					myslider.next();
 				}, 2500);
