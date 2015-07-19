@@ -295,6 +295,10 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.loading img {
+  height: 100%;
+  width: 100%;
+}
 .load_yx {
   width: 3.55rem;
   height: 4.5rem;
@@ -781,10 +785,10 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
-  top: 50%;
   left: 50%;
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
+  margin-left: -13.25rem;
+  top: 50%;
+  margin-top: -8.65rem;
 }
 .first_name {
   font-size: 1.7rem;
