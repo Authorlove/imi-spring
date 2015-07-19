@@ -910,7 +910,7 @@ body {
   -webkit-transform: translate3d(-50%, -50%, 0);
   z-index: 202;
 }
-.fuceng_close {
+.fuceng_close,.fuceng_close111{
   position: absolute;
   width: 2.6rem;
   height: 2.6rem;
