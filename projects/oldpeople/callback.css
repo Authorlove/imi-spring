@@ -248,6 +248,14 @@ body {
     transform: translate(-30px, 20px) rotate(-40deg);
   }
 }
+@keyframes faguang {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*  ========== 以上为初始化样式,以下为自定义样式  ===========*/
 .cal_bg {
   height: 100%;

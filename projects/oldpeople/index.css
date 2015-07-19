@@ -276,6 +276,22 @@ body {
     transform: translate(-30px, 20px) rotate(-40deg);
   }
 }
+@-webkit-keyframes faguang {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes faguang {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*  ========== 以上为初始化样式,以下为自定义样式  ===========*/
 @media screen and (max-height: 430px) {
   /*iphone4 ios 6 屏幕在Safari上 < 360，ios 7 8 屏幕在Safari上 < 375 */
@@ -863,7 +879,8 @@ body {
   bottom: 2rem;
   right: 2.2rem;
 }
-#hengpin {
+#hengpin,
+#h_mafeng {
   width: 100%;
   height: 100%;
   z-index: 200;
@@ -978,4 +995,37 @@ body {
 }
 .voice_play__open {
   display: block;
+}
+.mafeng_fuceng {
+  position: absolute;
+  width: 26.5rem;
+  height: 21rem;
+  background-image: url(img/mafeng.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  z-index: 202;
+}
+.fuceng_close {
+  position: absolute;
+  width: 2.6rem;
+  height: 2.6rem;
+  right: 0;
+  top: 0;
+}
+.btn_mafeng {
+  height: 2rem;
+  width: 2rem;
+  background-image: url(img/btn_mafeng.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 3rem;
+  top: 22rem;
+  -webkit-animation: faguang 2s ease-in-out infinite alternate;
+  animation: faguang 2s ease-in-out infinite alternate;
+  z-index: 100;
 }

@@ -15,7 +15,7 @@
 		<meta name="keywords" content="" />
 		<!--如果该页面只适合在手机上进行浏览，请添加以下代码-->
 		<meta name="applicable-device" content="mobile">
-		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="stylesheet" type="text/css" href="index.less" />
 	</head>
 	<script src="http://imgcache.gtimg.cn/music/h5/lib/js/module/iSlider-1.0.min.js?_bid=363&max_age=2592000"></script>
 	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
@@ -172,6 +172,9 @@
 						}, 2400))
 					}
 					if (index === 3) {
+						$(".btn_mafeng").on('click', function() {
+							$("#h_mafeng").show();
+						})
 						$(".slider").addClass('slider_open');
 						$(".star_txt--2").css('height', '0');
 						_timer.push(setTimeout(function() {
@@ -232,7 +235,7 @@
 					$("#icon_music").addClass('voice_pause');
 				}
 			})
-			$(".fuceng_close").live('click', function() {
+			$(".fuceng_close111").live('click', function() {
 				$("#hengpin").hide()
 			});
 			$(".last_post__left").live('click', function() {
@@ -252,6 +255,9 @@
 			$(".last_post__right").live('click', function() {
 				$(".mod_dialog").css('display', 'block');
 			})
+			$(".fuceng_close").on('click', function() {
+				$("#h_mafeng	").hide();
+			});
 		}
 	</script>
 
@@ -318,6 +324,7 @@
 					<div class="mafeng_txt3"><img src="img/s4_txt3.png" /></div>
 					<div class="mafeng_txt4"></div>
 					<div class="mafeng_bg"></div>
+					<a href="javascript:" class="btn_mafeng"></a>
 				</div>
 			</div>
 
@@ -338,12 +345,19 @@
 		<div id="hengpin">
 			<div class="maskhp"></div>
 			<div class="fuceng">
-				<a href="javascript:" class="fuceng_close"></a>
+				<a href="javascript:" class="fuceng_close111"></a>
 				<a href="callback.html" class="fuceng_a fuceng_a1"></a>
 				<a href="callback.html" class="fuceng_a fuceng_a2"></a>
 				<a href="callback.html" class="fuceng_a fuceng_a3"></a>
 				<input type="text" placeholder="输入金额" class="fuceng_input" value="" />
 				<a href="callback.html" class="fuceng_confirm">确认</a>
+			</div>
+		</div>
+
+		<div id="h_mafeng">
+			<div class="maskhp"></div>
+			<div class="mafeng_fuceng">
+				<a href="javascript:" class="fuceng_close"></a>
 			</div>
 		</div>
 

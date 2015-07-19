@@ -248,3 +248,11 @@ body {
     transform: translate(-30px, 20px) rotate(-40deg);
   }
 }
+@keyframes faguang {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
