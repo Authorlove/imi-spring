@@ -1,3 +1,15 @@
+2015.07.27更新-新增ani.less动画库
+================
+##增加一些简单的动画效果，此动画库无前缀，请配合[autoprefixer](https://github.com/postcss/autoprefixer)使用.
+>使用方法：
+>>.ani_flash;
+.xxx{animation: ani_flash 2s linear;}
+*以下八个动画支持填入参数改变距离，不填默认为正负20个像素。如: .ani_fadeInUp(30px);
+>ani_fadeInUp、ani_fadeInDown、ani_fadeInLeft、ani_fadeInRight、
+ani_fadeOutUp、ani_fadeOutDown、ani_fadeOutLeft、ani_fadeOutRight
+
+
+
 less的简要使用说明(具体请查看[这里](http://less.bootcss.com/))
 ================
 
