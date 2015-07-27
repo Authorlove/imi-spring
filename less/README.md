@@ -6,8 +6,8 @@
 .ani_flash;
 .xxx{animation: ani_flash 2s linear;}
 ```
-以下八个动画支持填入参数改变距离，不填默认为正负20个像素。如: .ani_fadeInUp(30px);\n
-ani_fadeInUp、ani_fadeInDown、ani_fadeInLeft、ani_fadeInRight、\n
+以下八个动画支持填入参数改变距离，不填默认为正负20个像素。如: .ani_fadeInUp(30px);<br />
+ani_fadeInUp、ani_fadeInDown、ani_fadeInLeft、ani_fadeInRight、<br />
 ani_fadeOutUp、ani_fadeOutDown、ani_fadeOutLeft、ani_fadeOutRight
 
 
