@@ -10,6 +10,62 @@
 ani_fadeInUp、ani_fadeInDown、ani_fadeInLeft、ani_fadeInRight、<br />
 ani_fadeOutUp、ani_fadeOutDown、ani_fadeOutLeft、ani_fadeOutRight
 
+    效果名     | 类名
+------------- | -------------
+闪光灯  | ani_flash
+弹起  | ani_bounce
+摇摆  | ani_shake
+秋千  | ani_tada
+swing | ani_swing
+脉冲  | ani_pulse
+x轴淡入 | ani_flipInX
+x轴淡出 | ani_flipOutX
+y轴淡入 | ani_flipInY
+y轴淡出 | ani_flipOutY
+淡入 | ani_danIn
+下方淡入 | ani_fadeInUp
+上方淡入 | ani_fadeInDown
+左边淡入 | ani_fadeInLeft
+右边淡入 | ani_fadeInRight
+页面底部淡入 | ani_fadeInUpBig
+页面底部淡入 | ani_fadeInDownBig
+页面左边淡入 | ani_fadeInLeftBig
+页面右边淡入 | ani_fadeInRightBig
+淡出 | ani_danOut
+向上淡出 | ani_fadeOutUp
+向下淡出 | ani_fadeOutDown
+向左淡出 | ani_fadeOutLeft
+向右淡出 | ani_fadeOutRight
+页面底部淡出 | ani_fadeOutUpBig
+页面底部淡出 | ani_fadeOutDownBig
+页面左边淡出 | ani_fadeOutLeftBig
+页面右边淡出 | ani_fadeOutRightBig
+弹跳进入 | ani_bounceIn
+页面顶部弹跳进入 | ani_bounceInDown
+页面底部弹跳进入 | ani_bounceInUp
+页面左边弹跳进入 | ani_bounceInLeft
+页面右边弹跳进入 | ani_bounceInRight
+弹跳退出 | ani_bounceOut
+页面底部弹跳退出 | ani_bounceOutDown
+页面顶部弹跳退出 | ani_bounceOutUp
+页面左边弹跳退出 | ani_bounceOutLeft
+页面右边弹跳退出 | ani_bounceOutRight
+旋转进入 | ani_rotateIn
+左上边旋转进入 | ani_rotateInDownLeft
+右上边旋转进入 | ani_rotateInDownRight
+右下边旋转进入 | ani_rotateInUpLeft
+左下边旋转进入 | ani_rotateInUpRight
+旋转退出 | ani_rotateOut
+右下边旋转退出 | ani_rotateOutDownLeft
+左下边旋转退出 | ani_rotateOutDownRight
+左上边旋转退出 | ani_rotateOutUpLeft
+右上边旋转退出 | ani_rotateOutUpRight
+左边滚动进入 | ani_rollIn
+右边滚动进入 | ani_rollOut
+旋转 | ani_rotate
+
+
+
 
 
 less的简要使用说明(具体请查看[这里](http://less.bootcss.com/))
