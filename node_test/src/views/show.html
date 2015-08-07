@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CGZ电影评论系统-讨论区-侏罗纪世界</title>
+		<link rel="stylesheet" type="text/css" href="/css/discuss.css">
+	</head>
+	<body>
+		<div class="head">
+			<ul class="m-nav">
+	  			<li><a href="/">首页</a></li>
+	  			<li class="cur"><a href="#">讨论区</a></li>
+	  			<li><a href="#">推荐</a></li>
+	  			<li><a href="#">我的收藏</a></li>
+	  			<li><a href="#">更多</a></li>
+			</ul> 
+		</div>	
+		<div class="body_head" style="background:url(/<%=movie.pic_path %>) no-repeat;background-size: 1200px 500px;">
+			<div class="film_img" style="background:url(/<%=movie.pic_path %>);"> </div>
+		</div>	
+		<div class="body_content">
+			<div class="side">
+				<div class="side_head">
+					<pre><span class="a">热门</span>电影         <a href="#"><span class="b">更多></span></a></pre>
+				</div>
+				<div class="side_content">
+					<div id="film_1">
+						<div class="_film_num">Top 1</div>
+						<a href="#"><div class="_film_pic" style="background:url(/img/Fast&Furious7.png);"></div></a>
+						<p class="_film_name">速度与激情7/<span class="_film_score">评分:8.3分</span></p>
+					</div>
+					<div id="film_2">
+						<div class="_film_num">Top 2</div>
+						<a href="#"><div class="_film_pic" style="background: url(/img/BeginAgain2.png);"></div></a>
+						<p class="_film_name">再次出发/<span class="_film_score">评分:8.0分</span></p>
+					</div>
+					<div id="film_3">
+						<div class="_film_num">Top 3</div>
+						<a href="#"><div class="_film_pic" style="background: url(/img/jurassicword2.png);"></div></a>
+						<p class="_film_name">侏罗纪世界/<span class="_film_score">评分:7.6分</span></p>
+					</div>
+					<div id="film_4">
+						<div class="_film_num">Top 4</div>
+						<a href="#"><div class="_film_pic" style="background: url(/img/Insurgent2.png);"></div></a>
+						<p class="_film_name">分歧者2：绝地反击/<span class="_film_score">评分:7.0分</span></p>
+					</div>
+					
+				</div>
+			</div>
+			<div class="main">
+				<div class="pic_loc">
+					<div class="pic" style="background: url(/<%=movie.pic_path %>);" title="侏罗纪世界/Jurassic World(2015)"></div>
+					<p class="pic_name"><%=movie.name %></p>
+					<input class="share"  type="submit" value="分享"/>
+					<input class="collect" name="collect" type="submit" value="收藏"/>
+					<!--<div class="video">
+						<video controls="controls" poster="./res/JurassicWorld.jpg"  width="200px" height="130px">
+   						<source src="./res/JurassicWorld.flv" type="video/mp4">
+    					<track kind="subtitles" src="./res/video.vtt" srclang="cn" label="cn">
+    					Your browser does not support the video tag.
+  						</video>
+					</div>
+					<p>预告片</p>-->
+				</div>
+				<div class="film_name_img"><p><%=movie.name %></p></div>
+				<div class="w_a"><pre class="writer_autor">导演:<span><%=movie.doctor %></span>             主演:<span><%=movie.bitch %></span>
+    信息:<span><%=movie.location %></span>
+				</pre></div>
+				<div class="synopsis">
+					<p class="synopsis_pic">简介:</p>
+					<p class="synopsis_write"><%=movie.info %></p>				
+				</div>
+				<!--<div class="film">
+					<p class="film_pic_head">剧照:</p>
+					<div class="film_pic">
+						<ul class="film_nav">
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld1.jpg"></a></li>
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld2.jpg"></a></li>
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld3.jpg"></a></li>
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld4.jpg"></a></li>
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld1.jpg"></a></li>
+	  						<li><a href="javascript:" target="_blank"><img src="/img/JurassicWorld2.jpg"></a></li>
+						</ul> 
+					</div>
+				</div>-->
+				<div class="video">
+					<embed src="<%=movie.href %>" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+				</div>
+				<div class="discuss">
+					<div class="discuss_head">讨论区:</div>
+					<div class="discuss_user">
+						<div id="user">
+							<div class="user_pic"><a href="#" title="匿名"><img src="/img/user_pic.png"/></a></div>
+							<p class="user_name">匿名</p>
+						</div>
+						<div class="message">
+							<textarea class="_message" id="tweetBox" style="background-color: rgb(255, 255, 255);">对影片的简短评论</textarea>
+							<div class="fr">
+								<span class="_put" >
+								<span>最多输入</span><strong>210</strong>字</span>
+								<a id="tweetButtonDown" onclick="" href="#">发表</a>
+							</div>						
+						</div>
+
+					</div>
+					<div class="other_user">
+						<p class="ou_head">网友评论</p>
+						<div id="ou_1">
+							<div class="floor"><p>Top</p><p class="number">1</p></div>
+							<div class="ou">
+								<div class="ou_pic"><img src="/img/user_pic.png"/></div>
+								<p class="ou_name">网友</p>
+							</div>
+							<p class="ou_message">在金华看得imx3d，效果是真心赞。场面宏大，效果逼真，剧情也挺感人的，而且不会过于恐怖最后也是个大团圆的美好结局。这样好的片子，你们还要再要求什么呢</p>
+						</div>
+						<div id="ou_2">
+							<div class="floor"><p>Top</p><p class="number">2</p></div>
+							<div class="ou">
+								<div class="ou_pic"><img src="/img/user_pic.png"/></div>
+								<p class="ou_name">网友</p>
+							</div>
+							<p class="ou_message">在金华看得imx3d，效果是真心赞。场面宏大，效果逼真，剧情也挺感人的，而且不会过于恐怖最后也是个大团圆的美好结局。这样好的片子，你们还要再要求什么呢</p>
+						</div>
+						<div id="ou_3">
+							<div class="floor"><p>Top</p><p class="number">3</p></div>
+							<div class="ou">
+								<div class="ou_pic"><img src="/img/user_pic.png"/></div>
+								<p class="ou_name">网友</p>
+							</div>
+							<p class="ou_message">在金华看得imx3d，效果是真心赞。场面宏大，效果逼真，剧情也挺感人的，而且不会过于恐怖最后也是个大团圆的美好结局。这样好的片子，你们还要再要求什么呢</p>
+						</div>
+						<div class="check"><a href="#">查看更多</a></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="foot">
+			<div class="foot_head"></div>
+			<!--<pre class="st1"><span class="st_name">陈清</span> <span class="st_num">学号:</span>201230760201</pre>
+			<pre class="st2"><span class="st_name">古雄洪</span>    <span class="st_num">学号:</span>201230760205</pre>
+			<pre class="st3"><span class="st_name">张力本</span>    <span class="st_num">学号:</span>201230760222</pre>-->
+		</div>
+	</body>
+</html>

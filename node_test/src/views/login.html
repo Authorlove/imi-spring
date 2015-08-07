@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>movie-login</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/login_v2.css" />
+<!--[if IE 6]><script>try{document.execCommand("BackgroundImageCache", false, true);}catch(e){}</script><![endif]-->
+</head>
+
+<body>
+<!--头部-->
+<div class="header">
+<h1><a href="javascript:;"></a></h1>
+</div>
+<!--主体-->
+<div class="mod_main">
+    <div class="decorate_pic"><img src="img/login_bg.jpg" width="518" height="310" alt="音乐你的生活" /></div>
+    
+    <!--登录区域 S-->
+    <div class="mod_login">
+        <div class="login_box" id="login_div">
+            <form action="/send/login" method="post" enctype="multipart/form-data">
+            		账号<input type="text" id="zhanghao" value="" placeholder="账号" name="username"/>
+            		<br />
+            		密码<input type="password" name="password" placeholder="密码"/>
+            		<br />
+            		<input type="submit" value="登录" id="login"/>
+            </form>
+           <a href="/register">注册</a>
+        </div>
+        <!--提示注册账号-->
+    </div>
+    <!--登录区域 E-->
+</div>
+<!--底部-->
+<script type="text/javascript">
+	var username = document.getElementById('zhanghao');
+	var login = document.getElementById('login');
+	login.addEventListener('click',function(e){
+		if(!username.value){
+			alert('请输入账号');
+			e.preventDefault();
+		}
+	})
+</script>
+</body>
+</html>

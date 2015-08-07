@@ -1,0 +1,80 @@
+html, body{margin: 0;height: 2250px;width:1350px;}
+body{display: flex;flex-flow: column;text-decoration: none;background: rgb(171,199,212);font-family: "微软雅黑";}
+a{text-decoration:none;color: black;}
+a:hover{color: red;}
+a:visited{color: black;}
+li{list-style: none;}
+.head{height: 70px;line-height: 70px;color: #fff;background: url(../img/head.jpg) repeat;background-size: 100% 70px;text-align: center;}
+.body_content{position:relative;width:1000px;align-self:center;flex: 1;display: flex;background-color:white;border-radius: 10px;box-shadow: 4px 4px 3px 0px black;}
+.side{width: 200px;background-color: white;box-shadow: 4px 0px 3px 0px black,-4px 0px 4px 0px black;}
+.main{flex: 1;background-color: white;width: 800px;margin-left: 7px;}
+.body_head{width: 1200px;height:500px;align-self: center;margin-bottom:-65px;background-color: red;background-size: 1200px 500px;}
+.film_img{width:1000px;height: 300px;margin-top:120px;margin-left:94px;background-color: lightcyan;border-radius: 10px;border: 5px solid rgba(169,169,169,0.2);box-shadow: 4px 8px 3px 0px black,-2px 8px black;opacity: 0.7;}
+
+.m-nav{text-align: center;height: 45px;line-height: 45px;margin-top: 0px;}
+.m-nav li, .m-nav a{display: inline-block;width: 80px;height: 100%;}
+.m-nav li{margin: 0 5px;list-style: none;}
+.m-nav a, .m-nav a:hover, .m-nav li.cur a{color: #cccccc;text-decoration: none;margin: 0px;}
+.m-nav a:hover,li.cur a{background:url(../img/nav.jpg)  no-repeat;background-size: 80px 46px;}
+
+
+.film_name_img{position:relative;top:5px;left:20px;width:250px;height:40px;color: white;text-indent:1em;line-height:40px;font-family: "微软雅黑";background-color:rgb(103,157,33);border-radius: 10px 50% 50% 10px;}
+
+.pic_loc{position:absolute;top:-150px;right:40px;text-align: center;font-family: "微软雅黑";color: rgb(50,50,50);font-size: 20px;}
+.score{font-weight: 700;font-size:25px ;}
+.pic_name{margin-top: 10px;margin-bottom: 10px;;}
+.pic{width: 184px;height: 278px;border:5px solid white;box-shadow: 2px 6px 3px 0px black;}
+.share{width: 70px;height: 20px;}
+.collect{width: 70px;height: 20px;}
+/*.video{position: relative;width:210px;top:20px;padding:0px;border:3px solid rgba(50,50,50,0.7);box-sizing:border-box;border-radius: 10px;}
+*/
+.w_a{line-height: 23px;border-bottom: solid;width: 550px;height: 46px;}
+.writer_autor{text-indent: 2em;font-family: "黑体";font-size: 15px;}
+
+.synopsis {position:relative;top:5px;font-family:"黑体";text-indent: 2em;font-size:15px;border-bottom: solid;}
+.synopsis_pic{position:relative;left:20px;text-indent: 0em;font-size:17px;font-family: "微软雅黑";line-height: 0px;}
+.synopsis_write{position:relative;left:20px;width: 500px;margin-top: 0px;}
+
+.film{border-bottom: solid;}
+.film_pic_head{position:relative;top:5px;left:20px;width: 537px;font-family: "微软雅黑";font-size:18px;line-height: 0px;}
+.film_pic{position:relative;top:10px;height: 130px;}
+.film_nav{position:relative;left: -20px;}
+.film_nav li, .film_nav a{list-style: none;display:inline;height: 150px;padding: 0px;}
+.film_pic img{width: 120px;height: 100px;border-radius: 10px;}
+
+.video{width:480px;height: 400px;background: red;}
+
+
+
+.discuss{position:relative;top:10px;width:780px;height:759px;background: rgb(18,123,171);border-right: 3px solid black;border-top: 3px solid black;border-radius:10px 10px 0px 0px /10px 10px 0px 0px;box-shadow: 2px -2px 3px 0px black;}
+.discuss_head{background: url(../img/discuss_head.png) no-repeat 50px 0px;height: 50px;text-indent: 1em;font-family: "黑体";font-size:25px;line-height: 50px;color: white;}
+.discuss_user{position:relative;left:50px;background: rgb(10,73,102);width: 680px;height: 150px;border-radius: 10px 10px 0px 0px/10px 10px 0px 0px;}
+#user{position:relative;top:30px;text-align: center;font-family: "微软雅黑";color:white;width: 100px;}
+.message{position: relative;top:-85px;left: 120px;;}
+._message{width: 500px;height: 70px;}
+.fr{position: relative;left: 340px;top:5px;}
+._put{color: white;font-size: 15px;}
+#tweetButtonDown{color:white;font-family:"微软雅黑";font-size:15px;display:inline-block;text-align:center;text-decoration: none;background: rgb(0,129,188);width:50px;height:25px;border-radius: 5px;}
+#tweetButtonDown:hover{background: rgb(0,109,158);}
+.other_user{position: relative;left:50px;top:5px;background: white;width: 680px;height:548px;box-shadow: inset 3px 3px 3px 0px black,inset -3px 3px 3px 0px black;border-top:5px solid rgb(18,123,171) ;}
+.ou_head{position:relative;margin-bottom:5px;top:-12px;left:3px;background: gray;color: white;text-align: center;width:100px;height: 30px;line-height: 30px;font-family: "微软雅黑";border-radius: 0px 0px 10px 0px /0px 0px 10px 0px;}
+#ou_1,#ou_2,#ou_3{position:relative;left:4px;width: 673px;height: 150px;border-bottom: 1px solid darkgray;}
+.floor{position:absolute;top:20px;background: rgb(255,150,0);width: 70px;height: 120px;color: white;text-align:right;font-family: "微软雅黑";font-size: 17px;}
+.number{font-size: 25px;}
+.floor>p{margin: 20px;}
+.ou{position: relative;top: 20px;left:100px;color: darkgray;font-family: "微软雅黑";text-align: center;border-right: 1px solid darkgray;width: 100px;height: 120px;}
+.ou_message{position:relative;top:-110px;left:210px;width:450px;height: 120px;font-family: "微软雅黑";}
+.check{position: relative;text-align: right;width: 650px;text-decoration: none;height: 40px;line-height: 40px;}
+
+.side_head{position: relative;width:180px;left: 10px;font-size: 17px;font-family: "黑体";border-bottom: 2px solid black;}
+.a{color: red;font-weight: bold;}
+.b{font-size: 10px;}
+
+.side_content>div{position:relative;top:1px;left:25px;width: 150px;height: 365px;background: white;border-bottom: 2px solid black;}
+._film_num{background: url(../img/focus.jpg) -5px 0px;width: 150px;height: 66px;text-align: center;color: red;font-size: 20px;font-weight: bold;}
+._film_pic{width: 150px;height: 223px;border-radius: 10px;box-shadow: 3px 3px 3px 0px black;}
+._film_name{color: rgb(50,50,50);width: 180px;}
+._film_score{font-weight:bold;font-size: 20px;}
+
+.foot{position:relative;top:5px;height: 100px;line-height: 70px;background-color:white;}
+.foot_head{background: url(../img/foot_head.png);width: 100%;height: 10px;}

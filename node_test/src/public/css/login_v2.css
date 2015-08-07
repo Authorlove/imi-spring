@@ -1,0 +1,46 @@
+/* CSS Document */
+/*===========================================
+		作者:huihuixiao
+		日期:2012.02.14
+		作用:独立登录页样式
+===========================================*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, lengend, button, input, textarea, th, td { margin: 0; padding: 0; }
+body, button, input, select, textarea,th { color:#8B8B8B;/*background-color:#FFFFFF;*/font-size:12px;line-height:1.5em;font-family:Arial,Tahoma,"hiragino sans gb",Helvetica; } /* \5b8b\4f53 是 宋体*/
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+li { list-style:none; }
+img{ border:0 none; -ms-interpolation-mode:bicubic; }
+fieldset,iframe{border:none;}
+input[type="button"],input[type='submit']{cursor:pointer;}
+button{cursor:pointer;}
+table { border-collapse:collapse; border-spacing:0; }
+a {color:#515151;text-decoration:none;}
+a:hover {color:#333333;}
+em,i{font-style:normal;font-weight:normal;}
+/*q:before, q:after{content:'';}*/
+.data{display:none;}
+/**滚动条**/
+::-webkit-scrollbar{width:12px;height:12px;}
+::-webkit-scrollbar-button:vertical{display:none;}
+::-webkit-scrollbar-track:vertical{background-color:black;}
+::-webkit-scrollbar-track-piece{background:#FFFFFF;}
+::-webkit-scrollbar-thumb:vertical{background-color:#8E8E8E;border-radius:5px;}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#3B3B3B;}
+::-webkit-scrollbar-corner:vertical{background-color:#535353;}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00;}
+
+.header{width:960px;height:112px;margin:20px auto 5px;position:relative;}
+.header h1{float:left;width:185px;height:58px;margin-top:28px;background:url(../img/login_logo.jpg) no-repeat 0 0;background-size: 100% 100%;}
+.header h1 a{display:block;width:100%;height:58px;text-indent:-9999px;}
+.header h1 span{display:none;}
+.mini_nav{float:right;color:#666;margin-top:56px;}
+.mini_nav a{color:#666;margin:0 5px;}
+.mini_nav a:hover{color:#444;}
+.mod_main{width:960px;margin:0 auto;overflow:hidden;padding-bottom:70px;}
+.decorate_pic{float:left;}
+.mod_login{float:right;width:426px;height:324px;}
+
+.foot{text-align:center;line-height:24px;margin:30px auto 10px;padding-top:10px;border-top:1px solid #DDDDDD;color:#515151;}
+
+@media only screen and (-webkit-min-device-pixel-ratio:1.5){
+    .header h1{background-image:url(../img/login_logo.jpg);background-size:1000px 200px;background-size: 100% 100%;}
+}
