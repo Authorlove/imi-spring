@@ -196,14 +196,15 @@ var MobileAnima = function() {
 			//横屏or竖屏
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)";
+				csstrans[_css3pre + "transform"] = _css3pre + "translate3d(" + translate + "px,0,0)";
 				//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)";
+				csstrans[_css3pre + "transform"] = _css3pre + "translate3d(0," + translate + "px,0)";
 				//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
 			$containerDiv.css(csstrans);
+			alert(csstrans[_css3pre + "transform"])
 			_isScrolling = true;
 			if (_options.isReplay) {
 				$(_stagesEles[_curStageIndex - 1]).each(function(index, item) {
@@ -244,11 +245,11 @@ var MobileAnima = function() {
 			var translate = 0;
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)";
+				csstrans[_css3pre + "transform"] = "translate3d(" + translate + "px,0,0)";
 				//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)";
+				csstrans[_css3pre + "transform"] = "translate3d(0," + translate + "px,0)";
 				//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
 			$containerDiv.css(csstrans);
@@ -286,11 +287,11 @@ var MobileAnima = function() {
 			var translate = 0;
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * stageIndex;
-				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)"
+				csstrans[_css3pre + "transform"] = "translate3d(" + translate + "px,0,0)"
 					//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * stageIndex;
-				csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)"
+				csstrans[_css3pre + "transform"] = "translate3d(0," + translate + "px,0)"
 					//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
 			$containerDiv.css(csstrans);
