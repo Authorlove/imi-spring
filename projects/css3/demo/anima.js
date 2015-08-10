@@ -6,7 +6,7 @@ var MobileAnima = function() {
 		$warper, $containerDiv, $stages,
 		_ua = navigator.userAgent.toLowerCase(),
 		_css3pre = '',
-		isScrolling = false,
+		_isScrolling = false,
 		_count = 0,
 		_curStageIndex = 0,
 		_stagesEles = {},
@@ -175,8 +175,8 @@ var MobileAnima = function() {
 		}
 	}
 
-	function _scorllNext() {
-		if (!_options.isAutoToNextStage) {
+	function _scrollNext(isHand) {
+		if (!_options.isAutoToNextStage && !isHand) {
 			_options.swipeCallback({
 				curStageIndex: _curStageIndex,
 				swipeTo: 1
@@ -193,6 +193,7 @@ var MobileAnima = function() {
 				$stages.eq(_curStageIndex).addClass("inited")
 			}
 			var translate = 0;
+			//横屏or竖屏
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * _curStageIndex;
 				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)";
@@ -204,16 +205,16 @@ var MobileAnima = function() {
 			}
 			$containerDiv.css(csstrans);
 			_isScrolling = true;
-			if (typeof _stagesEles[_curStageIndex] != undefined && _stagesEles[_curStageIndex].length > 0) {
-				if (_options.isReplay) {
-					$(_stagesEles[_curStageIndex - 1]).each(function(index, item) {
-						item.reset();
-					})
-				}
-				$(_stagesEles[_curStageIndex]).each(function(index, item) {
-					item.play();
+			if (_options.isReplay) {
+				$(_stagesEles[_curStageIndex - 1]).each(function(index, item) {
+					item.reset();
 				})
 			}
+			$(_stagesEles[_curStageIndex]).each(function(index, item) {
+				setTimeout(function() {
+					item.play();
+				}, _options.duration);
+			})
 			var st = setTimeout(function() {
 				_isScrolling = false;
 			}, _duration);
@@ -226,8 +227,8 @@ var MobileAnima = function() {
 		}
 	}
 
-	function _scorllBack() {
-		if (!_options.isAutoToNextStage) {
+	function _scorllBack(isHand) {
+		if (!_options.isAutoToNextStage && !isHand) {
 			_options.swipeCallback({
 				curStageIndex: _curStageIndex,
 				swipeTo: -1
@@ -257,7 +258,9 @@ var MobileAnima = function() {
 					item.reset();
 				})
 				$(_stagesEles[_curStageIndex]).each(function(index, item) {
-					item.play(true);
+					setTimeout(function() {
+						item.play(true);
+					}, _options.duration);
 				})
 			}
 			var st = setTimeout(function() {
@@ -298,7 +301,9 @@ var MobileAnima = function() {
 				})
 			}
 			$(_stagesEles[stageIndex]).each(function(index, item) {
-				item.play(isBack);
+				setTimeout(function() {
+					item.play(isBack);
+				}, _options.duration);
 			})
 			_curStageIndex = stageIndex;
 			var st = setTimeout(function() {
@@ -325,7 +330,7 @@ var MobileAnima = function() {
 			x: 0,
 			y: 0,
 			time: undefined
-		}
+		},
 
 		handleEvent: function(event) {
 			switch (event.type) {
@@ -348,7 +353,6 @@ var MobileAnima = function() {
 				y: touches.pageY,
 				time: +new Date
 			}
-
 		},
 
 		move: function(event) {
@@ -358,20 +362,20 @@ var MobileAnima = function() {
 			event.preventDefault();
 			var touches = event.touches[0];
 			this.endP.x = touches.pageX - this.startP.x;
-			this.endP.x = touches.pageY - this.startP.y;
+			this.endP.y = touches.pageY - this.startP.y;
+			//console.log(this.endP.y)
 		},
 
 		end: function(event) {
 			var click_time = this.endP.time - this.startP.time;
 			var isChgX, isChgY;
 			if (click_time > 800) {
-				isChgX = Math.abs(this.endP.x) > $containerDiv.width() / 4;
-				isChgY = Math.abs(this.endP.y) > $containerDiv.height() / 4;
+				isChgX = Math.abs(this.endP.x) > $warper.width() / 4;
+				isChgY = Math.abs(this.endP.y) > $warper.height() / 4;
 			} else {
 				isChgX = Math.abs(this.endP.x) > 50;
 				isChgY = Math.abs(this.endP.y) > 50;
 			}
-
 			if (isChgX && isChgY) {
 				if (Math.abs(this.endP.x) > Math.abs(this.endP.y)) {
 					isChgY = false;
@@ -379,13 +383,12 @@ var MobileAnima = function() {
 					isChgX = false;
 				}
 			}
-
 			if (isChgX) {
 				if (_options.isHorizontal) {
-					if (delta.x < 0) { //向左
-						_scorllNext();
+					if (this.endP.x < 0) { //向右
+						_scrollNext();
 
-					} else { //向右
+					} else { //向左
 						_scorllBack();
 					}
 				}
@@ -395,9 +398,9 @@ var MobileAnima = function() {
 				return;
 			}
 			if (isChgY) {
-				if (delta.y < 0) { //向上
-					_scorllNext();
-				} else { //向下
+				if (this.endP.y < 0) { //向下
+					_scrollNext();
+				} else { //向上
 					_scorllBack();
 				}
 			}
@@ -417,28 +420,150 @@ var MobileAnima = function() {
 			_resize(e);
 		}, false)
 	}
-	
-	
-	
 
-	function _onorientationchange(event) {
 
+
+
+	function _onorientationchange(e) {
+		if (window.orientation == 90 || window.orientation == -90) {
+			$("#forhorview").css("display", "-webkit-box");
+			$("#content").css({
+				"height": $(window).height(),
+				"width": $(window).height() * 2 / 3,
+				"margin": "auto"
+			});
+			$stages.css({
+				"height": "480px"
+			})
+		} else {
+			$("#content").css({
+				"width": "auto",
+				"margin": "auto",
+				"height": "100%"
+			});
+			$stages.css({
+				"height": $("#content")[0].offsetHeight
+			})
+			$("#forhorview").css("display", "none");
+		}
+		_resize(e);
 	}
 
 	function _resize(event) {
-
+		if (window.orientation == 90 || window.orientation == -90) {
+			return;
+		}
+		if (_options.isHorizontal) {
+			$containerDiv.css("width", $(window).width() * _count);
+			$stages.css({
+				"width": $(window).width()
+			});
+			var left = 0 - $containerDiv[0].offsetWidth / _count * _curStageIndex;
+			var csstrans = {};
+			csstrans[_css3pre + "transform"] = "translate(" + left + "px,0)";
+			$containerDiv.css(csstrans);
+		} else {
+			$containerDiv.css("height", $(window).height() * _count);
+			$stages.css({
+				"height": $(window).height()
+			});
+			var top = 0 - $containerDiv[0].offsetHeight / _count * _curStageIndex;
+			var csstrans = {};
+			csstrans[_css3pre + "transform"] = "translate(0," + top + "px)";
+			$containerDiv.css(csstrans);
+		}
 	}
 
 
 
-	function _preLoadImages(callback){
-		
+	function _preLoadImages(callback) {
+		var loadedCount = 0;
+
+		function preLoadImg(imgurl) {
+			var img = new Image();
+			img.onload = function() {
+				loadedCount++
+				if (loadedCount == _imglist.length) {
+					callback();
+				}
+			}
+			img.src = imgurl;
+		}
+
+		if (_imglist.length > 0) {
+			$(_imglist).each(function(index, imgurl) {
+				preLoadImg(imgurl);
+			})
+
+		} else {
+			callback();
+		}
 	}
 
+	function _createTopic(options) {
 
+		_options = $.extend({
+			warper: "",
+			containerDiv: "",
+			stages: "",
+			duration: 800,
+			stageBgs: [],
+			isHorizontal: false,
+			isAutoToNextStage: true,
+			swipeCallback: function(param) {},
+			initedCallback: function() {
 
-	function _init(){
-	
+			}
+		}, options || {});
+		$warper = $(_options.warper);
+		$containerDiv = $(_options.containerDiv),
+			$stages = $containerDiv.find(_options.stages);
+		_duration = _options.duration;
+		_count = $stages.length;
+		$containerDiv.css(_css3pre + "transition", _css3pre + "transform " + _options.duration + "ms ease-in-out");
+		if (_options.isHorizontal) {
+			$containerDiv.css("width", $("#content")[0].offsetWidth * _count);
+			$stages.css({
+				"width": $("#content")[0].offsetWidth,
+				"float": "left"
+			});
+		} else {
+			$containerDiv.css("height", $("#content")[0].offsetHeight * _count);
+		}
+		$stages.css("height", $("#content")[0].offsetHeight);
+		$stages.each(function(index, item) {
+			_stagesEles[index] = [];
+		})
+		if (_options.stageBgs.length > 0) {
+			$(_options.stageBgs).each(function(index, item) {
+				_imglist.push(item);
+			})
+		}
+		//$stages.eq(0).addClass("inited");
+	}
+
+	function _init() {
+		if (window.orientation == 90 || window.orientation == -90) {
+			$("#forhorview").css("display", _css3pre + "box");
+		}
+		var stageBgs = _options.stageBgs;
+		_preLoadImages(function() {
+			$stages.each(function(index, item) {
+				if (stageBgs.length > index && stageBgs[index] != "") {
+					$(item).css({
+						"background-image": "url(" + stageBgs[index] + ")"
+					});
+				}
+			})
+			$("#loading").hide();
+			//if(this.options.isAutoToNextStage){
+			_scrollTo(0)
+				//}
+		})
+		_addEvent();
+		if (typeof _options.initedCallback == "function") {
+			_options.initedCallback();
+		}
 	}
 
 
@@ -457,13 +582,18 @@ var MobileAnima = function() {
 		init: function() {
 			_init();
 		},
+		getAinmateEles: function() {
+			return _stagesEles;
+		},
 		scorllTo: function(stageIndex) {
 			_scrollTo(stageIndex);
 		},
-		getAinmateEles: function() {
-			return _stagesEles;
+		next: function() {
+			_scrollNext(true);
+		},
+		back: function() {
+			_scorllBack(true);
 		}
-
 	}
 
 
