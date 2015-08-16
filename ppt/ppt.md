@@ -238,25 +238,59 @@ transform:translate3d(0,10px,0);
 
 
 [slide style="background-color:#1f3f4f"]
+## 以前默认的设计稿宽度是640px的
+## 最近偶尔会收到宽度为750px的设计稿
+## 考虑到大屏手机的普及，以后750的设计稿可能会越来越多
+## 计算出了750设计稿的响应式媒体查询表
+<div><img src="/img/750.png""/></div>
+
+[slide style="background-color:#1f3f4f"]
 <div class="big huiyi">
-	<img src="/img/huiyi.png""/>
+	<img src="/img/huiyi.png"/>
 </div>
 ## 在两次小组分享会上做了分享
 
 
+[slide style="background-color:#1f3f4f"]
+#不愿止步 {:.fonts}
+
+[slide style="background-color:#1f3f4f"]
+## 实现了一个滑动框架的 1.0 版本
+https://github.com/zlbben/zlbben.github.io/tree/master/projects/css3
+
+[slide style="background-color:#1f3f4f"]
+## 尝试用比较火的nodejs做了一个简单的电影管理系统的后台
+https://github.com/zlbben/zlbben.github.io/tree/master/node_test
+
+[slide style="background-color:#1f3f4f"]
+#收获 {:.fonts}
+
+[slide style="background-color:#1f3f4f"]
+* 专业知识 {:&.fadeIn.fonts}
+* 主动性
+* 极致 
+
+[slide style="background-color:#1f3f4f"]
+#感恩 {:.fonts}
+
+[slide style="background-color:#1f3f4f"]
+<div class="fadeIn">
+	<div class="joimg big">
+		<img src="/img/1.jpg" style="height: 200px;"/>
+		<img src="/img/2.jpg" style="height: 200px;"/>
+		<img src="/img/3.jpg" style="height: 200px;"/>
+	</div>
+	<div class="joimg big">
+		<img src="/img/4.jpg" style="height: 200px;"/>
+		<img src="/img/5.jpg" style="height: 200px;"/>
+		<img src="/img/6.jpg" style="height: 200px;"/>
+	</div>
+	<p>在职期间，感谢leader、导师和同志们的指导和照顾</p>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+[slide style="background-color:#1f3f4f"]
+# 谢谢观看 {:.fonts}
 
 
 
