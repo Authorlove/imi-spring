@@ -68,7 +68,7 @@ files: /css/index.css,/js/index.js
 		<img src="/img/jo5.png"/>
 		<img src="/img/jo6.png"/>
 
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f" data-incallback="mv1" data-outcallback="mv1_end"]
 <div class="joimg">
 <video width="500" height="" src="/video/card.mp4" loop="loop" class=".mvst"></video>
 <video width="500" height="" src="/video/classroom.mp4" loop="loop" class=".mvst"></video>
@@ -83,13 +83,13 @@ files: /css/index.css,/js/index.js
 	* 在职期间开发超过**5**个游戏移动官网全站,**20+**个专题活动页 {:&.fadeIn}
 	* 学到了开发流程、规范和很多移动端的知识
 
-[slide style="background-color:#1f3f4f"]
-<div class="joimg">
+[slide style="background-color:#1f3f4f" data-incallback="mv2" data-outcallback="mv2_end"]
+<div class="joimg" data-incallback="mv2" data-outcallback="mv2_end">
 	<video width="400" src="/video/ltzs.mp4" loop="loop"></video>
 	<img src="/img/testimg.png"/>
 </div>
 
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f" data-incallback="mv3" data-outcallback="mv3_end"]
 <div class="joimg">
 	<video width="1200" src="/video/hudong.mp4" loop="loop"></video>
 </div>
@@ -115,12 +115,12 @@ files: /css/index.css,/js/index.js
 ##部分截图 {:.big}
 <img src="/img/txxq.png"/>
 
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f" data-incallback="mv4" data-outcallback="mv4_end"]
 <div class="joimg">
 	<video width="800" src="/video/lv.mkv" loop="loop"></video>
 	<video width="800" src="/video/lv2.mkv" loop="loop"></video>
 </div>
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f" data-incallback="mv5" data-outcallback="mv5_end"]
 <div class="joimg">
 	<video width="500" src="/video/qixi.mkv" loop="loop"></video>
 </div>
@@ -268,7 +268,7 @@ https://github.com/zlbben/zlbben.github.io/tree/master/node_test
 [slide style="background-color:#1f3f4f"]
 * 专业知识 {:&.fadeIn.fonts}
 * 主动性
-* 极致 
+* 追求极致 
 
 [slide style="background-color:#1f3f4f"]
 #感恩 {:.fonts}
@@ -285,11 +285,11 @@ https://github.com/zlbben/zlbben.github.io/tree/master/node_test
 		<img src="/img/5.jpg" style="height: 200px;"/>
 		<img src="/img/6.jpg" style="height: 200px;"/>
 	</div>
-	<p>在职期间，感谢leader、导师和同志们的指导和照顾</p>
+	<p>在职期间，感谢leader、导师和同事们的指导和照顾</p>
 </div>
 
 
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f" data-incallback="aaa"]
 # 谢谢观看 {:.fonts}
 
 
