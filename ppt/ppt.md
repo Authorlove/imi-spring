@@ -181,14 +181,67 @@ files: /css/index.css,/js/index.js
 # 做了一个基本css库和一个less动画库，方便大家调用
 
 [slide style="background-color:#1f3f4f"]
+```css
+@-webkit-keyframes myfirst {
+	from {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-moz-keyframes myfirst {
+	from {
+		-moz-transform: rotate(0);
+		transform: rotate(0);
+	}
+	to {
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes myfirst {
+	from {
+		-webkit-transform: rotate(0);
+		-moz-transform: rotate(0);
+		transform: rotate(0);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+.play .disk_big{
+	-webkit-animation: myfirst 8s 2s linear infinite;
+	-moz-animation: myfirst 8s 2s linear infinite;
+	animation: myfirst 8s 2s linear infinite;
+}
+.play .top{-webkit-transform:translate3d(0,10px,0);
+-moz-transform:translate3d(0,10px,0);
+transform:translate3d(0,10px,0);
+-webkit-transition:all 1s ease-out-ease;
+-moz-transition:all 1s ease-out-ease;transition:all 1s ease-out-ease;}
+```
 
 
+[slide style="background-color:#1f3f4f"]
+<div class="joimg big">
+	<img src="/img/auto0.png" style="height: 250px;"/>
+</div>
+<img src="/img/auto.png" style="height: 250px;"/>
+## 开发时为了兼容各种浏览器所加前缀使代码可读性和可维护性降低 {:.huise}
+## 使用autoprefixer后，我们只需要维护开发环境的代码，与生产环境的代码分离，使得代码更容易维护并减少开发人员的工作量
+## 此插件可与现有工作流无缝合并，0学习成本 {:.huise}
 
 
-
-
-
-
+[slide style="background-color:#1f3f4f"]
+<div class="big huiyi">
+	<img src="/img/huiyi.png""/>
+</div>
+## 在两次小组分享会上做了分享
 
 
 

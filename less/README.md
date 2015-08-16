@@ -252,10 +252,10 @@ html,body{font-size: 62.5%;}
 @media screen and (min-width:400px) and (max-width:413px) {
     html,body { font-size: 78.125%; }
 }
-@media screen and (min-width:414px) and (max-width:431px) and (orientation:portrait){
+@media screen and (min-width:414px) and (max-width:431px){
     html { font-size: 80.86%; }
 }
-@media screen and (min-width:432px) and (max-width:479px) and (orientation:portrait){
+@media screen and (min-width:432px) and (max-width:479px){
     html { font-size: 84.375%; }
 }
 //下面两个是针对android pad分辨率设置
@@ -269,28 +269,28 @@ html,body{font-size: 62.5%;}
 
 ## 750设计稿 (实际网页宽度/375 * 62.5%)
 ``` css
-@media screen and (max-width:359px) and (orientation:portrait) {
+@media screen and (max-width:359px) {
     html { font-size: 53.33%; } 
 }
-@media screen and (min-width:360px) and (max-width:374px) and (orientation:portrait) {
+@media screen and (min-width:360px) and (max-width:374px) {
     html { font-size: 60%; } 
 }
-@media screen and (min-width:384px) and (max-width:399px) and (orientation:portrait) {
+@media screen and (min-width:384px) and (max-width:399px) {
     html { font-size: 64%; } 
 }
-@media screen and (min-width:400px) and (max-width:413px) and (orientation:portrait) {
+@media screen and (min-width:400px) and (max-width:413px) {
     html { font-size: 66.67%; } 
 }
-@media screen and (min-width:414px) and (max-width:431px) and (orientation:portrait){
+@media screen and (min-width:414px) and (max-width:431px){
     html { font-size: 69%; }
 }
-@media screen and (min-width:432px) and (max-width:479px) and (orientation:portrait){
+@media screen and (min-width:432px) and (max-width:479px){
     html { font-size:72%; }
 }
-@media screen and (min-width:480px)and (max-width:639px) and (orientation:portrait){
+@media screen and (min-width:480px)and (max-width:639px){
    html{ font-size:80%;}
 } 
-@media screen and (min-width:640px) and (orientation:portrait){
+@media screen and (min-width:640px){
    html{ font-size:106.67%;}
 }
 ```
