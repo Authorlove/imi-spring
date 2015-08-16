@@ -236,6 +236,65 @@ reference
 引入的less文件中的规则集不会直接输出到output，而只能作为mixin或者被继承（:extend）
 
 
+使用rem布局，在device-width=320/360/375/384/400/414这几种终端设备中显示兼容效果比较好,在工作量与显示效果间取个平衡点，确定五个响应点
+## 640设计稿 (实际网页宽度/320 * 62.5%)
+``` css
+html,body{font-size: 62.5%;}
+@media screen and (min-width:360px) and (max-width:374px) {
+    html,body { font-size: 70.3%; } 
+}
+@media screen and (min-width:375px) and (max-width:383px) {
+    html { font-size: 73.24%; } 
+}
+@media screen and (min-width:384px) and (max-width:399px) {
+    html { font-size: 75%; } 
+}
+@media screen and (min-width:400px) and (max-width:413px) {
+    html,body { font-size: 78.125%; }
+}
+@media screen and (min-width:414px) and (max-width:431px) and (orientation:portrait){
+    html { font-size: 80.86%; }
+}
+@media screen and (min-width:432px) and (max-width:479px) and (orientation:portrait){
+    html { font-size: 84.375%; }
+}
+//下面两个是针对android pad分辨率设置
+@media screen and (min-width:480px)and (max-width:639px) {
+   html{ font-size:93.75%;}
+}
+@media screen and (min-width:640px){
+   html{ font-size:125%;}
+}
+```
+
+## 750设计稿 (实际网页宽度/375 * 62.5%)
+``` css
+@media screen and (max-width:359px) and (orientation:portrait) {
+    html { font-size: 53.33%; } 
+}
+@media screen and (min-width:360px) and (max-width:374px) and (orientation:portrait) {
+    html { font-size: 60%; } 
+}
+@media screen and (min-width:384px) and (max-width:399px) and (orientation:portrait) {
+    html { font-size: 64%; } 
+}
+@media screen and (min-width:400px) and (max-width:413px) and (orientation:portrait) {
+    html { font-size: 66.67%; } 
+}
+@media screen and (min-width:414px) and (max-width:431px) and (orientation:portrait){
+    html { font-size: 69%; }
+}
+@media screen and (min-width:432px) and (max-width:479px) and (orientation:portrait){
+    html { font-size:72%; }
+}
+@media screen and (min-width:480px)and (max-width:639px) and (orientation:portrait){
+   html{ font-size:80%;}
+} 
+@media screen and (min-width:640px) and (orientation:portrait){
+   html{ font-size:106.67%;}
+}
+```
+
 #编译工具请移步[这里](http://koala-app.com/index-zh.html)
 栗子请看此目录下的文件
 

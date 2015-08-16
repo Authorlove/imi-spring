@@ -54,52 +54,6 @@ var MobileAnima = function() {
 	}
 
 
-	//初始化场景
-	function _createSpecial(options) {
-		_options = $.extend({
-			warper: "", //外层容器,Id
-			containerDiv: "", //包住所有的屏,Id
-			stages: "", //所有屏共用的class
-			duration: 750, //切换屏的滚动时间
-			stageBgs: [], //每屏的背景图
-			isHorizontal: false, //是否水平滚动，false为垂直滚动
-			isAutoToNextStage: true, //每次滑屏时是否自动切换到下一场景,默认为true
-			swipeCallback: function(param) {
-
-			},
-			initedCallback: function() {
-
-			}
-		}, options || {});
-		$warper = $(_options.warper),
-			$containerDiv = $(_options.containerDiv),
-			$stages = $containerDiv.find(_options.stages),
-			_duration = _options.duration,
-			_count = $stages.length;
-
-		$containerDiv.css(_css3pre + "transition", _css3pre + "transform " + _options.duration + "ms ease-in-out");
-
-		if (_options.isHorizontal) {
-			$containerDiv.css("width", $("body")[0].offsetWidth * _count);
-			$stages.css({
-				"width": $("body")[0].offsetWidth,
-				"float": "left"
-			});
-		} else {
-			$containerDiv.css("height", $("body")[0].offsetHeight * _count);
-		}
-
-		$stages.css("height", $("body")[0].offsetHeight);
-		$stages.each(function(index, item) {
-			_stagesEles[index] = [];
-		});
-		if (_options.stageBgs.length > 0) {
-			$(_options.stageBgs).each(function(index, item) {
-				_imglist.push(item);
-			})
-		}
-	}
-
 
 	//创建每一屏的动画元素,内部类
 	function _createAnimateEle(options) {
@@ -189,22 +143,20 @@ var MobileAnima = function() {
 				return false;
 			}
 			_curStageIndex++;
-			if (!$stages.eq(_curStageIndex).hasClass("inited")) {
-				$stages.eq(_curStageIndex).addClass("inited")
-			}
+//			if (!$stages.eq(_curStageIndex).hasClass("inited")) {
+//				$stages.eq(_curStageIndex).addClass("inited")
+//			}
 			var translate = 0;
 			//横屏or竖屏
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = _css3pre + "translate3d(" + translate + "px,0,0)";
-				//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
+				//csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)";
+				$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = _css3pre + "translate3d(0," + translate + "px,0)";
-				//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
+				//csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)";
+				$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
-			$containerDiv.css(csstrans);
-			alert(csstrans[_css3pre + "transform"])
 			_isScrolling = true;
 			if (_options.isReplay) {
 				$(_stagesEles[_curStageIndex - 1]).each(function(index, item) {
@@ -245,14 +197,13 @@ var MobileAnima = function() {
 			var translate = 0;
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate3d(" + translate + "px,0,0)";
-				//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
+//				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)";
+				$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * _curStageIndex;
-				csstrans[_css3pre + "transform"] = "translate3d(0," + translate + "px,0)";
-				//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
+//				csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)";
+				$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
-			$containerDiv.css(csstrans);
 			_isScrolling = true;
 			if (_options.isReplay) {
 				$(_stagesEles[_curStageIndex + 1]).each(function(index, item) {
@@ -287,12 +238,12 @@ var MobileAnima = function() {
 			var translate = 0;
 			if (_options.isHorizontal) {
 				translate = -$containerDiv[0].offsetWidth / _count * stageIndex;
-				csstrans[_css3pre + "transform"] = "translate3d(" + translate + "px,0,0)"
-					//$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
+//				csstrans[_css3pre + "transform"] = "translate(" + translate + "px,0)"
+				$containerDiv.css({"-webkit-transform": "translate("+translate+"px,0)"});
 			} else {
 				translate = -$containerDiv[0].offsetHeight / _count * stageIndex;
-				csstrans[_css3pre + "transform"] = "translate3d(0," + translate + "px,0)"
-					//$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
+//				csstrans[_css3pre + "transform"] = "translate(0," + translate + "px)"
+				$containerDiv.css({"-webkit-transform": "translate(0,"+translate+"px)"});
 			}
 			$containerDiv.css(csstrans);
 			_isScrolling = true;
@@ -462,7 +413,7 @@ var MobileAnima = function() {
 			var left = 0 - $containerDiv[0].offsetWidth / _count * _curStageIndex;
 			var csstrans = {};
 			csstrans[_css3pre + "transform"] = "translate(" + left + "px,0)";
-			$containerDiv.css(csstrans);
+			$containerDiv.css(csstrans);//微信下不能加
 		} else {
 			$containerDiv.css("height", $(window).height() * _count);
 			$stages.css({
@@ -471,7 +422,7 @@ var MobileAnima = function() {
 			var top = 0 - $containerDiv[0].offsetHeight / _count * _curStageIndex;
 			var csstrans = {};
 			csstrans[_css3pre + "transform"] = "translate(0," + top + "px)";
-			$containerDiv.css(csstrans);
+			$containerDiv.css(csstrans);//微信下不能加
 		}
 	}
 
@@ -521,7 +472,9 @@ var MobileAnima = function() {
 			$stages = $containerDiv.find(_options.stages);
 		_duration = _options.duration;
 		_count = $stages.length;
-		$containerDiv.css(_css3pre + "transition", _css3pre + "transform " + _options.duration + "ms ease-in-out");
+		
+		$containerDiv.css("-webkit-transition", "-webkit-transform " + _options.duration + "ms ease-in-out");
+		
 		if (_options.isHorizontal) {
 			$containerDiv.css("width", $("#content")[0].offsetWidth * _count);
 			$stages.css({

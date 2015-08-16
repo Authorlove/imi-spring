@@ -1,0 +1,123 @@
+.radius(@radius) {
+  -webkit-border-radius: @radius;
+          border-radius: @radius;
+          border-top-left-radius: @radius;
+          border-top-right-radius: @radius;
+          border-bottom-right-radius: @radius;
+          border-bottom-left-radius: @radius;
+}
+
+.bgs{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.bgh{
+    background-size: 100% auto;
+}
+.cover{
+    background-size: cover;
+}
+// 居中
+.mr_t(@aaa){
+    top: 50%;
+    margin-top: -@aaa/40rem;
+}
+.mr_l(@aaa){
+    left: 50%;
+    margin-left: -@aaa/40rem;
+}
+.tr_t{
+    top: 50%;
+    -ms-transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+}
+.tr_l{
+    left: 50%;
+    -ms-transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%,0,0);
+}
+.tr_c{
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate3d(-50%,-50%,0);
+    -webkit-transform: translate3d(-50%,-50%,0);
+}
+
+
+
+.h_l(@aaa){
+    height: @aaa/20rem;;
+    line-height: @aaa/20rem;;
+}
+
+
+.rotate(@aaa){
+    transform: rotate(@aaa);
+    -ms-transform: rotate(@aaa);       /* IE 9 */
+    -webkit-transform: rotate(@aaa);   /* Safari and Chrome */
+    -o-transform: rotate(@aaa);        /* Opera */
+    -moz-transform: rotate(@aaa);  
+}
+
+.trsi(@aaa;@bbb:.5s;@ccc:0s;@ddd:ease-in-out){
+    transition: @aaa @bbb @ccc @ddd;
+    -webkit-transition: @aaa @bbb @ccc @ddd;   /* Safari  Chrome */
+}
+
+.boxc{
+    display: -webkit-box;
+//  display: -moz-box;
+//  display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -webkit-justify-content:center;
+}
+.boxs{
+    display: -webkit-box;
+//  display: -moz-box;
+//  display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-box-pack:justify;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -webkit-justify-content:space-between;
+}
+
+.flex(@value){
+    display: block;
+    -webkit-box-flex: @value;
+    -webkit-flex: @value;
+}
+
+.img_h{
+    height: 100%;
+    width: auto;
+}
+
+.h(@aaa){height: @aaa/20rem;}.w(@aaa){width: @aaa/20rem;}
+.h_w(@aaa){
+    height: @aaa/20rem;
+    width: @aaa/20rem;
+}
+.left(@aaa){left: @aaa/20rem;}
+.right(@aaa){right: @aaa/20rem;}
+.top(@aaa){top: @aaa/20rem;}
+.bottom(@aaa){bottom: @aaa/20rem;}
+
+
+
+
+
+
+
+
+
+
+
+
