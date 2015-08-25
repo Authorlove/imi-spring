@@ -36,3 +36,11 @@ function mv5_end(){
 	video[6].pause();
 	video[6].pause();
 }
+function mv6(){
+	video[7].play();
+	video[7].play();
+}
+function mv6_end(){
+	video[7].pause();
+	video[7].pause();
+}

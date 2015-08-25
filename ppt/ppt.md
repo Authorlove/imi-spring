@@ -1,4 +1,4 @@
-title:考评PPT
+title:melon
 speaker:melonzhang 
 url: 
 transition: zoomin
@@ -32,7 +32,7 @@ files: /css/index.css,/js/index.js
 * 大一、大二
 	* 做一些简单的java开发 {:&.moveIn}
 	* Enactus(创行)<img src="/img/enactus.png" style="height: 50px;"/> - 荔枝龙眼信息平台项目，数据库、价格周报负责人  
-	* 第九届“挑战杯”创业计划 - 省赛银奖
+	* 第九届“挑战杯”创业计划 - 省赛银奖 {:.big}
 
 * 大二下学期
 	* 重要的决定，转行做开发 {:&.moveIn}
@@ -70,8 +70,8 @@ files: /css/index.css,/js/index.js
 
 [slide style="background-color:#1f3f4f" data-incallback="mv1" data-outcallback="mv1_end"]
 <div class="joimg">
-<video width="500" height="" src="/video/card.mp4" loop="loop" class=".mvst"></video>
-<video width="500" height="" src="/video/classroom.mp4" loop="loop" class=".mvst"></video>
+<video width="500" height="" src="/video/card.mp4" loop="loop" class=".mvst" autoplay="autoplay"></video>
+<video width="500" height="" src="/video/classroom.mp4" loop="loop" class=".mvst" autoplay="autoplay"></video>
 </div>
 
 [slide style="background-color:#1f3f4f"]
@@ -85,14 +85,16 @@ files: /css/index.css,/js/index.js
 
 [slide style="background-color:#1f3f4f" data-incallback="mv2" data-outcallback="mv2_end"]
 <div class="joimg" data-incallback="mv2" data-outcallback="mv2_end">
-	<video width="400" src="/video/ltzs.mp4" loop="loop"></video>
+	<video width="400" src="/video/ltzs.mp4" loop="loop"  autoplay="autoplay"></video>
 	<img src="/img/testimg.png"/>
 </div>
 
 [slide style="background-color:#1f3f4f" data-incallback="mv3" data-outcallback="mv3_end"]
-<div class="joimg">
+<div class="joimg big">
 	<video width="1200" src="/video/hudong.mp4" loop="loop"></video>
 </div>
+##《互动吧》项目 - 增强微信二次传播，一期功能有真心话和弹幕功能，二期功能为pk
+
 
 [slide style="background-color:#1f3f4f"]
 ##部分截图 {:.big}
@@ -106,24 +108,77 @@ files: /css/index.css,/js/index.js
 [slide style="background-color:#1f3f4f"]
 <img src="/img/xuqiu.png"/>
 	* 主要负责绿钻相关和客户端相关 {:&.fadeIn}
-	* **12**个pc版页面
-	* **11**个移动端页面
-	* **5**个移动端滑动专题页
+	* **12**个pc平台模块
+	* **11**个移动平台模块
+	* **5**个移动端专题滑动页
 	
 	
 [slide style="background-color:#1f3f4f"]
 ##部分截图 {:.big}
-<img src="/img/txxq.png"/>
+<img src="/img/tx1.png"/>
+
+[slide style="background-color:#1f3f4f"]
+##部分截图 {:.big}
+<img src="/img/tx2.png"/>
 
 [slide style="background-color:#1f3f4f" data-incallback="mv4" data-outcallback="mv4_end"]
 <div class="joimg">
 	<video width="800" src="/video/lv.mkv" loop="loop"></video>
 	<video width="800" src="/video/lv2.mkv" loop="loop"></video>
 </div>
+
+[slide style="background-color:#1f3f4f"]
+#项目一 {:.fonts}
+
+
 [slide style="background-color:#1f3f4f" data-incallback="mv5" data-outcallback="mv5_end"]
 <div class="joimg">
 	<video width="500" src="/video/qixi.mkv" loop="loop"></video>
 </div>
+
+
+[slide style="background-color:#1f3f4f"]
+## 需求沟通 {:.fonts.big}
+[subslide]
+<div class="fadeIn">
+	<p>先跟产品沟通，了解其基本需求</p>
+	<p>沟通需要的素材--需要svg</p>
+</div>
+============
+<div class="joimg fadeIn">
+	<p>发现可以做的更好的地方</p>
+	<div>
+		<img src="/img/gt.png" style="height: 500px;"/>
+		<p>提出自己的想法</p>
+	</div>
+</div>
+============
+<div class="joimg fadeIn">
+	<p>效果得到好评</p>
+	<div>
+		<img src="/img/gt2.png" style="height: 500px;"/>
+		<p>发现问题，提供方案</p>
+	</div>
+</div>
+[/subslide]
+
+[slide style="background-color:#1f3f4f"]
+<div>
+	<div class="joimg big">
+		<img src="/img/qx1.png" style="height: 300px;"/>
+		<img src="/img/qx2.png" style="height: 300px;"/>
+		<img src="/img/qx3.png" style="height: 300px;"/>
+	</div>
+	<div class="joimg big">
+		<img src="/img/qx4.png" style="height: 300px;"/>
+		<img src="/img/qx5.png" style="height: 300px;"/>
+	</div>
+	<p>兼容小屏</p>
+</div>
+
+[slide style="background-color:#1f3f4f"]
+#项目二 {:.fonts}
+
 [slide style="background-color:#1f3f4f"]
 <div class="joimg kupao">
 	<div><img src="/img/kupao.jpeg" class="kupaoimg"/></div>
@@ -140,8 +195,9 @@ files: /css/index.css,/js/index.js
 	<img src="/img/btn_cen.png" style="height: 200px;"/>
 	<img src="/img/btn_right.png" style="height: 200px;"/>
 </div>
+<img src="/img/daima.png" />
 * 失败 {:&.fadeIn}
-* 在一些机型上总会出现bug
+* 在一些机型上总会出现bug <div><img src="/img/bug.png"/></div>
 * 原先是用伪类写的，思考是否伪类的兼容性引起的，转换为&lt;i&gt;&lt;/i&gt;替代
 * 失败 x 2
 
@@ -156,20 +212,36 @@ files: /css/index.css,/js/index.js
 
 [slide style="background-color:#1f3f4f"]
 <div class="joimg big">
-	<img src="/img/sprite.png" style="height: 300px;"/>
+	<div>
+		<img src="/img/sprite.png" style="height: 300px;"/>
+		<p>最终雪碧图</p>
+	</div>
 </div>
+<div class="joimg">
+	<div>
+		<img src="/img/yh1.png" style="height: 300px;"/>
+		<p>优化前</p>
+	</div>
+	<div>
+		<img src="/img/yh2.png" style="height: 300px;"/>
+		<p>优化后</p>
+	</div>
+</div>
+
 
 
 [slide style="background-color:#1f3f4f"]
 #需求之外 {:.fonts}
 
-[slide style="background-color:#1f3f4f"]
+[slide style="background-color:#1f3f4f"  data-incallback="mv6" data-outcallback="mv6_end"]
 <div class="joimg big">
 	<img src="/img/gongyi.png" style="height: 350px;"/>
 	<img src="/img/gongyi2.jpg" style="height: 350px;"/>
 </div>
 <div class="joimg big">
 	<img src="/img/gongyi3.png" style="height: 300px;"/>
+	<video width="280" src="/video/mf.mkv" loop="loop" autoplay="autoplay"></video>
+	
 </div>
 # 参加一次腾讯“创益24小时比赛”获得二等奖
 
