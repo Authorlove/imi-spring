@@ -128,7 +128,7 @@ files: /css/index.css
 
 [slide style="background-color:#1f3f4f"]
 # 谢谢观看 {:.fonts}
-ppt地址：
+ppt地址：http://zlbben.github.io/3_12share/publish/ppt.htm
 
 
 
