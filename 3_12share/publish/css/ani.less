@@ -1,0 +1,407 @@
+.ani_flash(){//闪光灯
+   @keyframes ani_flash{
+       0%,50%,100%{opacity: 1;}
+       25%,75%{opacity: 0;}
+   }
+}
+.ani_bounce(){//弹起
+    @keyframes ani_bounce{
+        0%,20%,50%,80%,100%{transform:translateY(0)}
+        40%{transform:translateY(-30px)}
+        60%{transform:translateY(-15px)}
+    }
+}
+.ani_shake(){//摇摆
+    @keyframes ani_shake{
+        0%,100%{transform:translateX(0);}
+        10%,30%,50%,70%, 90%{transform:translateX(-10px);}
+        20%,40%,60%,80%{transform:translateX(10px);}
+    }
+}
+.ani_tada(){//秋千
+    @keyframes ani_tada{
+        0%{transform:scale(1)}
+        10%,20%{transform:scale(0.9) rotate(-3deg)}
+        30%,50%,70%,90%{transform:scale(1.1) rotate(3deg)}
+        40%,60%,80%{transform:scale(1.1) rotate(-3deg)}
+        100%{transform:scale(1) rotate(0)}
+    }
+}
+.ani_swing(){
+    @keyframes ani_swing{
+        20%,40%,60%,80%,100%{transform-origin:top center}
+        20%{transform:rotate(15deg)}
+        40%{transform:rotate(-10deg)}
+        60%{transform:rotate(5deg)}
+        80%{transform:rotate(-5deg)}
+        100%{transform:rotate(0deg)}
+    }
+}
+.ani_wobble(){//疯狂摆动
+    @keyframes ani_wobble{
+        0%{transform:translateX(0%)}
+        15%{transform:translateX(-25%) rotate(-5deg)}
+        30%{transform:translateX(20%) rotate(3deg)}
+        45%{transform:translateX(-15%) rotate(-3deg)}
+        60%{transform:translateX(10%) rotate(2deg)}
+        75%{transform:translateX(-5%) rotate(-1deg)}
+        100%{transform:translateX(0%)}
+    }
+}
+.ani_pulse(){//脉冲
+    @keyframes ani_pulse{
+        0%{transform:scale(1)}
+        50%{transform:scale(1.1)}
+        100%{transform:scale(1)}
+    }
+}
+.ani_flipInX(){//x轴淡入
+    @keyframes ani_flipInX{
+        0%{transform:perspective(400px) rotateX(90deg);opacity:0}
+        40%{transform:perspective(400px) rotateX(-10deg)}
+        70%{transform:perspective(400px) rotateX(10deg)}
+        100%{transform:perspective(400px) rotateX(0deg);
+        opacity:1}
+    }
+}
+.ani_flipOutX(){//x轴淡出
+  @keyframes ani_flipOutX{
+        0%{transform:perspective(400px) rotateX(0deg);opacity:1}
+        100%{transform:perspective(400px) rotateX(90deg);opacity:0}
+    }  
+}
+.ani_flipInY(){//y轴淡入
+    @keyframes ani_flipInY{
+        0%{transform:perspective(400px) rotateY(90deg);opacity:0}
+        40%{transform:perspective(400px) rotateY(-10deg)}
+        70%{transform:perspective(400px) rotateY(10deg)}
+        100%{transform:perspective(400px) rotateY(0deg);opacity:1}
+    }
+}
+.ani_flipOutY(){//y轴淡出
+    @keyframes ani_flipOutY{
+        0%{transform:perspective(400px) rotateY(0deg);opacity:1}
+        100%{transform:perspective(400px) rotateY(90deg);opacity:0}
+    }
+}
+.ani_danIn(){
+    @keyframes ani_danIn{
+        0%{opacity:0}
+        100%{opacity:1}
+    }
+}
+.ani_fadeInUp(@value:20px){
+    @keyframes ani_fadeInUp{
+        0%{opacity:0;transform:translateY(@value)}
+        100%{opacity:1;transform:translateY(0)}
+    }
+}
+.ani_fadeInDown(@value:-20px){
+    @keyframes ani_fadeInDown{
+        0%{opacity:0;transform:translateY(@value)}
+        100%{opacity:1;transform:translateY(0)}
+    }
+}
+.ani_fadeInLeft(@value:-20px){
+    @keyframes ani_fadeInLeft{
+        0%{opacity:0;transform:translateX(@value)}
+        100%{opacity:1;transform:translateX(0)}
+    }
+}
+.ani_fadeInRight(@value:20px){
+    @keyframes ani_fadeInRight{
+        0%{opacity:0;transform:translateX(@value)}
+        100%{opacity:1;transform:translateX(0)}
+    }
+}
+.ani_fadeInUpBig(){
+    @keyframes ani_fadeInUpBig{
+        0%{opacity:0;transform:translateY(2000px)}
+        100%{opacity:1;transform:translateY(0)}
+    }
+}
+.ani_fadeInDownBig(){
+    @keyframes ani_fadeInDownBig{
+        0%{opacity:0;transform:translateY(-2000px)}
+        100%{opacity:1;transform:translateY(0)}
+    }
+}
+.ani_fadeInLeftBig(){
+    @keyframes ani_fadeInLeftBig{
+        0%{opacity:0;transform:translateX(-2000px)}
+        100%{opacity:1;transform:translateX(0)}
+    }
+}
+.ani_fadeInRightBig(){
+   @keyframes ani_fadeInRightBig{
+        0%{opacity:0;transform:translateX(2000px)}
+        100%{opacity:1;transform:translateX(0)}
+    }
+}
+.ani_danOut(){
+    @keyframes ani_danOut{
+        0%{opacity:1}
+        100%{opacity:0}
+    }
+}
+.ani_fadeOutUp(@value:-20px){
+    @keyframes ani_fadeOutUp{
+        0%{opacity:1;transform:translateY(0)}
+        100%{opacity:0;transform:translateY(@value)}
+    }
+}
+.ani_fadeOutDown(@value:20px){
+    @keyframes ani_fadeOutDown{
+        0%{opacity:1;transform:translateY(0)}
+        100%{opacity:0;transform:translateY(@value)}
+    }
+}
+.ani_fadeOutLeft(@value:-20px){
+    @keyframes ani_fadeOutLeft{
+        0%{opacity:1;transform:translateX(0)}
+        100%{opacity:0;transform:translateX(@value)}
+    }
+}
+.ani_fadeOutRight(@value:20px){
+    @keyframes ani_fadeOutRight{
+        0%{opacity:1;transform:translateX(0)}
+        100%{opacity:0;transform:translateX(@value)}
+    }
+}
+.ani_fadeOutUpBig(){
+    @keyframes ani_fadeOutUpBig{
+        0%{opacity:1;transform:translateY(0)}
+        100%{opacity:0;transform:translateY(-2000px)}
+    }
+}
+.ani_fadeOutDownBig(){
+    @keyframes ani_fadeOutUpBig{
+        0%{opacity:1;transform:translateY(-2000px)}
+        100%{opacity:0;transform:translateY(0)}
+    }
+}
+.ani_fadeOutLeftBig(){
+    @keyframes ani_fadeOutLeftBig{
+        0%{opacity:1;transform:translateX(0)}
+        100%{opacity:0;transform:translateX(-2000px)}
+    }
+}
+.ani_fadeOutRightBig(){
+    @keyframes ani_fadeOutRightBig{
+        0%{opacity:1;transform:translateX(0)}
+        100%{opacity:0;transform:translateX(2000px)}
+    }
+}
+.ani_bounceIn(){
+    @keyframes ani_bounceIn{
+        0%{opacity:0;transform:scale(.3)}
+        50%{opacity:1;transform:scale(1.05)}
+        70%{transform:scale(.9)}
+        100%{transform:scale(1)}
+    }
+}
+.ani_bounceInDown(){
+    @keyframes ani_bounceInDown{
+        0%{opacity:0;transform:translateY(-2000px)}
+        60%{opacity:1;transform:translateY(30px)}
+        80%{transform:translateY(-10px)}
+        100%{transform:translateY(0)}
+    }
+}
+.ani_bounceInUp(){
+    @keyframes ani_bounceInUp{
+        0%{opacity:0;transform:translateY(2000px)}
+        60%{opacity:1;transform:translateY(-30px)}
+        80%{transform:translateY(10px)}
+        100%{transform:translateY(0)}
+    }
+}
+.ani_bounceInLeft(){
+    @keyframes ani_bounceInLeft{
+        0%{opacity:0;transform:translateX(-2000px)}
+        60%{opacity:1;transform:translateX(30px)}
+        80%{transform:translateX(-10px)}
+        100%{transform:translateX(0)}
+    }
+}
+.ani_bounceInRight(){
+    @keyframes ani_bounceInRight{
+        0%{opacity:0;transform:translateX(2000px)}
+        60%{opacity:1;transform:translateX(-30px)}
+        80%{transform:translateX(10px)}
+        100%{transform:translateX(0)}
+    }
+}
+.ani_bounceOut(){
+    @keyframes ani_bounceOut{
+        0%{transform:scale(1)}
+        25%{transform:scale(.95)}
+        50%{opacity:1;transform:scale(1.1)}
+        100%{opacity:0;transform:scale(.3)}
+    }
+}
+.ani_bounceOutDown(){
+    @keyframes ani_bounceOutDown{
+        0%{transform:translateY(0)}
+        20%{opacity:1;transform:translateY(-20px)}
+        100%{opacity:0;transform:translateY(2000px)}
+    }
+}
+.ani_bounceOutUp(){
+    @keyframes ani_bounceOutUp{
+        0%{transform:translateY(0)}
+        20%{opacity:1;transform:translateY(20px)}
+        100%{opacity:0;transform:translateY(-2000px)}
+    }
+}
+.ani_bounceOutLeft(){
+    @keyframes ani_bounceOutLeft{
+        0%{transform:translateX(0)}
+        20%{opacity:1;transform:translateX(20px)}
+        100%{opacity:0;transform:translateX(-2000px)}
+    }
+}
+.ani_bounceOutRight(){
+    @keyframes ani_bounceOutRight{
+        0%{transform:translateX(0)}
+        20%{opacity:1;transform:translateX(-20px)}
+        100%{opacity:0;transform:translateX(2000px)}
+    }
+}
+.ani_rotateIn(){
+    @keyframes ani_rotateIn{
+        0%{transform-origin:center center;transform:rotate(-200deg);opacity:0}
+        100%{transform-origin:center center;transform:rotate(0);opacity:1}
+    }
+}
+.ani_rotateOut(){
+    @keyframes ani_rotateOut{
+        0%{transform:rotate(0);opacity:1}
+        100%{transform:rotate(-90deg);opacity:0}
+    }
+}
+.ani_rotateInDownLeft(){
+    @keyframes ani_rotateInDownLeft{
+        0%{transform-origin:left bottom;transform:rotate(-90deg);opacity:0}
+        100%{transform-origin:left bottom;transform:rotate(0);opacity:1}
+    }
+}
+.ani_rotateOutDownLeft(){
+    @keyframes ani_rotateOutDownLeft{
+        0%{transform-origin:left bottom;transform:rotate(0);opacity:1}
+        100%{transform-origin:left bottom;transform:rotate(-90deg);opacity:0}
+    }
+}
+.ani_rotateInDownRight(){
+    @keyframes ani_rotateInDownRight{
+        0%{transform-origin:right bottom;transform:rotate(-90deg);opacity:0}
+        100%{transform-origin:right bottom;transform:rotate(0);opacity:1}
+    }
+}
+.ani_rotateOutDownRight(){
+    @keyframes ani_rotateOutDownRight{
+        0%{transform-origin:right bottom;transform:rotate(0);opacity:1}
+        100%{transform-origin:right bottom;transform:rotate(-90deg);opacity:0}
+    }
+}
+.ani_rotateInUpLeft(){
+    @keyframes ani_rotateInUpLeft{
+        0%{transform-origin:left bottom;transform:rotate(90deg);opacity:0}
+        100%{transform-origin:left bottom;transform:rotate(0);opacity:1}
+    }
+}
+.ani_rotateOutUpLeft(){
+    @keyframes ani_rotateOutUpLeft{
+        0%{transform-origin:left top;transform:rotate(0);opacity:1}
+        100%{transform-origin:left top;transform:rotate(-90deg);opacity:0}
+    }
+}
+.ani_rotateInUpRight(){
+    @keyframes ani_rotateInUpRight{
+        0%{transform-origin:right bottom;transform:rotate(-90deg);opacity:0}
+        100%{transform-origin:right bottom;transform:rotate(0);opacity:1}
+    }
+}
+.ani_rotateOutUpRight(){
+    @keyframes ani_rotateOutUpRight{
+        0%{transform-origin:right top;transform:rotate(0);opacity:1}
+        100%{transform-origin:right top;transform:rotate(-90deg);opacity:0}
+    }
+}
+.ani_rollIn(){
+    @keyframes ani_rollIn{
+        0%{opacity:0;transform:translateX(-100%) rotate(-120deg)}
+        100%{opacity:1;transform:translateX(0px) rotate(0deg)}
+    }
+}
+.ani_rollOut(){
+    @keyframes ani_rollOut{
+        0%{opacity:1;transform:translateX(0px) rotate(0deg)}
+        100%{opacity:0;transform:translateX(100%) rotate(120deg)}
+    }
+}
+.ani_rotate(){
+    @keyframes ani_rotate{
+        0%{transform: rotate(0);}
+        100%{transform: rotate(360deg);}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
