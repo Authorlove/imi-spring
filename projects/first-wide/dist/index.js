@@ -446,12 +446,7 @@
 /***/ },
 /* 10 */,
 /* 11 */,
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "2ecdfdb6f6eceb6d07987124f8898f16.png";
-
-/***/ },
+/* 12 */,
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -477,7 +472,7 @@
 	  /* script */
 	  __webpack_require__(17),
 	  /* template */
-	  __webpack_require__(55),
+	  __webpack_require__(56),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -888,7 +883,7 @@
 	  /* script */
 	  __webpack_require__(27),
 	  /* template */
-	  __webpack_require__(54),
+	  __webpack_require__(55),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -2425,7 +2420,7 @@
 	    staticClass: "contact_logo"
 	  }, [_c('img', {
 	    attrs: {
-	      "src": __webpack_require__(12)
+	      "src": __webpack_require__(54)
 	    }
 	  })]), _vm._v(" "), _c('div', {
 	    staticClass: "contact_text"
@@ -2447,6 +2442,12 @@
 
 /***/ },
 /* 54 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "2ecdfdb6f6eceb6d07987124f8898f16.png";
+
+/***/ },
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2491,7 +2492,7 @@
 	}
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
