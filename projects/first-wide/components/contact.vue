@@ -47,9 +47,9 @@
 			Suite 202, HuaiZhong Mansion<br />
 			1162 Middle Huaihai Road<br />
 			Shanghai, China<br />
-			<span>T</span>. +86 21 6473 0600 ext. 213<br />
-			<span>C</span>. + 86 177 2147 0932<br />
-			<span>E</span>. inquiry@imi-spring.com
+			<span>T</span>. +86 21 6473 0600<br />
+			<!--<span>C</span>. + 86 177 2147 0932<br />-->
+			<span>E</span>. <a href="mailto:inquiry@imi-spring.com">inquiry@imi-spring.com</a>
 
 		</div>
 

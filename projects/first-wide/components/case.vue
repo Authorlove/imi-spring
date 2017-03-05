@@ -25,7 +25,7 @@
 	}
 	
 	.case_title {
-		font-size: 30px;
+		font-size: 26px;
 		margin-bottom: 10px;
 	}
 	
@@ -49,12 +49,12 @@
 	
 	.case_con__tit {
 		font-weight: bold;
-		font-size: 18px;
+		font-size: 15px;
 		margin-bottom: 30px;
 	}
 	
 	.case_con__des {
-		font-size: 18px;
+		font-size: 16px;
 		margin-bottom: 30px;
 		color: #aaa;
 		margin-bottom: 25px;
@@ -65,6 +65,7 @@
 	}
 	
 	.case_ul {
+		font-size: 14px;
 		margin-bottom: 30px;
 	}
 	
@@ -214,20 +215,20 @@
 						}],
 						pic: ['../images/pic17.png', '../images/pic18.png', '../images/pic19.png', '../images/pic20.png']
 					},
-					{
-						tit: {
-							value: '“ONE RECEPTION AT TWO CONTINENTS”',
-							color: '#811e1d',
-							bgcolor: '#ffff3c'
-						},
-						des: 'Gala Awards Dinner',
-						contit: 'Created the best-of-the-best incentive program for one of the leading automobile brand in Asia Pacific dealers in Istanbul with the Gala Dinner highlights',
-						list: [{
-							header: 'PROGRAM HIGHLIGHTS',
-							item: ['One night across TWO continents with the sunset reception over Asia with beautiful ocean view', 'Then crossing with exclusive hire boat from Asia to Europe', 'Exclusive hire dinner at Europe side at the Cirgan Palace – the former Sultan royal palace']
-						}],
-						pic: ['../images/pic21.png', '../images/pic22.png', '../images/pic23.png', '../images/pic24.png']
-					},
+//					{
+//						tit: {
+//							value: '“ONE RECEPTION AT TWO CONTINENTS”',
+//							color: '#811e1d',
+//							bgcolor: '#ffff3c'
+//						},
+//						des: 'Gala Awards Dinner',
+//						contit: 'Created the best-of-the-best incentive program for one of the leading automobile brand in Asia Pacific dealers in Istanbul with the Gala Dinner highlights',
+//						list: [{
+//							header: 'PROGRAM HIGHLIGHTS',
+//							item: ['One night across TWO continents with the sunset reception over Asia with beautiful ocean view', 'Then crossing with exclusive hire boat from Asia to Europe', 'Exclusive hire dinner at Europe side at the Cirgan Palace – the former Sultan royal palace']
+//						}],
+//						pic: ['../images/pic21.png', '../images/pic22.png', '../images/pic23.png', '../images/pic24.png']
+//					},
 					{
 						tit: {
 							value: '“WONDERFUL REUION WITH A LEGACY LEFT”',

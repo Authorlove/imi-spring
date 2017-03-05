@@ -10,18 +10,18 @@
 	}
 	
 	.about_logo img {
-		height: 40px;
+		height: 34px;
 	}
 	
 	.mod_tit {
-		font-size: 43px;
+		font-size: 36px;
 		color: rgb(133, 126, 124);
 		margin-bottom: 20px;
 	}
 	
 	.mod_des {
 		color: rgb(133, 126, 124);
-		font-size: 26px;
+		font-size: 20px;
 		line-height: 1.5;
 		margin-bottom: 100px;
 	}
@@ -40,7 +40,7 @@
 	}
 	
 	.about_show__tit {
-		font-size: 36px;
+		font-size: 32px;
 		line-height: 1.3;
 		margin-bottom: 20px;
 	}
@@ -52,7 +52,7 @@
 		color: #d15f96;
 	}
 	.about_show__des {
-		font-size: 20px;
+		font-size: 16px;
 		margin-bottom: 20px;
 		line-height: 1.2;
 	}
@@ -126,9 +126,9 @@
 		<!--show one-->
 		<div class="about_show">
 			<div class="about_show__left">
-				<div class="about_icon">
+				<!--<div class="about_icon">
 					<img src="../images/logo.jpg" />
-				</div>
+				</div>-->
 				<div class="about_show__tit">The Bespoke<br /><span class="about_show__tit--color">ENGAGEMENT</span><br />Solution </div>
 				<p class="about_show__des">You have so many audiences that you want to inspire, to engage, to get them in the loop. Your employees, your customers, your channel distributors, and further the massive market audiences out there. But how to turn around the theory and the your blueprint into something that is practicable and visible, is our expertise.
 				</p>
@@ -185,9 +185,9 @@
 		<!--show two-->
 		<div class="about_show about_show--two">
 			<div class="about_show__left">
-				<div class="about_icon">
+				<!--<div class="about_icon">
 					<img src="../images/imi.png" />
-				</div>
+				</div>-->
 				<div class="about_show__tit">The Bespoke<br /><span class="about_show__tit--colortwo">EVENT &amp; TRAVEL</span><br />Experience</div>
 				<p class="about_show__des">We simply don’t like the term of ‘Event’, as we believe deep-in, that putting your audience into a place with food &amp; beverage is NOT what is defined us. It is the messaging we will create together with you, and the methods, the adaptions we make that key messaging cross through the entire way.
 				</p>

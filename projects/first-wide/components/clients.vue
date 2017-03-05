@@ -1,8 +1,11 @@
 <style>
 	.clients_img{width: 100%;}
+	.clients_container .mod_des{
+		margin-bottom: 0;
+	}
 </style>
 <template>
-	<div class="mod_wrap">
+	<div class="mod_wrap clients_container">
 		<div class="about_logo">
 			<img src="../images/us.png" alt="" />
 		</div>
@@ -14,14 +17,14 @@
 		<!--clients show-->
 		<div class="clients">
 			<!--header-->
-			<div class="case_wrap">
+			<!--<div class="case_wrap">
 				<div class="case_header">
 					Our<br />Clients
 				</div>
 				<div class="case_header--right">
 					<img src="../images/minilogo.png" />
 				</div>
-			</div>
+			</div>-->
 			
 			<div class="clients_wrap">
 				<img class="clients_img" src="../images/clients.png"/>

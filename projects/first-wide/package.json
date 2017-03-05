@@ -2,17 +2,6 @@
   "name": "first-wide",
   "version": "0.1.0",
   "description": "first-wide",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.alibaba-inc.com:mtb/comment-component.git"
-  },
-  "author": {
-    "name": "liben.zlb",
-    "email": "liben.zlb@alibaba-inc.com"
-  },
   "keywords": [
     "vue",
     "app"
