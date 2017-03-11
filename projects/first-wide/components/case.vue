@@ -167,7 +167,7 @@
 							header: 'WHAT WE DID',
 							item: ['Build a PALACE that was inspired by colors – a palace of color that creating an enchanting exotic world', 'A virtual world filled with multi-ways to interactive, to have fun, and most importantly to integrate with guests  from the minute walk-in, till exit. Make them feel they passing through a journey', 'Inspirational set-up, to form up a story that smartly transformed in Marie Dalgar’ s brand messages in a more vivid and easy way.']
 						}],
-						pic: []
+						pic: ['../images/pic45.jpeg', '../images/pic46.jpeg', '../images/pic47.jpeg', '../images/pic48.jpeg']
 					}, {
 						tit: {
 							value: 'SET UP THE RIGHT WAY',
